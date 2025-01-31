@@ -29,7 +29,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased`}>{children}</body>
+      <body className="antialiased">
+        <div className="flex flex-col min-h-screen max-w-6xl mx-auto px-4">
+          <header className="sticky top-0 z-50 bg-white shadow">
+            <div className="py-4">Header Content</div>
+          </header>
+          <main>{children}</main>
+          <footer className="py-4 border-t">Footer Content</footer>
+        </div>
+      </body>
     </html>
   );
 }
