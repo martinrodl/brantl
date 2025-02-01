@@ -24,11 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} antialiased container max-w-full`}>
+      <body className={`${montserrat.className} antialiased`}>
         <header className="sticky top-0 z-50 bg-white shadow">Header Content</header>
-
-        <main>{children}</main>
-
+        {children}
         <footer className="py-4 border-t">Footer Content</footer>
       </body>
     </html>
