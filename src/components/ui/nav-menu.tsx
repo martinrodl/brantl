@@ -11,23 +11,23 @@ const links = [
   { href: "#", label: "SLUŽBY" },
   { href: "#", label: "REFERENCE" },
   { href: "#", label: "KONTAKTY" },
-  { href: "#", label: "KONTAKTY" },
+  { href: "#", label: "CZ/ENG" },
 ];
 
 export default function NavMenu() {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="relative flex items-center justify-between">
-      <Logo className="ml-14 mt-10 h-[72px] w-[172px]" />
+    <nav className="relative mx-5 flex min-h-20 items-center justify-between border-b border-white lg:mx-0 lg:min-h-16 lg:border-none">
+      <Logo className="ml-5 h-[40px] w-[95px] lg:ml-16 lg:mt-14 lg:h-[72px] lg:w-[172px]" />
 
       <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
-        <div className="flex items-center border-b">
+        <div className="border-b-none flex items-center text-white lg:border-b">
           {links.map((link, idx) => (
             <a
               key={`${link.href}-${idx}`}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium transition-colors hover:text-primary"
+              className="whitespace-nowrap px-4 py-4 text-sm font-medium transition-colors hover:text-primary lg:px-11 lg:first:pl-4 lg:last:pr-4"
             >
               {link.label}
             </a>
@@ -37,8 +37,8 @@ export default function NavMenu() {
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="rounded-full border border-white text-white md:hidden">
+            <Menu className="h-8 w-8 text-white" />
             <span className="sr-only">Toggle menu</span>
           </Button>
         </SheetTrigger>

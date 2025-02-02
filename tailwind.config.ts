@@ -6,20 +6,32 @@ export default {
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     screens: {
-      md: "377px",
-      lg: "769px",
-    },
-    maxWidth: {
-      full: "1680px",
+      // Default mobile: No prefix needed, use regular classes as default styles
+      // md: "769px", // Styles for tablet start at 769px
+      // lg: "1680px", // Styles for desktop start at 1680px
     },
     container: {
       center: true,
       screens: {
-        md: "768px",
-        lg: "1680px",
+        sm: "100%",
+        md: "100%",
+        lg: "100%",
+        xl: "1680px",
       },
     },
     extend: {
+      screens: {
+        // Default mobile: No prefix needed, use regular classes as default styles
+        // md: "1680px", // Styles for tablet start at 769px
+        // lg: "1680px", // Styles for desktop start at 1680px
+        md: "768px", // Tablet starts at 768px
+        lg: "1680px", // Desktop starts at 1680px
+      },
+      maxWidth: {
+        full: "100%", // Mobile full width
+        // md: "768px", // Max width at tablet breakpoint
+        // lg: "1680px", // Max width at desktop breakpoint
+      },
       fontSize: {
         sm: [
           "14px",
@@ -35,6 +47,14 @@ export default {
             letterSpacing: "-0.015em",
           },
         ],
+        "5xl": [
+          "3.125rem", // 50px
+          {
+            lineHeight: "60px", // Adjust proportionally
+            letterSpacing: "-0.01em", // Optional spacing
+          },
+        ],
+
         "6xl": [
           "3.75rem",
           {
