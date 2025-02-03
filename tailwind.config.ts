@@ -5,11 +5,6 @@ export default {
   darkMode: ["class"],
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    screens: {
-      // Default mobile: No prefix needed, use regular classes as default styles
-      // md: "769px", // Styles for tablet start at 769px
-      // lg: "1680px", // Styles for desktop start at 1680px
-    },
     container: {
       center: true,
       screens: {
@@ -21,16 +16,11 @@ export default {
     },
     extend: {
       screens: {
-        // Default mobile: No prefix needed, use regular classes as default styles
-        // md: "1680px", // Styles for tablet start at 769px
-        // lg: "1680px", // Styles for desktop start at 1680px
-        md: "768px", // Tablet starts at 768px
-        lg: "1680px", // Desktop starts at 1680px
+        md: "768px",
+        lg: "1680px",
       },
       maxWidth: {
-        full: "100%", // Mobile full width
-        // md: "768px", // Max width at tablet breakpoint
-        // lg: "1680px", // Max width at desktop breakpoint
+        full: "100%",
       },
       fontSize: {
         sm: [
@@ -43,18 +33,24 @@ export default {
         "2xl": [
           "25px",
           {
-            lineHeight: "50px",
+            lineHeight: "35px",
+            letterSpacing: "-0.015em",
+          },
+        ],
+        "3xl": [
+          "35px",
+          {
+            lineHeight: "35px",
             letterSpacing: "-0.015em",
           },
         ],
         "5xl": [
-          "3.125rem", // 50px
+          "3.125rem",
           {
-            lineHeight: "60px", // Adjust proportionally
-            letterSpacing: "-0.01em", // Optional spacing
+            lineHeight: "60px",
+            letterSpacing: "-0.01em",
           },
         ],
-
         "6xl": [
           "3.75rem",
           {
@@ -108,6 +104,10 @@ export default {
           "3": "hsl(var(--chart-3))",
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
+        },
+        "menu-icon": {
+          DEFAULT: "hsl(var(--menu-icon))",
+          hover: "hsl(var(--menu-icon-hover, var(--menu-icon)))",
         },
       },
     },
