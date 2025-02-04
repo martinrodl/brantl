@@ -1,11 +1,28 @@
 "use client";
 
+import * as React from "react";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 
 import { VIEWPORTS } from "@/constants/viewports";
+import { cn } from "@/lib/utils";
 
-export default function ResponsiveImage() {
+interface ResponsiveImageProps extends ImageProps {
+  mobileWidth?: number;
+  mobileHeight?: number;
+}
+
+export default function ResponsiveImage({
+  src,
+  alt,
+  width,
+  height,
+  mobileWidth,
+  mobileHeight,
+  priority,
+  className,
+  ...props
+}: ResponsiveImageProps) {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -21,12 +38,12 @@ export default function ResponsiveImage() {
 
   return (
     <Image
-      src="/hero.webp"
-      alt="Hero Banner Background"
-      width={isMobile ? 1438 : 1680}
-      height={isMobile ? 822 : 968}
-      priority
-      className={isMobile ? "min-w-[1438px]" : "min-w-[1680px]"}
+      src={src}
+      alt={alt}
+      width={isMobile ? mobileWidth || width : width}
+      height={isMobile ? mobileHeight || height : height}
+      priority={priority}
+      className={cn(isMobile ? `min-w-[${mobileWidth || width}px]` : `min-w-[${width}px]`, className, { ...props })}
     />
   );
 }

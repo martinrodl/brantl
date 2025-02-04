@@ -1,11 +1,20 @@
-import Vector from "@/public/vector.svg";
-import ResponsiveImage from "@/components/ui/responsive-image";
 import * as React from "react";
+
+import ResponsiveImage from "@/components/ui/responsive-image";
+import Vector from "@/public/vector.svg";
 
 export default function HeroBanner() {
   return (
     <div className="relative flex justify-center overflow-hidden">
-      <ResponsiveImage />
+      <ResponsiveImage
+        src="/hero.webp"
+        alt="Hero Banner Background"
+        width={1680}
+        height={968}
+        mobileWidth={1438}
+        mobileHeight={822}
+        priority
+      />
 
       <div className="absolute mx-6 flex h-full max-w-[800px] flex-col md:mx-16">
         <div className="my-auto flex flex-col gap-24 self-center text-center text-white lg:gap-20">
