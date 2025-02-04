@@ -3,8 +3,9 @@
 import * as React from "react";
 import { Menu, X } from "lucide-react";
 
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader, SheetDescription } from "@/components/ui/sheet";
 import { RouterLinkNav } from "@/components/ui/router-link-nav";
 import { RouterLinkMenu } from "@/components/ui/router-link-menu";
 import Logo from "@/public/logo.svg";
@@ -49,23 +50,30 @@ export default function NavMenu() {
             </Button>
           </SheetTrigger>
 
-          <SheetContent className="w-full bg-black bg-[url('/menu-bg-mobile.webp')] bg-cover bg-center p-0 text-secondary-foreground">
-            <div className="absolute left-0 top-0 flex w-full justify-between border-b-2 p-4">
-              <Logo className="h-[40px] w-[95px] shrink-0 fill-secondary-foreground" />
+          <SheetContent className="flex w-full flex-col justify-between gap-0 bg-black bg-[url('/menu-bg-mobile.webp')] bg-cover bg-center p-0 text-secondary-foreground">
+            <VisuallyHidden>
+              <SheetTitle>Main Navigation</SheetTitle>
+              <SheetDescription>Choose an option from the menu below.</SheetDescription>
+            </VisuallyHidden>
 
-              <Button
-                onClick={() => setOpen(false)}
-                variant="ghost"
-                size="icon"
-                className="group flex h-10 w-10 items-center rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 [&_svg]:size-7"
-                aria-label="Close"
-              >
-                <X className="stroke-secondary-foreground group-hover:stroke-foreground" />
-                <span className="sr-only">Close</span>
-              </Button>
-            </div>
+            <SheetHeader>
+              <div className="flex w-full justify-between border-b-2 p-4">
+                <Logo className="h-[40px] w-[95px] shrink-0 fill-secondary-foreground" />
 
-            <nav className="flex h-full flex-col items-center justify-center gap-4 pl-12 pr-20">
+                <Button
+                  onClick={() => setOpen(false)}
+                  variant="ghost"
+                  size="icon"
+                  className="group flex h-10 w-10 items-center rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 [&_svg]:size-7"
+                  aria-label="Close"
+                >
+                  <X className="stroke-secondary-foreground group-hover:stroke-foreground" />
+                  <span className="sr-only">Close</span>
+                </Button>
+              </div>
+            </SheetHeader>
+
+            <nav className="flex flex-grow flex-col justify-center gap-4 overflow-clip pl-12 pr-20">
               {links.map((link, idx) => (
                 <RouterLinkMenu
                   key={`${link.href}-${idx}`}
