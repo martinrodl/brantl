@@ -109,7 +109,12 @@
     --menu-icon: 220, 9%, 60%;
   }
 
+  html {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
+    @apply  !min-w-full;
   }
 }
