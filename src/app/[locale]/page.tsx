@@ -1,6 +1,7 @@
 import initTranslations from "@/app/i18n";
 import TranslationsProvider from "@/components/context/translations-provider";
 import Hero from "@/components/pages/hero";
+import Divider from "@/components/ui/divider";
 
 const i18nNamespaces = ["home"];
 
@@ -12,6 +13,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
       <main className="container flex flex-grow flex-col">
         <Hero locale={locale} />
+
+        <Divider />
 
         {Array.from({ length: 50 }).map((_, i) => (
           <p key={i} className="m-4">
