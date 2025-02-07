@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "pull-i18n": "node --env-file=.env scripts/pull-i18n.mjs",
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "npm run pull-i18n && next build",
+    "start": "npm run pull-i18n && next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -17,16 +18,17 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "i18next": "^24.2.2",
+    "i18next-resources-to-backend": "^1.2.1",
     "lucide-react": "^0.474.0",
     "next": "15.1.6",
+    "next-i18n-router": "^5.5.1",
     "next-i18next": "^15.4.1",
     "next-international": "^1.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.0",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-animated": "^2.0.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

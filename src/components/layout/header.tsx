@@ -1,39 +1,21 @@
-"use client";
+import * as React from "react";
 
-import React, { useState, useEffect } from "react";
-import NavMenu from "@/components/ui/nav-menu";
+import Navbar from "@/components/navbar/navbar";
+import TranslationsProvider from "@/components/context/translations-provider";
+import initTranslations from "@/app/i18n";
+import AutoHideHeader from "@/components/layout/auto-hide-header";
 
-export default function Header() {
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+const i18nNamespaces = ["home"];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+export default async function Header({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
-    <header
-      className={`container fixed left-0 right-0 top-0 z-50 transition-transform duration-300 ${
-        showHeader ? "translate-y-0" : "-translate-y-full"
-      }`}
-    >
-      <NavMenu />
-    </header>
+    <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
+      <AutoHideHeader>
+        <Navbar />
+      </AutoHideHeader>
+    </TranslationsProvider>
   );
 }

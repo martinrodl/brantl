@@ -1,19 +1,16 @@
-import React from "react";
+import * as React from "react";
 import Link from "next/link";
 
-interface RouterLinkNavProps {
-  href: string;
-  children: React.ReactNode;
-}
+import { NavLink } from "@/components/navbar/types";
 
-export function RouterLinkNav({ href, children }: RouterLinkNavProps) {
+export function NavbarTopLink({ link }: { link: NavLink }) {
   return (
     <Link
-      href={href}
+      href={link.href}
       passHref
       className="flex items-center justify-center whitespace-nowrap p-4 text-sm font-medium text-secondary-foreground transition-all duration-300 ease-in-out hover:bg-secondary/80 hover:text-foreground hover:opacity-90"
     >
-      {children}
+      {link.label}
     </Link>
   );
 }
