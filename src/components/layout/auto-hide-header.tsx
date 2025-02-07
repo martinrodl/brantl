@@ -10,10 +10,10 @@ export default function AutoHideHeader({ children }: { children: React.ReactNode
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY.current) {
-        setShowHeader(false);
-      } else {
+      if (currentScrollY === 0) {
         setShowHeader(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        setShowHeader(false);
       }
 
       lastScrollY.current = currentScrollY;
