@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "pull-i18n": "node --env-file=.env scripts/pull-i18n.mjs",
-    "dev": "next dev",
+    "dev": "npm run pull-i18n && next dev",
     "build": "npm run pull-i18n && next build",
     "start": "npm run pull-i18n && next start",
     "lint": "next lint"

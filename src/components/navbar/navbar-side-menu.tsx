@@ -3,29 +3,47 @@
 import * as React from "react";
 import { Menu, X } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
+import { useSearchParams, useRouter } from "next/navigation";
 
 import { NavLinks } from "@/components/navbar/types";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import Logo from "~/public/logo.svg";
 import { NavbarSideLink } from "@/components/navbar/navbar-side-link";
+import LanguageSwitcher from "@/components/ui/language-switcher";
+import Logo from "~/public/logo.svg";
 
 interface NavbarSideMenuProps {
   links: NavLinks;
-  positioning?: string; // Optional positioning prop
+  positioning?: string;
 }
 
 export default function NavbarSideMenu({
   links,
   positioning = "flex w-full flex-grow flex-col justify-center gap-4 pl-12 pr-20", // Default positioning
 }: NavbarSideMenuProps) {
-  const [open, setOpen] = React.useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const [open, setOpen] = React.useState(searchParams.get("open") === "true");
+
+  const toggleMenu = (menuState: boolean) => {
+    setOpen(menuState);
+
+    const queryParams = new URLSearchParams(window.location.search);
+    if (menuState) {
+      queryParams.set("open", "true");
+    } else {
+      queryParams.delete("open");
+    }
+
+    router.replace(window.location.pathname + "?" + queryParams.toString());
+  };
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button
-          onClick={() => setOpen((prev) => !prev)}
+          onClick={() => toggleMenu(!open)}
           variant="ghost"
           size="icon"
           className="group h-10 w-10 rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 md:hidden [&_svg]:size-7"
@@ -48,7 +66,7 @@ export default function NavbarSideMenu({
             <Logo className="h-[40px] w-[95px] shrink-0 fill-secondary-foreground" />
 
             <Button
-              onClick={() => setOpen(false)}
+              onClick={() => toggleMenu(false)}
               variant="ghost"
               size="icon"
               className="group flex h-10 w-10 items-center rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 [&_svg]:size-7"
@@ -62,8 +80,10 @@ export default function NavbarSideMenu({
 
         <section className={positioning}>
           {links.map((link) => (
-            <NavbarSideLink key={link.href} link={link} onClick={() => setOpen(false)} />
+            <NavbarSideLink key={link.href} link={link} onClick={() => toggleMenu(false)} />
           ))}
+
+          <LanguageSwitcher preserveMenuState />
         </section>
       </SheetContent>
     </Sheet>

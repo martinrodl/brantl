@@ -15,18 +15,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+export default function LanguageSwitcher({ preserveMenuState = false }: { preserveMenuState?: boolean }) {
+  const { i18n, t } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
 
   const changeLanguage = (newLocale: string) => {
-    if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
-      router.push("/" + newLocale + currentPathname);
-    } else {
-      router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
+    const queryParams = new URLSearchParams(window.location.search);
+
+    if (preserveMenuState) {
+      queryParams.set("open", "true");
     }
+
+    if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
+      router.push("/" + newLocale + currentPathname + (preserveMenuState ? "?" + queryParams.toString() : ""));
+    } else {
+      const newPathname = currentPathname.replace(`/${currentLocale}`, `/${newLocale}`);
+      router.push(newPathname + (preserveMenuState ? "?" + queryParams.toString() : ""));
+    }
+
     router.refresh();
   };
 
@@ -38,7 +46,7 @@ export default function LanguageSwitcher() {
       </SelectTrigger>
       <SelectContent align="end">
         <SelectGroup>
-          <SelectLabel>Select Language</SelectLabel>
+          <SelectLabel>{t("header.switcher.dropdownHeader")}</SelectLabel>
           <SelectItem value={LANGUAGES.en.locale}>{LANGUAGES.en.label}</SelectItem>
           <SelectItem value={LANGUAGES.cs.locale}>{LANGUAGES.cs.label}</SelectItem>
         </SelectGroup>
