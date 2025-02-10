@@ -23,39 +23,58 @@ export default {
         full: "100%",
       },
       fontSize: {
-        sm: [
-          "14px",
+        xs: [
+          "0.75rem", // 12px ÷ 16 = 0.75rem
           {
-            lineHeight: "18px",
-            letterSpacing: "-0.015em",
+            lineHeight: "1rem",
+          },
+        ],
+        sm: [
+          "0.875rem", // 14px ÷ 16 = 0.875rem
+          {
+            lineHeight: "1.25rem",
+          },
+        ],
+        lg: [
+          "1.125rem", // 18px ÷ 16 = 1.125rem
+          {
+            lineHeight: "1.75rem",
           },
         ],
         "2xl": [
-          "25px",
+          "1.5625rem", // 25px ÷ 16 = 1.5625rem
           {
-            lineHeight: "35px",
-            letterSpacing: "-0.015em",
+            lineHeight: "2rem",
+          },
+        ],
+        "2.5xl": [
+          "1.875rem", // 30px ÷ 16 = 1.875rem
+          {
+            lineHeight: "2.25rem",
           },
         ],
         "3xl": [
-          "35px",
+          "2.1875rem", // 35px ÷ 16 = 2.1875rem
           {
-            lineHeight: "35px",
-            letterSpacing: "-0.015em",
+            lineHeight: "2.5rem",
+          },
+        ],
+        "4xl": [
+          "3rem", // 48px ÷ 16 = 3rem
+          {
+            lineHeight: "3rem",
           },
         ],
         "5xl": [
-          "3.125rem",
+          "3.125rem", // 50px ÷ 16 = 3.125rem
           {
-            lineHeight: "60px",
-            letterSpacing: "-0.01em",
+            lineHeight: "3.5rem",
           },
         ],
         "6xl": [
-          "3.75rem",
+          "3.75rem", // 60px ÷ 16 = 3.75rem
           {
-            lineHeight: "65px",
-            letterSpacing: "-0.015em",
+            lineHeight: "4rem",
           },
         ],
       },
@@ -109,6 +128,12 @@ export default {
           DEFAULT: "hsl(var(--menu-icon))",
           hover: "hsl(var(--menu-icon-hover, var(--menu-icon)))",
         },
+        icon: {
+          DEFAULT: "hsl(var(--icon-default))",
+        },
+      },
+      spacing: {
+        "16": "64px",
       },
     },
   },

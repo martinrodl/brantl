@@ -6,7 +6,7 @@
   :root {
     --background: 0, 0%, 100%;
 
-    --foreground: 220, 50%, 27%;
+    --foreground: 222, 51%, 26%;
 
     --card: 0 0% 100%;
 
@@ -55,6 +55,8 @@
     --radius: 0.5rem;
 
     --menu-icon: 220, 9%, 47%;
+
+    --icon-default: 217 15% 94.1%;
   }
 
   .dark {
@@ -107,6 +109,8 @@
     --chart-5: 340 75% 55%;
 
     --menu-icon: 220, 9%, 60%;
+
+    --icon-default: 217, 15%, 94.1%;
   }
 
   html {

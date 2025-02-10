@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 import Header from "@/components/layout/header";
+import ScrollProvider from "@/components/context/scroll-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html>
       <body className={`${montserrat.className} antialiased`}>
-        <Header params={params} />
-        {children}
-        <footer className="border-t py-4">Footer Content</footer>
+        <ScrollProvider>
+          <Header params={params} />
+          {children}
+          <footer className="border-t py-4">Footer Content</footer>
+        </ScrollProvider>
       </body>
     </html>
   );
