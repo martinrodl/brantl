@@ -49,7 +49,7 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
           specializationTitle={t("about.team.sectionTitle.specialization")}
           specializations={t(`about.team.${position}.specializations`)}
           cvRecords={t(`about.team.${position}.cvRecords`)}
-          className="place-self-center lg:row-span-3"
+          className="place-self-center lg:row-span-3 lg:place-self-start"
         />
       ))}
     </div>

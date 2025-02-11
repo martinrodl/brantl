@@ -35,7 +35,7 @@ export default function ProfileCard({
         <p className="text-xs font-bold">{role}</p>
       </div>
 
-      <div className="mb-4 flex flex-col gap-4 place-self-start lg:mb-8">
+      <div className="mb-4 flex flex-col gap-4 lg:mb-8">
         <p className="text-xs font-bold">{specializationTitle}:</p>
         <ul className="list-disc pl-5">
           {specializations.split("|").map((specialization) => (
@@ -46,7 +46,7 @@ export default function ProfileCard({
         </ul>
       </div>
 
-      <div className="mb-16 flex flex-col gap-4 place-self-start">
+      <div className="mb-16 flex flex-col gap-4">
         <p className="text-xs font-bold">CV:</p>
         <ul className="list-disc pl-5">
           {cvRecords.split("|").map((record) => (
