@@ -11,7 +11,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
-      <main className="container flex flex-grow flex-col gap-14">
+      <main className="container flex flex-grow flex-col gap-7 md:gap-14">
         <Hero locale={locale} />
         <About locale={locale} />
 
