@@ -15,7 +15,6 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
     mobile: {
       grid: "grid-cols-1",
       spacing: "px-8",
-      alignment: "place-items-center",
     },
     tablet: {
       grid: "md:grid-cols-3 md:grid-flow-col md:grid-rows-[repeat(4,auto)]",
@@ -34,7 +33,6 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
         cssClasses.common,
         cssClasses.mobile.grid,
         cssClasses.mobile.spacing,
-        cssClasses.mobile.alignment,
         cssClasses.tablet.grid,
         cssClasses.tablet.spacing,
         cssClasses.desktop.grid,
@@ -51,7 +49,7 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
           specializationTitle={t("about.team.sectionTitle.specialization")}
           specializations={t(`about.team.${position}.specializations`)}
           cvRecords={t(`about.team.${position}.cvRecords`)}
-          className="lg:row-span-3"
+          className="place-self-center lg:row-span-3"
         />
       ))}
     </div>
