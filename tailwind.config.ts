@@ -59,6 +59,12 @@ export default {
             lineHeight: "2.5rem",
           },
         ],
+        "3.5xl": [
+          "2.5rem", // 40px ÷ 16 = 2.5rem
+          {
+            lineHeight: "2.75rem",
+          },
+        ],
         "4xl": [
           "3rem", // 48px ÷ 16 = 3rem
           {
