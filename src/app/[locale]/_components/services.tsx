@@ -18,8 +18,8 @@ export default async function Services({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
-    <SectionRef id={NavLinkHref.SERVICES} className="flex flex-col gap-8 md:gap-20">
-      <SectionHeader header={t("services.header")} />
+    <SectionRef id={NavLinkHref.SERVICES} className="">
+      <SectionHeader header={t("services.header")} className="mb-8 md:mb-12" />
 
       {sections.map((key, idx) => (
         <MediaTextBlock
