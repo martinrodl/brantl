@@ -1,13 +1,13 @@
 export enum NavLinkHref {
   ABOUT = "about",
   SERVICES = "services",
-  REFERENCES = "references",
+  TESTIMONIALS = "testimonials",
   CONTACTS = "contacts",
 }
 
 export enum LinkLabelEnum {
   ABOUT = "header.navbar.about",
   SERVICES = "header.navbar.services",
-  REFERENCES = "header.navbar.references",
+  TESTIMONIALS = "header.navbar.testimonials",
   CONTACTS = "header.navbar.contacts",
 }

@@ -1,18 +1,15 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 
 import BorderTexture from "~/public/icons/border-texture.svg";
 
 export default function ImageWithDescription({
   imageSrc,
   imageAlt,
-  width,
-  height,
   description,
 }: {
-  imageSrc: string;
+  imageSrc: StaticImageData;
   imageAlt: string;
-  width?: number;
-  height?: number;
   description: string;
 }) {
   return (
@@ -21,8 +18,7 @@ export default function ImageWithDescription({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={width}
-          height={height}
+          placeholder="blur"
           className="h-[40vw] w-full object-cover object-[0_20%] lg:h-auto lg:w-1/2"
         />
 

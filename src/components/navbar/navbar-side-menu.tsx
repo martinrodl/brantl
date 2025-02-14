@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useSearchParams, useRouter } from "next/navigation";
+
 import { navLinks } from "@/components/navbar/utils/constants";
 import {
   Sheet,
@@ -18,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { NavbarSideButton } from "@/components/navbar/navbar-side-button";
 import LanguageSwitcher from "@/components/ui/language-switcher";
-import Logo from "~/public/logos/logo.svg";
+import Logo from "~/public/logos/brantl-partners-logo.svg";
 import Vector from "~/public/icons/vector.svg";
 
 export default function NavbarSideMenu() {

@@ -1,9 +1,10 @@
 import initTranslations from "@/app/i18n";
-import SectionHeader from "@/components/ui/section-header";
 import SectionRef from "@/components/context/section-ref";
+import SectionHeader from "@/components/ui/section-header";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
 import ProfileOverview from "@/components/ui/profile-overview";
 import ImageWithDescription from "@/components/ui/visual-description-block";
+import aboutPrimary from "~/public/images/about/about-primary.webp";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
 import BorderTexture from "~/public/icons/border-texture.svg";
 
@@ -18,10 +19,8 @@ export default async function About({ locale }: { locale: string }) {
         <SectionHeader header={t("about.header")} />
 
         <ImageWithDescription
-          imageSrc="/images/about/about-primary.webp"
+          imageSrc={aboutPrimary}
           imageAlt="Three members of the company Brantl Partners"
-          width={838}
-          height={626}
           description={t("about.description")}
         />
 

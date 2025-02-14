@@ -5,12 +5,12 @@ import { Separator } from "@/components/ui/separator";
 import Vector from "~/public/icons/vector.svg";
 
 export default function MediaTextBlock({
-  image,
+  imageSrc,
   isImageFirst = true,
   title,
   description,
 }: {
-  image: StaticImageData;
+  imageSrc: StaticImageData;
   isImageFirst?: boolean;
   title: string;
   description: string;
@@ -18,7 +18,7 @@ export default function MediaTextBlock({
   return (
     <div className={`flex flex-col ${isImageFirst ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
       <div className="relative aspect-[64/26] lg:aspect-square lg:w-1/2">
-        <Image src={image} alt={title} fill placeholder="blur" className="object-cover" />
+        <Image src={imageSrc} alt={title} fill placeholder="blur" className="object-cover" />
       </div>
 
       <div className="flex w-full flex-col justify-center px-8 md:px-16 lg:aspect-square lg:w-1/2 lg:pl-20 lg:pr-24">

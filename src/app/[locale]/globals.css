@@ -3,60 +3,78 @@
 @tailwind utilities;
 
 @layer base {
+  /* todo: remove after fixing it */
   :root {
+    --hex-background: #ffffff;
     --background: 0, 0%, 100%;
-
+    --hex-foreground: #213565;
     --foreground: 222, 51%, 26%;
 
-    --card: 0 0% 100%;
+    --hex-card: #ffffff;
+    --card: 0, 0%, 100%;
+    --hex-card-foreground: #0a0a0a;
+    --card-foreground: 0, 0%, 3.9%;
 
-    --card-foreground: 0 0% 3.9%;
+    --hex-popover: #ffffff;
+    --popover: 0, 0%, 100%;
+    --hex-popover-foreground: #0a0a0a;
+    --popover-foreground: 0, 0%, 3.9%;
 
-    --popover: 0 0% 100%;
+    --hex-primary: #171717;
+    --primary: 0, 0%, 9%;
+    --hex-primary-foreground: #fafafa;
+    --primary-foreground: 0, 0%, 98%;
 
-    --popover-foreground: 0 0% 3.9%;
+    --hex-secondary: #244466;
+    --secondary: 223, 40%, 28%;
+    --hex-secondary-foreground: #ffffff;
+    --secondary-foreground: 0, 0%, 100%;
 
-    --primary: 0 0% 9%;
+    --hex-muted: #f4f4f4;
+    --muted: 0, 0%, 96.1%;
+    --hex-muted-foreground: #737373;
+    --muted-foreground: 0, 0%, 45.1%;
 
-    --primary-foreground: 0 0% 98%;
+    --hex-accent: #f4f4f4;
+    --accent: 0, 0%, 96.1%;
+    --hex-accent-foreground: #171717;
+    --accent-foreground: 0, 0%, 9%;
 
-    --secondary: 0 0% 96.1%;
+    --hex-destructive: #cb4242;
+    --destructive: 0, 84.2%, 60.2%;
+    --hex-destructive-foreground: #fafafa;
+    --destructive-foreground: 0, 0%, 98%;
 
-    --secondary-foreground: 0 0% 100%;
+    --hex-border: #213565;
+    --border: 222, 51%, 26%;
 
-    --muted: 0 0% 96.1%;
+    --hex-border-accent: #FFFFFF;
+    --border-accent: 0, 0%, 100%;
 
-    --muted-foreground: 0 0% 45.1%;
+    --hex-border-destructive: #cb4242;
+    --border-destructive: 0, 84.2%, 60.2%;
 
-    --accent: 0 0% 96.1%;
+    --hex-input: #e5e5e5;
+    --input: 0, 0%, 89.8%;
 
-    --accent-foreground: 0 0% 9%;
+    --hex-ring: #0a0a0a;
+    --ring: 0, 0%, 3.9%;
 
-    --destructive: 0 84.2% 60.2%;
+    --hex-chart-1: #e55930;
+    --chart-1: 12, 76%, 61%;
+    --hex-chart-2: #2ba68c;
+    --chart-2: 173, 58%, 39%;
+    --hex-chart-3: #2f4e66;
+    --chart-3: 197, 37%, 24%;
+    --hex-chart-4: #f0d366;
+    --chart-4: 43, 74%, 66%;
+    --hex-chart-5: #f3bc7e;
+    --chart-5: 27, 87%, 67%;
 
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 89.8%;
-
-    --input: 0 0% 89.8%;
-
-    --ring: 0 0% 3.9%;
-
-    --chart-1: 12 76% 61%;
-
-    --chart-2: 173 58% 39%;
-
-    --chart-3: 197 37% 24%;
-
-    --chart-4: 43 74% 66%;
-
-    --chart-5: 27 87% 67%;
-
-    --radius: 0.5rem;
-
+    --hex-menu-icon: #6d758d;
     --menu-icon: 220, 9%, 47%;
-
-    --icon-default: 217 15% 94.1%;
+    --hex-icon-default: #ededf5;
+    --icon-default: 217, 15%, 94.1%;
   }
 
   .dark {

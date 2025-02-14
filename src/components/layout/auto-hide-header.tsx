@@ -3,7 +3,7 @@
 import * as React from "react";
 
 export default function AutoHideHeader({ children }: { children: React.ReactNode }) {
-  const [showHeader, setShowHeader] = React.useState(true);
+  const [showHeader, setShowHeader] = React.useState(false);
   const lastScrollY = React.useRef(0);
 
   React.useEffect(() => {
@@ -18,6 +18,10 @@ export default function AutoHideHeader({ children }: { children: React.ReactNode
 
       lastScrollY.current = currentScrollY;
     };
+
+    if (window.scrollY === 0) {
+      setShowHeader(true);
+    }
 
     window.addEventListener("scroll", handleScroll);
 

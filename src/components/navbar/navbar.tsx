@@ -1,6 +1,6 @@
-import Logo from "~/public/logos/logo.svg";
 import NavbarTopMenu from "@/components/navbar/navbar-top-menu";
 import NavbarSideMenu from "@/components/navbar/navbar-side-menu";
+import Logo from "~/public/logos/brantl-partners-logo.svg";
 
 export default function Navbar() {
   return (

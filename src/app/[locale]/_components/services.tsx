@@ -10,26 +10,35 @@ import Services03 from "~/public/images/services/services-block-03.jpg";
 import Services04 from "~/public/images/services/services-block-04.jpg";
 import Services05 from "~/public/images/services/services-block-05.jpg";
 import Services06 from "~/public/images/services/services-block-06.jpg";
+import BorderTexture from "~/public/icons/border-texture.svg";
 
-const sections = ["first", "second", "third", "fourth", "fifth", "sixth"];
-const sectionImages = [Services01, Services02, Services03, Services04, Services05, Services06];
+const sections = [
+  { key: "first", image: Services01, name: "firstImage" },
+  { key: "second", image: Services02, name: "secondImage" },
+  { key: "third", image: Services03, name: "thirdImage" },
+  { key: "fourth", image: Services04, name: "fourthImage" },
+  { key: "fifth", image: Services05, name: "fifthImage" },
+  { key: "sixth", image: Services06, name: "sixthImage" },
+];
 
 export default async function Services({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
-    <SectionRef id={NavLinkHref.SERVICES} className="">
+    <SectionRef id={NavLinkHref.SERVICES}>
       <SectionHeader header={t("services.header")} className="mb-8 md:mb-12" />
 
-      {sections.map((key, idx) => (
+      {sections.map((section, idx) => (
         <MediaTextBlock
           key={idx}
-          image={sectionImages[idx]}
-          title={t(`services.sections.${key}.title`)}
-          description={t(`services.sections.${key}.description`)}
+          imageSrc={section.image}
+          title={t(`services.sections.${section.key}.title`)}
+          description={t(`services.sections.${section.key}.description`)}
           isImageFirst={idx % 2 === 0}
         />
       ))}
+
+      <BorderTexture className="w-full fill-icon" />
     </SectionRef>
   );
 }
