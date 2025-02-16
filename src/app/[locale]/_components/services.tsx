@@ -38,7 +38,7 @@ export default async function Services({ locale }: { locale: string }) {
         />
       ))}
 
-      <BorderTexture className="w-full fill-icon" />
+      <BorderTexture className="w-full fill-muted" />
     </SectionRef>
   );
 }

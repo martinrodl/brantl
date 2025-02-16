@@ -47,35 +47,35 @@ export default function NavbarSideMenu() {
       <SheetTrigger asChild>
         <Button
           onClick={() => toggleMenu(!open)}
-          variant="ghost"
+          variant="ghostInverse"
           size="icon"
-          className="group h-10 w-10 rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 md:hidden [&_svg]:size-7"
+          className="group h-10 w-10 rounded-full border-2 border-inverse md:hidden [&_svg]:size-7"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          <Menu className="stroke-secondary-foreground group-hover:stroke-foreground" />
+          <Menu className="stroke-icon-inverse" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="flex w-full flex-col justify-between gap-0 bg-black bg-[url('/images/mobile/menu-bg-mobile.webp')] bg-cover bg-center p-0 text-secondary-foreground">
+      <SheetContent className="flex w-full flex-col justify-between gap-0 bg-[url('/images/mobile/menu-bg-mobile.webp')] bg-cover bg-center p-0 text-inverse-foreground">
         <VisuallyHidden>
           <SheetTitle>Main Navigation</SheetTitle>
           <SheetDescription>Choose an option from the menu below.</SheetDescription>
         </VisuallyHidden>
 
         <SheetHeader>
-          <div className="flex w-full justify-between border-b-2 p-4">
+          <div className="flex w-full justify-between border-b-2 border-inverse p-4">
             <Logo className="h-[40px] w-[95px] shrink-0 fill-secondary-foreground" />
 
             <Button
               onClick={() => toggleMenu(false)}
-              variant="ghost"
+              variant="ghostInverse"
               size="icon"
-              className="group flex h-10 w-10 items-center rounded-full border-2 border-secondary-foreground ring-offset-background hover:bg-secondary-foreground hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 [&_svg]:size-7"
+              className="group h-10 w-10 rounded-full border-2 border-inverse [&_svg]:size-7"
               aria-label="Close"
             >
-              <X className="stroke-secondary-foreground group-hover:stroke-foreground" />
+              <X className="stroke-icon-inverse" />
               <span className="sr-only">Close</span>
             </Button>
           </div>
@@ -91,7 +91,7 @@ export default function NavbarSideMenu() {
 
           <SheetFooter className="flex flex-col items-center gap-4 px-12 pb-12 text-center">
             <p>{t("navbar.sideMenu.footer")}</p>
-            <Vector width={24} height={10} className="fill-white" />
+            <Vector width={24} height={10} className="fill-icon-inverse" />
           </SheetFooter>
         </section>
       </SheetContent>

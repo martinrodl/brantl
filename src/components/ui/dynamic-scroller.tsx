@@ -63,9 +63,9 @@ export default function DynamicScroller({ imageUrls, itemWidth }: { imageUrls: s
   }, [api]);
 
   return (
-    <div>
+    <div className={cn("opacity-0 duration-500", isReadyRef.current && "opacity-100")}>
       {/* region carousel container */}
-      <div className={cn("relative w-full px-20 opacity-0 duration-500", isReadyRef.current && "opacity-100")}>
+      <div className="relative px-20">
         {/* region carousel scrollable */}
 
         <Carousel
@@ -130,8 +130,10 @@ export default function DynamicScroller({ imageUrls, itemWidth }: { imageUrls: s
               setCurrent(idx * itemsPerView);
             }}
             className={cn(
-              "h-3 w-3 rounded-full transition-colors duration-300" /* todo: change colors */,
-              current >= idx * itemsPerView && current < (idx + 1) * itemsPerView ? "bg-red-500" : "bg-green-400",
+              "h-3 w-3 rounded-full transition-colors duration-300",
+              current >= idx * itemsPerView && current < (idx + 1) * itemsPerView
+                ? "bg-primary-inverse"
+                : "bg-muted-foreground",
             )}
           />
         ))}

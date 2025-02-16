@@ -25,7 +25,7 @@ export default function ImageWithDescription({
         <p className="px-4 text-center md:px-16 md:text-lg lg:w-1/2 lg:pr-36 lg:text-start">{description}</p>
       </div>
 
-      <BorderTexture className="w-full fill-icon lg:hidden" />
+      <BorderTexture className="w-full fill-muted lg:hidden" />
     </div>
   );
 }

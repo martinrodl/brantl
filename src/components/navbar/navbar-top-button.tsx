@@ -12,11 +12,7 @@ export function NavbarTopButton({ navLink }: { navLink: NavLink }) {
   const { t } = useTranslation();
 
   return (
-    <Button
-      variant="ghost"
-      onClick={() => scrollTo(navLink.href)}
-      className="text-sm font-medium text-secondary-foreground"
-    >
+    <Button variant="ghostInverse" onClick={() => scrollTo(navLink.href)} className="text-sm font-medium">
       {t(navLink.labelKey)}
     </Button>
   );

@@ -19,10 +19,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <Services locale={locale} />
         <Testimonials locale={locale} />
 
-        {Array.from({ length: 50 }).map((_, i) => (
-          <p key={i} className="m-4">
-            Scroll content {i + 1}
-          </p>
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div key={i} className="boder-2 flex h-40 items-center border-4 border-blue-500 bg-blue-500/30">
+            <p className="mx-auto text-3xl">Scroll content {i + 1}</p>
+          </div>
         ))}
       </main>
     </TranslationsProvider>

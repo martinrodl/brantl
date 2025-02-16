@@ -12,12 +12,12 @@ export function NavbarSideButton({ navLink, onClick }: { navLink: NavLink; onCli
 
   return (
     <Button
-      variant="ghost"
+      variant="ghostInverse"
       onClick={() => {
         onClick();
         setTimeout(() => scrollTo(navLink.href), 300);
       }}
-      className="text-2.5xl justify-between p-2 font-medium"
+      className="justify-between p-2 text-2.5xl font-medium"
     >
       {t(navLink.labelKey)}
       <Vector width={20} height={20} className="-rotate-90 fill-menu-icon" />

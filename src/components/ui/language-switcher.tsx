@@ -38,9 +38,10 @@ export default function LanguageSwitcher({ preserveMenuState = false }: { preser
     router.refresh();
   };
 
+  /* todo: no refactor colors, replace with ghost buttons */
   return (
     <Select onValueChange={changeLanguage} value={currentLocale}>
-      <SelectTrigger className="h-auto w-fit border-none bg-transparent p-4 font-medium text-secondary-foreground transition-all duration-300 ease-in-out hover:bg-secondary/80 hover:text-foreground hover:opacity-90">
+      <SelectTrigger className="h-auto w-fit border-none bg-transparent p-4 font-medium text-primary-inverseForeground transition-all duration-300 ease-in-out">
         <SelectValue />
         &nbsp;
       </SelectTrigger>

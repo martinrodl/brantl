@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss";
 import * as tailwindAnimate from "tailwindcss-animate";
-import scrollbarHide from "tailwind-scrollbar-hide";
-
-// todo: remove tailwind-scrollbar-hide ?
 
 export default {
   darkMode: ["class"],
@@ -95,6 +92,10 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        inverse: {
+          DEFAULT: "hsl(var(--inverse-background))",
+          foreground: "hsl(var(--inverse-foreground))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -106,6 +107,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          inverse: "hsl(var(--primary-inverse))",
+          inverseForeground: "hsl(var(--primary-inverse-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -118,12 +121,14 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          inverse: "hsl(var(--accent-inverse))",
+          inverseForeground: "hsl(var(--accent-inverse-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "hsl(var(--border))",
+        // border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         chart: {
@@ -133,18 +138,23 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        icon: {
+          DEFAULT: "hsl(var(--icon))",
+          inverse: "hsl(var(--icon-inverse))",
+        },
         "menu-icon": {
           DEFAULT: "hsl(var(--menu-icon))",
           hover: "hsl(var(--menu-icon-hover, var(--menu-icon)))",
         },
-        icon: {
-          DEFAULT: "hsl(var(--icon-default))",
-        },
+      },
+      borderColor: {
+        DEFAULT: "hsl(var(--border))",
+        inverse: "hsl(var(--border-inverse))",
       },
       spacing: {
         "16": "64px",
       },
     },
   },
-  plugins: [tailwindAnimate, scrollbarHide],
+  plugins: [tailwindAnimate],
 } satisfies Config;

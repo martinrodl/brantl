@@ -17,16 +17,16 @@ export default async function Hero({ locale }: { locale: string }) {
         </div>
 
         <div className="absolute mx-6 flex h-full max-w-[800px] flex-col md:mx-16">
-          <div className="my-auto flex flex-col gap-24 self-center text-center text-white lg:gap-20">
+          <div className="my-auto flex flex-col gap-24 self-center text-center text-inverse-foreground lg:gap-20">
             <h1 className="text-3xl font-medium md:text-5xl lg:text-6xl">{t("hero.header")}</h1>
             <p className="text-2xl">{t("hero.description")}</p>
           </div>
 
-          <Vector width={24} height={10} className="mx-auto mb-10 fill-white" />
+          <Vector width={24} height={10} className="mx-auto mb-10 fill-icon-inverse" />
         </div>
       </div>
 
-      <BorderTexture className="w-full fill-foreground" />
+      <BorderTexture className="w-full fill-icon" />
     </Section>
   );
 }
