@@ -1,27 +1,24 @@
 import type { Config } from "tailwindcss";
 import * as tailwindAnimate from "tailwindcss-animate";
 
+import viewports from "./src/constants/viewports";
+
 export default {
   darkMode: ["class"],
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      md: `${viewports.tablet}px`,
+      lg: `${viewports.desktop}px`,
+    },
     container: {
       center: true,
       screens: {
-        sm: "100%",
         md: "100%",
-        lg: "100%",
-        xl: "1680px",
+        lg: `${viewports.desktop}px`,
       },
     },
     extend: {
-      screens: {
-        md: "768px",
-        lg: "1680px",
-      },
-      maxWidth: {
-        full: "100%",
-      },
       fontSize: {
         xs: [
           "0.75rem", // 12px ÷ 16 = 0.75rem
@@ -128,7 +125,6 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        // border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         chart: {

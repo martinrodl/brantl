@@ -1,9 +1,5 @@
-const MOBILE_BREAKPOINT = 376;
-const TABLET_BREAKPOINT = 768;
-const DESKTOP_BREAKPOINT = 1680;
-
-export const VIEWPORTS = {
-  mobile: MOBILE_BREAKPOINT,
-  tablet: TABLET_BREAKPOINT,
-  desktop: DESKTOP_BREAKPOINT,
+const viewports = {
+  tablet: 768,
+  desktop: 1680,
 };
+export default viewports;
