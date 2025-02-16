@@ -26,7 +26,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
     <SectionRef id={NavLinkHref.TESTIMONIALS} className="flex flex-col">
       <SectionHeader header={t("testimonials.header")} className="mb-48" />
 
-      <DynamicScroller imageUrls={imageUrls} itemWidth={320} />
+      <DynamicScroller imageUrls={imageUrls} itemBaseWidth={160} itemDesktopWidth={320} />
     </SectionRef>
   );
 }
