@@ -14,31 +14,38 @@ import viewports from "@/constants/viewports";
 export default function DynamicScroller({
   imageUrls,
   itemBaseWidth,
+  itemTabletWidth,
   itemDesktopWidth,
 }: {
   imageUrls: string[];
   itemBaseWidth: number;
+  itemTabletWidth: number;
   itemDesktopWidth: number;
 }) {
   const [api, setApi] = React.useState<CarouselApi | undefined>();
   const [itemsPerView, setItemsPerView] = React.useState(1);
   const [current, setCurrent] = React.useState(0);
-  const { isDesktop } = useDeviceType();
+  const { isDesktop, isTablet } = useDeviceType();
 
   const isReadyRef = React.useRef(false);
 
-  const itemWidth = isDesktop ? itemDesktopWidth : itemBaseWidth;
+  const itemWidth = isDesktop ? itemDesktopWidth : isTablet ? itemTabletWidth : itemBaseWidth;
 
   const indexes = Array.from({ length: imageUrls.length }, (_, index) => index);
   const evenIndexes = indexes.filter((index) => index % 2 === 0);
   const filteredImageUrls = isDesktop ? indexes : evenIndexes;
 
+  const paddingMobile = 36;
+  const paddingTabletDesktop = 80;
+
   const calculateItemsPerView = React.useCallback(() => {
-    const viewportWidth = isDesktop ? viewports.desktop - 160 : window.innerWidth - 160;
+    const viewportWidth = isDesktop
+      ? viewports.desktop - paddingTabletDesktop * 2
+      : window.innerWidth - (isTablet ? paddingTabletDesktop * 2 : paddingMobile * 2);
     const calculatedItems = Math.floor(viewportWidth / itemWidth);
     setItemsPerView(calculatedItems > 0 ? calculatedItems : 1);
     isReadyRef.current = true;
-  }, [itemWidth, isDesktop]);
+  }, [itemWidth, isTablet, isDesktop]);
 
   React.useEffect(() => {
     calculateItemsPerView();
@@ -70,7 +77,10 @@ export default function DynamicScroller({
 
   return (
     <div className={cn("opacity-0 duration-500", isReadyRef.current && "opacity-100")}>
-      <div className="relative px-20">
+      <div
+        className="relative"
+        style={{ padding: isTablet ? `0 ${paddingTabletDesktop}px` : `0 ${paddingMobile}px 60px` }}
+      >
         <Carousel
           opts={{
             align: "start",
@@ -91,7 +101,6 @@ export default function DynamicScroller({
                   >
                     <Image src={imageUrls[idx]} alt={`Logo ${idx + 1}`} fill unoptimized draggable="false" />
                   </div>
-
                   {!isDesktop && (
                     <div
                       className="relative flex aspect-video h-28 shrink-0 items-center justify-center"
@@ -111,7 +120,7 @@ export default function DynamicScroller({
           size="icon"
           disabled={current === 0}
           onClick={() => api?.scrollTo(Math.max(current - itemsPerView, 0))}
-          className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-secondary text-secondary-foreground"
+          className="absolute bottom-0 left-1/3 z-10 rounded-full bg-secondary text-secondary-foreground md:left-0 md:top-1/2 md:-translate-y-1/2 md:translate-x-1/2"
         >
           <Vector className="rotate-90 fill-secondary-foreground" />
         </Button>
@@ -121,13 +130,13 @@ export default function DynamicScroller({
           size="icon"
           disabled={current >= filteredImageUrls.length - itemsPerView}
           onClick={() => api?.scrollTo(Math.min(filteredImageUrls.length - itemsPerView, current + itemsPerView))}
-          className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-secondary text-secondary-foreground"
+          className="absolute bottom-0 right-1/3 z-10 rounded-full bg-secondary text-secondary-foreground md:right-0 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
         >
           <Vector className="-rotate-90 fill-secondary-foreground" />
         </Button>
       </div>
 
-      <div className="mt-40 flex justify-center space-x-2">
+      <div className="mt-12 hidden justify-center space-x-2 md:flex lg:mt-40">
         {Array.from({ length: totalDots }).map((_, idx) => (
           <button
             key={`dot-button-${idx}`}
