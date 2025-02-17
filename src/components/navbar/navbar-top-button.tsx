@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { NavLink } from "@/components/navbar/utils/types";
+import { NavLink } from "./utils/types";
 import { Button } from "@/components/ui/button";
 import { useScroll } from "@/hooks/useScroll";
 import { useTranslation } from "react-i18next";

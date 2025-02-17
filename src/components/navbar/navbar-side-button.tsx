@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { NavLink } from "@/components/navbar/utils/types";
+import { NavLink } from "./utils/types";
 import { Button } from "@/components/ui/button";
 import Vector from "~/public/icons/vector.svg";
 import { useScroll } from "@/hooks/useScroll";

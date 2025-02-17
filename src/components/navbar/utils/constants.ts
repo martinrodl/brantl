@@ -1,5 +1,5 @@
-import { NavLink } from "@/components/navbar/utils/types";
-import { LinkLabelEnum, NavLinkHref } from "@/components/navbar/utils/enums";
+import { NavLink } from "./types";
+import { LinkLabelEnum, NavLinkHref } from "./enums";
 
 export const navLinks: NavLink[] = [
   { href: NavLinkHref.ABOUT, labelKey: LinkLabelEnum.ABOUT },

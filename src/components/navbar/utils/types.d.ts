@@ -1,4 +1,4 @@
-import { LinkLabelEnum, NavLinkHref } from "@/components/navbar/utils/enums";
+import { LinkLabelEnum, NavLinkHref } from "./enums";
 
 export interface NavLink {
   href: NavLinkHref;

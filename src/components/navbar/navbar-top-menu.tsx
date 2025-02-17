@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-import { navLinks } from "@/components/navbar/utils/constants";
+import { navLinks } from "./utils/constants";
 import { NavbarTopButton } from "@/components/navbar/navbar-top-button";
 import LanguageSwitcher from "@/components/ui/language-switcher";
 

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useSearchParams, useRouter } from "next/navigation";
 
-import { navLinks } from "@/components/navbar/utils/constants";
+import { navLinks } from "./utils/constants";
 import {
   Sheet,
   SheetContent,
