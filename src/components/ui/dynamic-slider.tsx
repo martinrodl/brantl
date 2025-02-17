@@ -16,11 +16,13 @@ export default function DynamicSlider({
   itemBaseWidth,
   itemTabletWidth,
   itemDesktopWidth,
+  className,
 }: {
   imageUrls: string[];
   itemBaseWidth: number;
   itemTabletWidth: number;
   itemDesktopWidth: number;
+  className?: string;
 }) {
   const [api, setApi] = React.useState<CarouselApi | undefined>();
   const [itemsPerView, setItemsPerView] = React.useState(1);
@@ -80,7 +82,7 @@ export default function DynamicSlider({
 
   return (
     <div
-      className={cn("opacity-0 duration-500", isReadyRef.current && "opacity-100")}
+      className={cn("opacity-0 duration-500", isReadyRef.current && "opacity-100", className)}
       ref={containerRef as React.RefObject<HTMLDivElement>}
     >
       <div
