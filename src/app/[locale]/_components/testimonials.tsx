@@ -2,7 +2,7 @@ import initTranslations from "@/app/i18n";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
 import SectionRef from "@/components/context/section-ref";
 import SectionHeader from "@/components/ui/section-header";
-import DynamicScroller from "@/components/ui/dynamic-scroller";
+import DynamicSlider from "@/components/ui/dynamic-slider";
 
 const imageUrls = [
   "logos/wecubex-logo.svg",
@@ -26,7 +26,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
     <SectionRef id={NavLinkHref.TESTIMONIALS} className="flex flex-col">
       <SectionHeader header={t("testimonials.header")} className="mb-12 lg:mb-48" />
 
-      <DynamicScroller imageUrls={imageUrls} itemBaseWidth={120} itemTabletWidth={160} itemDesktopWidth={280} />
+      <DynamicSlider imageUrls={imageUrls} itemBaseWidth={120} itemTabletWidth={160} itemDesktopWidth={280} />
     </SectionRef>
   );
 }

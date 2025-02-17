@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import Vector from "~/public/icons/vector.svg";
 import viewports from "@/constants/viewports";
 
-export default function DynamicScroller({
+export default function DynamicSlider({
   imageUrls,
   itemBaseWidth,
   itemTabletWidth,
