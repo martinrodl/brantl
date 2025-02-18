@@ -55,9 +55,6 @@ next-env.d.ts
 .gradle/
 out/
 
-# Scripts
-/scripts/
-
 # locales
 /locales/cs/home.json
 /locales/en/home.json
