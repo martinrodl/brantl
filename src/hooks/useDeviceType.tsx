@@ -11,7 +11,7 @@ export default function useDeviceType() {
     if (width === 0) return { isMobile: false, isTablet: false, isDesktop: false };
     return {
       isMobile: width < viewports.tablet,
-      isTablet: width >= viewports.tablet && width < viewports.desktop,
+      isTablet: width >= viewports.tablet,
       isDesktop: width >= viewports.desktop,
     };
   }, [width]);
