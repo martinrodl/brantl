@@ -17,9 +17,12 @@ export default function TranslationsProvider({
   namespaces: string[];
   resources: Record<string, never>;
 }) {
-  const i18n = createInstance();
+  const i18n = React.useMemo(() => {
+    const instance = createInstance();
+    initTranslations(locale, namespaces, instance, resources);
 
-  initTranslations(locale, namespaces, i18n, resources);
+    return instance;
+  }, [locale, namespaces, resources]);
 
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 }

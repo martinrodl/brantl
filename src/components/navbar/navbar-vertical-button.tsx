@@ -25,6 +25,8 @@ export function NavbarVerticalButton({
 
   return (
     <Button
+      type="button"
+      role="link"
       onClick={() => {
         onClick?.();
         setTimeout(() => scrollTo(navLink.href), 300);

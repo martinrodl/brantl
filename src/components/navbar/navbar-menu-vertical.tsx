@@ -86,6 +86,7 @@ export default function NavbarMenuVertical({ className }: { className?: string }
           {navLinks.map((navLink) => (
             <NavbarVerticalButton
               key={navLink.href}
+              variant="ghostInverse"
               navLink={navLink}
               onClick={() => toggleMenu(false)}
               className="justify-between"

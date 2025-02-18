@@ -6,8 +6,8 @@ import { navLinks } from "@/components/navbar/utils/constants";
 import LanguageSwitcher from "@/components/ui/language-switcher";
 import footerBackground from "~/public/images/footer/footer-bg.webp";
 import Logo from "~/public/logos/brantl-partners-logo.svg";
-import { NavbarVerticalButton } from "@/components/navbar/navbar-vertical-button";
 import * as React from "react";
+import NavbarHorizontalButton from "@/components/navbar/navbar-horizontal-button";
 
 const i18nNamespaces = ["home"];
 
@@ -26,14 +26,14 @@ export default async function Footer({ params }: { params: Promise<{ locale: str
 
         <nav className="flex w-full flex-col justify-between md:max-w-[800px] md:flex-row md:items-center">
           {navLinks.map((navLink) => (
-            <NavbarVerticalButton
+            <NavbarHorizontalButton
               key={`footer-${navLink.href}`}
               navLink={navLink}
               variant="ghostInverse"
               className="justify-between text-sm"
             />
           ))}
-          <LanguageSwitcher preserveMenuState buttonClassName="text-sm ml-2 md:ml-0 p-1 h-auto" />
+          <LanguageSwitcher buttonClassName="text-sm ml-2 md:ml-0 p-1 h-auto" />
         </nav>
 
         <Logo className="h-fit w-[144px] shrink-0 fill-icon-inverse md:w-[206px]" />

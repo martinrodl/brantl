@@ -31,10 +31,12 @@ export default function LanguageSwitcher({
     }
 
     if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
-      router.push("/" + newLocale + currentPathname + (preserveMenuState ? "?" + queryParams.toString() : ""));
+      router.push("/" + newLocale + currentPathname + (preserveMenuState ? "?" + queryParams.toString() : ""), {
+        scroll: false,
+      });
     } else {
       const newPathname = currentPathname.replace(`/${currentLocale}`, `/${newLocale}`);
-      router.push(newPathname + (preserveMenuState ? "?" + queryParams.toString() : ""));
+      router.push(newPathname + (preserveMenuState ? "?" + queryParams.toString() : ""), { scroll: false });
     }
 
     router.refresh();
