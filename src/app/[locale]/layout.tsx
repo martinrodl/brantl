@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
 import "./globals.css";
-import Header from "@/components/layout/header";
 import ScrollProvider from "@/components/context/scroll-provider";
+import Header from "@/components/layout/header";
+import Footer from "@/components/footer/footer";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -34,7 +35,7 @@ export default function RootLayout({
         <ScrollProvider>
           <Header params={params} />
           {children}
-          <footer className="border-t py-4">Footer Content</footer>
+          <Footer params={params} />
         </ScrollProvider>
       </body>
     </html>

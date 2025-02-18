@@ -1,10 +1,14 @@
 export const LANGUAGES = {
+  cs: {
+    locale: "cs",
+    label: "CZ",
+  },
   en: {
     locale: "en",
     label: "EN",
   },
-  cs: {
-    locale: "cs",
-    label: "CS",
+  de: {
+    locale: "de",
+    label: "DE",
   },
 };

@@ -1,22 +1,24 @@
 "use client";
 
+import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { usePathname, useRouter } from "next/navigation";
 
-import { LANGUAGES } from "@/constants/locales";
 import i18nConfig from "~/i18nConfig";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { LANGUAGES } from "@/constants/locales";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
-export default function LanguageSwitcher({ preserveMenuState = false }: { preserveMenuState?: boolean }) {
-  const { i18n, t } = useTranslation();
+export default function LanguageSwitcher({
+  preserveMenuState = false,
+  containerClassName,
+  buttonClassName,
+}: {
+  preserveMenuState?: boolean;
+  containerClassName?: string;
+  buttonClassName?: string;
+}) {
+  const { i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
@@ -38,20 +40,23 @@ export default function LanguageSwitcher({ preserveMenuState = false }: { preser
     router.refresh();
   };
 
-  /* todo: no refactor colors, replace with ghost buttons */
   return (
-    <Select onValueChange={changeLanguage} value={currentLocale}>
-      <SelectTrigger className="h-auto w-fit border-none bg-transparent p-4 font-medium text-primary-inverseForeground transition-all duration-300 ease-in-out">
-        <SelectValue />
-        &nbsp;
-      </SelectTrigger>
-      <SelectContent align="end">
-        <SelectGroup>
-          <SelectLabel>{t("header.switcher.dropdownHeader")}</SelectLabel>
-          <SelectItem value={LANGUAGES.en.locale}>{LANGUAGES.en.label}</SelectItem>
-          <SelectItem value={LANGUAGES.cs.locale}>{LANGUAGES.cs.label}</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <div className={cn("flex items-center", containerClassName)}>
+      {Object.values(LANGUAGES).map(({ locale, label }) => (
+        <React.Fragment key={locale}>
+          <Button
+            type="button"
+            role="link"
+            variant="ghostInverse"
+            onClick={() => changeLanguage(locale)}
+            className={cn({ "font-bold": currentLocale === locale }, buttonClassName)}
+          >
+            {label}
+          </Button>
+
+          {locale !== Object.values(LANGUAGES).at(-1)?.locale && <span className="text-inverse-foreground">/</span>}
+        </React.Fragment>
+      ))}
+    </div>
   );
 }
