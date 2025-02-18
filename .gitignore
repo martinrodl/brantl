@@ -43,7 +43,6 @@ next-env.d.ts
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon?
 ._*
 
 # VS Code
@@ -62,3 +61,4 @@ out/
 # locales
 /locales/cs/home.json
 /locales/en/home.json
+/locales/de/home.json
