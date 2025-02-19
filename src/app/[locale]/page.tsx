@@ -4,6 +4,7 @@ import Hero from "@/app/[locale]/_components/hero";
 import About from "@/app/[locale]/_components/about";
 import Services from "@/app/[locale]/_components/services";
 import Testimonials from "@/app/[locale]/_components/testimonials";
+import Contacts from "@/app/[locale]/_components/contacts";
 
 const i18nNamespaces = ["home"];
 
@@ -18,6 +19,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <About locale={locale} />
         <Services locale={locale} />
         <Testimonials locale={locale} />
+        <Contacts locale={locale} />
       </main>
     </TranslationsProvider>
   );
