@@ -5,9 +5,14 @@ import Link from "next/link";
 import initTranslations from "@/app/i18n";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
 import SectionRef from "@/components/context/section-ref";
+import MapComponent from "@/components/ui/map";
 import SectionHeader from "@/components/ui/section-header";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
 import Vector from "~/public/icons/vector.svg";
+import MapProvider from "@/components/context/map-provider";
+
+const leftMarker = { lat: 50.0869393, lng: 14.4337539 };
+const rightMarker = { lat: 49.3955, lng: 13.2956 };
 
 const ContactInfo = ({ icon, children }: { icon?: boolean; children: React.ReactNode }) => (
   <div className="flex gap-2 pr-8 lg:pr-0">
@@ -72,7 +77,7 @@ export default async function Contacts({ locale }: { locale: string }) {
     <SectionRef id={NavLinkHref.CONTACTS} className="flex flex-col">
       <SectionHeader header={t("contacts.header")} />
 
-      <div className="mt-12 flex justify-center gap-12 px-8 md:gap-4 md:px-16 lg:mt-20 lg:gap-12 lg:px-0">
+      <div className="mt-12 flex justify-center gap-12 px-8 md:gap-4 md:px-16 lg:mt-24 lg:gap-12 lg:px-0">
         <TriangleCluster className="hidden h-auto w-[254px] shrink-0 fill-muted lg:block" />
 
         <div className="flex flex-col gap-8 md:flex-row lg:flex-col">
@@ -105,19 +110,27 @@ export default async function Contacts({ locale }: { locale: string }) {
         <PositionedTriangleCluster position="right" />
         <PositionedTriangleCluster position="left" translateX />
 
-        <div className="flex flex-col bg-violet-300 md:w-1/2 lg:flex-row">
-          <div className="aspect-[1.5/1] bg-orange-300 lg:aspect-square lg:w-2/3" />
+        <div className="flex flex-col md:w-1/2 lg:flex-row">
+          <div className="aspect-[1.5/1] lg:aspect-square lg:w-2/3">
+            <MapProvider>
+              <MapComponent marker={leftMarker} />
+            </MapProvider>
+          </div>
 
-          <div className="p-8 pb-32 pt-12 md:p-12 lg:w-1/3">
+          <div className="p-12 pb-32 pt-12 lg:w-1/3 lg:py-0">
             <p className="text-2.5xl font-semibold">{t("contacts.office1.city")}</p>
             <p className="text-lg">{t("contacts.office1.address")}</p>
           </div>
         </div>
 
-        <div className="flex flex-col bg-green-300 md:w-1/2 lg:flex-row-reverse">
-          <div className="aspect-[1.5/1] bg-blue-300 lg:aspect-square lg:w-2/3" />
+        <div className="flex flex-col md:w-1/2 lg:flex-row-reverse">
+          <div className="aspect-[1.5/1] lg:aspect-square lg:w-2/3">
+            <MapProvider>
+              <MapComponent marker={rightMarker} />
+            </MapProvider>
+          </div>
 
-          <div className="p-12 pb-32 lg:w-1/3">
+          <div className="p-12 pb-32 pt-12 lg:w-1/3 lg:py-0">
             <p className="text-2.5xl font-semibold">{t("contacts.office2.city")}</p>
             <p className="text-lg">{t("contacts.office2.address")}</p>
           </div>
