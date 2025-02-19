@@ -35,7 +35,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
         itemBaseWidth={120}
         itemTabletWidth={160}
         itemDesktopWidth={280}
-        className="mt-12 lg:mt-48"
+        className="mt-12"
       />
 
       <Image

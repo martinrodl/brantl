@@ -95,7 +95,7 @@ export default function DynamicSlider({
           }}
           setApi={setApi}
         >
-          <CarouselContent>
+          <CarouselContent className="flex min-h-[300px] items-center">
             {(!isDesktop ? dualRowIndexes : rowIndexes).map((idx) => (
               <CarouselItem
                 key={idx}
@@ -144,7 +144,7 @@ export default function DynamicSlider({
         </Button>
       </div>
 
-      <div className="mt-12 hidden justify-center space-x-2 md:flex lg:mt-40">
+      <div className="mt-12 hidden min-h-12 justify-center space-x-2 md:flex lg:mt-40">
         {Array.from({ length: totalDots }).map((_, idx) => {
           const startIdx = idx * itemsPerView;
           const endIdx = startIdx + itemsPerView - 1;
