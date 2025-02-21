@@ -4,12 +4,11 @@ import * as React from "react";
 
 import { useTranslation } from "react-i18next";
 
-import { cn } from "@/lib/utils";
 import { NavLink } from "./utils/types";
-import { Button, ButtonProps } from "@/components/ui/button";
 import { useScroll } from "@/hooks/useScroll";
+import { Button, ButtonProps } from "@/components/ui/button";
 
-export default function NavbarHorizontalButton({
+export default function NavbarButton({
   navLink,
   className,
   ...props
@@ -22,14 +21,7 @@ export default function NavbarHorizontalButton({
   const { t } = useTranslation();
 
   return (
-    <Button
-      type="button"
-      role="link"
-      variant="ghostInverse"
-      onClick={() => scrollTo(navLink.href)}
-      className={cn("text-sm font-medium", className)}
-      {...props}
-    >
+    <Button onClick={() => scrollTo(navLink.href)} className={className} {...props}>
       {t(navLink.labelKey)}
     </Button>
   );

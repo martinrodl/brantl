@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 const defaultMapContainerStyle = {
   width: "100%",
   height: "100%",
-  borderRadius: "15px 0px 0px 15px",
 };
 
 const defaultMapZoom = 18;

@@ -9,5 +9,7 @@ export const useScroll = () => {
     throw new Error("useScroll must be used within a ScrollProvider");
   }
 
-  return context;
+  const { scrollTo, registerSection } = context;
+
+  return { scrollTo, registerSection };
 };

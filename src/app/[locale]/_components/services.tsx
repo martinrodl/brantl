@@ -1,6 +1,6 @@
 import initTranslations from "@/app/i18n";
-import SectionRef from "@/components/context/section-ref";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
+import SectionRef from "@/components/context/section-ref";
 import MediaTextBlock from "@/components/ui/media-text-block";
 import SectionHeader from "@/components/ui/section-header";
 

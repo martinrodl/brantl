@@ -17,7 +17,9 @@ export default function SectionRef({
 
   const { registerSection } = useScroll();
 
-  registerSection(id, sectionRef);
+  React.useEffect(() => {
+    registerSection(id, sectionRef);
+  }, [id, sectionRef, registerSection]);
 
   return (
     <section ref={sectionRef} className={className}>

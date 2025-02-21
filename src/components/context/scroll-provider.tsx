@@ -16,11 +16,14 @@ export default function ScrollProvider({ children }: { children: React.ReactNode
 
   const scrollTo = (id: string) => {
     const section = sectionsRef.current[id];
+
     if (section && section.current) {
-      section.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      setTimeout(() => {
+        section.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 200);
     }
   };
 

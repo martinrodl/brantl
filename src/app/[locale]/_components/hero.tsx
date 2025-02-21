@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import initTranslations from "@/app/i18n";
-import Section from "@/components/context/section";
 import heroBanner from "~/public/images/hero/hero-banner.webp";
 import Vector from "~/public/icons/vector.svg";
 import BorderTexture from "~/public/icons/border-texture.svg";
@@ -10,7 +9,7 @@ export default async function Hero({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
-    <Section id="hero">
+    <section id="hero">
       <div className="relative flex justify-center overflow-hidden">
         <div className="relative h-[820px] w-full md:h-[968px]">
           <Image src={heroBanner} alt="Hero banner image" priority fill className="object-cover" />
@@ -31,6 +30,6 @@ export default async function Hero({ locale }: { locale: string }) {
       </div>
 
       <BorderTexture className="w-full fill-icon" />
-    </Section>
+    </section>
   );
 }

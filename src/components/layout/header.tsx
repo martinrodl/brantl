@@ -1,9 +1,9 @@
 import * as React from "react";
 
-import Navbar from "@/components/navbar/navbar";
-import TranslationsProvider from "@/components/context/translations-provider";
 import initTranslations from "@/app/i18n";
 import AutoHideHeader from "@/components/layout/auto-hide-header";
+import Navbar from "@/components/navbar/navbar";
+import TranslationsProvider from "@/components/context/translations-provider";
 
 const i18nNamespaces = ["home"];
 

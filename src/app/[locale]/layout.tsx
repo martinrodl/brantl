@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
 import "./globals.css";
-import ScrollProvider from "@/components/context/scroll-provider";
 import Header from "@/components/layout/header";
 import Footer from "@/components/footer/footer";
+import ScrollProvider from "@/components/context/scroll-provider";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],

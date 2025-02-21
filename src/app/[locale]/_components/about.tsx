@@ -1,7 +1,7 @@
 import initTranslations from "@/app/i18n";
-import SectionRef from "@/components/context/section-ref";
 import SectionHeader from "@/components/ui/section-header";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
+import SectionRef from "@/components/context/section-ref";
 import ProfileOverview from "@/components/ui/profile-overview";
 import ImageWithDescription from "@/components/ui/visual-description-block";
 import aboutPrimary from "~/public/images/about/about-primary.webp";

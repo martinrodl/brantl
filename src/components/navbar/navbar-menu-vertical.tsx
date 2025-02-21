@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Menu, X } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { useSearchParams, useRouter } from "next/navigation";
 
 import { navLinks } from "./utils/constants";
 import {
@@ -18,36 +17,37 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { NavbarVerticalButton } from "@/components/navbar/navbar-vertical-button";
 import LanguageSwitcher from "@/components/ui/language-switcher";
 import Logo from "~/public/logos/brantl-partners-logo.svg";
 import Vector from "~/public/icons/vector.svg";
+import { useSearchParams } from "next/navigation";
+import { useScroll } from "@/hooks/useScroll";
 
 export default function NavbarMenuVertical({ className }: { className?: string }) {
-  const searchParams = useSearchParams();
-  const router = useRouter();
+  const { scrollTo } = useScroll();
   const { t } = useTranslation();
+  const searchParams = useSearchParams();
 
   const [open, setOpen] = React.useState(searchParams.get("open") === "true");
 
-  const toggleMenu = (menuState: boolean) => {
-    setOpen(menuState);
+  const handleDrawerState = (state: boolean) => {
+    setOpen(state);
 
-    const queryParams = new URLSearchParams(window.location.search);
-    if (menuState) {
-      queryParams.set("open", "true");
+    const params = new URLSearchParams(searchParams.toString());
+    if (state) {
+      params.set("open", "true");
     } else {
-      queryParams.delete("open");
+      params.delete("open");
     }
 
-    router.replace(window.location.pathname + "?" + queryParams.toString());
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.replaceState(null, "", newUrl);
   };
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
+    <Sheet open={open} onOpenChange={handleDrawerState}>
       <SheetTrigger asChild>
         <Button
-          onClick={() => toggleMenu(!open)}
           variant="ghostInverse"
           size="icon"
           className={cn("group h-10 w-10 rounded-full border-2 border-inverse md:hidden [&_svg]:size-7", className)}
@@ -70,7 +70,7 @@ export default function NavbarMenuVertical({ className }: { className?: string }
             <Logo className="h-[40px] w-[95px] shrink-0 fill-secondary-foreground" />
 
             <Button
-              onClick={() => toggleMenu(false)}
+              onClick={() => handleDrawerState(false)}
               variant="ghostInverse"
               size="icon"
               className="group h-10 w-10 rounded-full border-2 border-inverse [&_svg]:size-7"
@@ -84,15 +84,20 @@ export default function NavbarMenuVertical({ className }: { className?: string }
 
         <nav className="flex flex-1 flex-grow flex-col justify-center gap-4 p-8">
           {navLinks.map((navLink) => (
-            <NavbarVerticalButton
+            <Button
+              type="button"
+              role="link"
               key={navLink.href}
               variant="ghostInverse"
-              navLink={navLink}
-              onClick={() => toggleMenu(false)}
-              className="justify-between"
+              onClick={() => {
+                handleDrawerState(false);
+                scrollTo(navLink.href);
+              }}
+              className="justify-between text-2.5xl font-medium"
             >
+              {t(navLink.labelKey)}
               <Vector width={20} height={20} className="-rotate-90 fill-menu-icon" />
-            </NavbarVerticalButton>
+            </Button>
           ))}
           <LanguageSwitcher preserveMenuState buttonClassName="text-2.5xl" />
         </nav>
