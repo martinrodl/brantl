@@ -9,7 +9,7 @@ import type { CarouselApi } from "@/components/ui/carousel";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import Vector from "~/public/icons/vector.svg";
-import viewports from "@/constants/viewports";
+import { breakpoints } from "@/constants/breakpoints";
 
 export default function DynamicSlider({
   imageUrls,
@@ -45,7 +45,7 @@ export default function DynamicSlider({
 
   const calculateItemsPerView = React.useCallback(() => {
     const viewportWidth = isDesktop
-      ? viewports.desktop - paddingTabletDesktop * 2
+      ? breakpoints.xl - paddingTabletDesktop * 2
       : window.innerWidth - (isTablet ? paddingTabletDesktop * 2 : paddingMobile * 2);
     const calculatedItems = Math.floor(viewportWidth / itemWidth);
     setItemsPerView(calculatedItems > 0 ? calculatedItems : 1);
@@ -144,7 +144,7 @@ export default function DynamicSlider({
         </Button>
       </div>
 
-      <div className="mt-12 hidden min-h-12 justify-center space-x-2 md:flex lg:mt-40">
+      <div className="xl:mt-40 mt-12 hidden min-h-12 justify-center space-x-2 md:flex">
         {Array.from({ length: totalDots }).map((_, idx) => {
           const startIdx = idx * itemsPerView;
           const endIdx = startIdx + itemsPerView - 1;

@@ -14,18 +14,15 @@ export default function ImageWithDescription({
 }) {
   return (
     <div>
-      <div className="flex flex-col-reverse items-center gap-6 md:gap-10 lg:flex-row lg:gap-0">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          placeholder="blur"
-          className="h-[40vw] w-full object-cover object-[0_20%] lg:h-auto lg:w-1/2"
-        />
+      <div className="xl:flex-row xl:gap-0 flex flex-col-reverse items-center gap-6 md:gap-10">
+        <Image src={imageSrc} alt={imageAlt} placeholder="blur" className="xl:h-[626px] xl:w-1/2 w-full object-cover" />
 
-        <p className="px-4 text-center md:px-16 md:text-lg lg:w-1/2 lg:pr-36 lg:text-start">{description}</p>
+        <p className="2xl:w-1/2 2xl:pr-36 2xl:pl-20 xl:text-start xl:px-12 px-4 text-center md:px-16 md:text-lg">
+          {description}
+        </p>
       </div>
 
-      <BorderTexture className="w-full fill-muted lg:hidden" />
+      <BorderTexture className="xl:hidden w-full fill-muted" />
     </div>
   );
 }

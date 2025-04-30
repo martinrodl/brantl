@@ -21,9 +21,9 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
       spacing: "md:gap-x-4",
     },
     desktop: {
-      grid: "lg:grid-cols-[repeat(6,auto)] lg:grid-rows-1",
-      spacing: "lg:gap-x-10 lg:px-20",
-      alignment: "lg:place-items-start",
+      grid: "xl:grid-cols-[repeat(6,auto)] xl:grid-rows-1",
+      spacing: "xl:gap-x-10 xl:px-20",
+      alignment: "xl:place-items-start",
     },
   };
 
@@ -49,7 +49,7 @@ export default async function ProfileOverview({ locale }: { locale: string }) {
           specializationTitle={t("about.team.sectionTitle.specialization")}
           specializations={t(`about.team.${position}.specializations`)}
           cvRecords={t(`about.team.${position}.cvRecords`)}
-          className="place-self-center lg:row-span-3 lg:place-self-start"
+          className="xl:row-span-3 xl:place-self-start place-self-center"
         />
       ))}
     </div>

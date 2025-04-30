@@ -27,15 +27,15 @@ export default function ProfileCard({
         alt={`${name} - ${role}`}
         width={138}
         height={184}
-        className={cn("mb-11 h-[184px] w-[138px] lg:mb-0", className)}
+        className={cn("xl:mb-0 mb-11 h-auto min-w-[138px]", className)}
       />
 
-      <div className="mb-11 flex flex-col gap-4 lg:mb-24 lg:gap-0">
+      <div className="xl:mb-24 xl:gap-0 mb-11 flex flex-col gap-4">
         <p className="text-xl font-bold">{name}</p>
         <p className="text-xs font-bold">{role}</p>
       </div>
 
-      <div className="mb-4 flex flex-col gap-4 lg:mb-8">
+      <div className="xl:mb-8 mb-4 flex flex-col gap-4">
         <p className="text-xs font-bold">{specializationTitle}:</p>
         <ul className="list-disc pl-5">
           {specializations.split("|").map((specialization) => (

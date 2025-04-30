@@ -14,7 +14,7 @@ export default async function About({ locale }: { locale: string }) {
   return (
     <SectionRef id={NavLinkHref.ABOUT}>
       <div className="relative flex flex-col gap-8 md:gap-20">
-        <TriangleCluster className="absolute right-0 top-0 -z-10 hidden h-[296px] w-[296px] fill-muted lg:block" />
+        <TriangleCluster className="xl:block absolute right-0 top-0 -z-10 hidden h-[296px] w-[296px] fill-muted" />
 
         <SectionHeader header={t("about.header")} />
 

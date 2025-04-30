@@ -13,12 +13,12 @@ import Services06 from "~/public/images/services/services-block-06.jpg";
 import BorderTexture from "~/public/icons/border-texture.svg";
 
 const sections = [
-  { key: "first", image: Services01, name: "firstImage" },
-  { key: "second", image: Services02, name: "secondImage" },
-  { key: "third", image: Services03, name: "thirdImage" },
-  { key: "fourth", image: Services04, name: "fourthImage" },
-  { key: "fifth", image: Services05, name: "fifthImage" },
-  { key: "sixth", image: Services06, name: "sixthImage" },
+  { key: "first", image: Services01 },
+  { key: "second", image: Services02 },
+  { key: "third", image: Services03 },
+  { key: "fourth", image: Services04 },
+  { key: "fifth", image: Services05 },
+  { key: "sixth", image: Services06 },
 ];
 
 export default async function Services({ locale }: { locale: string }) {
@@ -33,7 +33,8 @@ export default async function Services({ locale }: { locale: string }) {
           key={idx}
           imageSrc={section.image}
           title={t(`services.sections.${section.key}.title`)}
-          description={t(`services.sections.${section.key}.description`)}
+          descriptionPart1={t(`services.sections.${section.key}.descriptionPart1`)}
+          descriptionPart2={t(`services.sections.${section.key}.descriptionPart2`)}
           isImageFirst={idx % 2 === 0}
         />
       ))}

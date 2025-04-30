@@ -1,23 +1,21 @@
 import type { Config } from "tailwindcss";
 import * as tailwindAnimate from "tailwindcss-animate";
 
-import viewports from "./src/constants/viewports";
+import { breakpoints } from "./src/constants/breakpoints";
 
 export default {
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    screens: {
-      md: `${viewports.tablet}px`,
-      lg: `${viewports.desktop}px`,
-    },
-    container: {
-      center: true,
-      screens: {
-        md: "100%",
-        lg: `${viewports.desktop}px`,
-      },
-    },
     extend: {
+      screens: {
+        "2xl": `${breakpoints["2xl"]}px`,
+      },
+      container: {
+        center: true,
+        screens: {
+          "2xl": `${breakpoints["2xl"]}px`,
+        },
+      },
       fontSize: {
         xs: [
           "0.75rem", // 12px ÷ 16 = 0.75rem

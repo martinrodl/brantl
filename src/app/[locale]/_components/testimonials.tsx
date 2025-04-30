@@ -42,7 +42,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
         src={testimonials}
         alt="Handshaking representing collaboration and work"
         placeholder="blur"
-        className="mt-9 min-h-[144px] lg:mt-20"
+        className="xl:h-[420px] mt-9 min-h-[144px] object-cover lg:mt-20"
       />
       <SmallTexture className="fill-icon" />
     </SectionRef>
