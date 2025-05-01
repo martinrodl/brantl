@@ -4,11 +4,11 @@ import initTranslations from "@/app/i18n";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
 import SectionRef from "@/components/context/section-ref";
 import SectionHeader from "@/components/ui/section-header";
-import DynamicSlider from "@/components/ui/dynamic-slider";
+import { DynamicSlider } from "./_testimonials/dynamic-slider";
 import testimonials from "~/public/images/testimonials/testimonials.webp";
 import SmallTexture from "~/public/icons/small-texture.svg";
 
-const imageUrls = [
+const PARTNER_LOGOS = [
   "logos/wecubex-logo.svg",
   "logos/solodoor-logo.svg",
   "logos/fischer-group-logo.svg",
@@ -31,7 +31,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
       <SectionHeader header={t("testimonials.header")} />
 
       <DynamicSlider
-        imageUrls={imageUrls}
+        imageUrls={PARTNER_LOGOS}
         itemBaseWidth={120}
         itemTabletWidth={160}
         itemDesktopWidth={280}
@@ -42,7 +42,7 @@ export default async function Testimonials({ locale }: { locale: string }) {
         src={testimonials}
         alt="Handshaking representing collaboration and work"
         placeholder="blur"
-        className="xl:h-[420px] mt-9 min-h-[144px] object-cover lg:mt-20"
+        className="mt-9 min-h-[144px] object-cover lg:mt-20 xl:h-[420px]"
       />
       <SmallTexture className="fill-icon" />
     </SectionRef>
