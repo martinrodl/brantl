@@ -14,10 +14,18 @@ export function VisualDescriptionBlock({
 }) {
   return (
     <div>
-      <div className="flex flex-col-reverse items-center gap-6 md:gap-10 xl:flex-row xl:gap-0">
-        <Image src={imageSrc} alt={imageAlt} placeholder="blur" className="w-full object-cover xl:h-[626px] xl:w-1/2" />
+      <div className="grid items-center gap-8 md:gap-12 xl:grid-cols-2 xl:gap-0">
+        <div className="relative aspect-[188/77] w-full overflow-hidden xl:h-[626px]">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, (min-width: 1280px) 840px"
+            className="scale-[140%] object-cover object-[0_30%] 2xl:object-[0_50%]"
+          />
+        </div>
 
-        <p className="px-4 text-center md:px-16 md:text-lg xl:px-12 xl:text-start 2xl:w-1/2 2xl:pl-20 2xl:pr-36">
+        <p className="row-start-1 px-4 text-center md:px-16 md:text-lg xl:col-start-2 xl:pl-12 xl:pr-36 xl:text-start">
           {description}
         </p>
       </div>

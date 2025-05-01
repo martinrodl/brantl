@@ -38,12 +38,14 @@ export async function Testimonials({ locale }: { locale: string }) {
         className="mt-12"
       />
 
-      <Image
-        src={testimonials}
-        alt="Handshaking representing collaboration and work"
-        placeholder="blur"
-        className="mt-9 min-h-[144px] object-cover lg:mt-20 xl:h-[420px]"
-      />
+      <div className="relative aspect-[188/77] w-full overflow-hidden xl:h-[420px]">
+        <Image
+          src={testimonials}
+          alt="Handshaking representing collaboration and work"
+          fill
+          className="object-cover object-[0_40%] xl:object-[0_50%]"
+        />
+      </div>
       <SmallTexture className="fill-icon" />
     </SectionRef>
   );

@@ -86,7 +86,7 @@ export function DynamicSlider({
       ref={containerRef as React.RefObject<HTMLDivElement>}
     >
       <div
-        className="relative"
+        className="relative mb-12 md:mb-0"
         style={{ padding: isTablet ? `0 ${paddingTabletDesktop}px` : `0 ${paddingMobile}px 60px` }}
       >
         <Carousel opts={{ align: "start" }} setApi={setApi}>
