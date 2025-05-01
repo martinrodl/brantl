@@ -14,7 +14,7 @@ export async function Contacts({ locale }: { locale: string }) {
   return (
     <SectionRef
       id={NavLinkHref.CONTACTS}
-      className="grid md:grid-cols-2 xl:auto-rows-min xl:grid-cols-4 2xl:grid-cols-6"
+      className="grid md:grid-cols-2 xl:auto-rows-min xl:grid-cols-[30%_20%_20%_30%] 2xl:grid-cols-[1fr_2fr_1.5fr_1.5fr_2fr_1fr]"
     >
       <SectionHeader header={t("contacts.header")} className="col-span-full pb-12 xl:pb-20" />
 
