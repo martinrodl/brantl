@@ -1,21 +1,10 @@
-import * as React from "react";
+import { AutoHideHeader } from "@/components/ui/auto-hide-header";
+import { Navbar } from "./navbar";
 
-import initTranslations from "@/app/i18n";
-import AutoHideHeader from "@/components/layout/auto-hide-header";
-import Navbar from "@/components/navbar/navbar";
-import TranslationsProvider from "@/components/context/translations-provider";
-
-const i18nNamespaces = ["home"];
-
-export default async function Header({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const { resources } = await initTranslations(locale, i18nNamespaces);
-
+export async function Header() {
   return (
-    <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
-      <AutoHideHeader>
-        <Navbar />
-      </AutoHideHeader>
-    </TranslationsProvider>
+    <AutoHideHeader>
+      <Navbar />
+    </AutoHideHeader>
   );
 }

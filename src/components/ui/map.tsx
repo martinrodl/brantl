@@ -23,7 +23,7 @@ interface MapComponentProps {
   marker: { lat: number; lng: number };
 }
 
-export default function MapComponent({ marker, className }: MapComponentProps & { className?: string }) {
+export function MapComponent({ marker, className }: MapComponentProps & { className?: string }) {
   return (
     <div className={cn("h-full w-full", className)}>
       <GoogleMap

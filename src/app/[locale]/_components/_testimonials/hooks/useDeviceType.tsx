@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import useResizeObserver from "@/hooks/useResizeObserver";
+
+import { useResizeObserver } from "./useResizeObserver";
 
 import { breakpoints } from "@/constants/breakpoints";
 
-export default function useDeviceType() {
+export function useDeviceType() {
   const [{ width }, containerRef] = useResizeObserver();
 
   const deviceType = React.useMemo(() => {

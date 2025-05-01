@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 import initTranslations from "@/app/i18n";
-import { NavLinkHref } from "@/components/navbar/utils/enums";
-import SectionRef from "@/components/context/section-ref";
-import SectionHeader from "@/components/ui/section-header";
+import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
+import { SectionRef } from "@/components/context/section-ref";
+import { SectionHeader } from "@/components/ui/section-header";
 import { DynamicSlider } from "./_testimonials/dynamic-slider";
 import testimonials from "~/public/images/testimonials/testimonials.webp";
 import SmallTexture from "~/public/icons/small-texture.svg";
@@ -23,7 +23,7 @@ const PARTNER_LOGOS = [
   "logos/scania-logo.svg",
 ];
 
-export default async function Testimonials({ locale }: { locale: string }) {
+export async function Testimonials({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (

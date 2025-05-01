@@ -1,8 +1,8 @@
 import initTranslations from "@/app/i18n";
-import { NavLinkHref } from "@/components/navbar/utils/enums";
-import SectionRef from "@/components/context/section-ref";
+import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
+import { SectionRef } from "@/components/context/section-ref";
 import { MediaTextBlock } from "@/app/[locale]/_components/_services/media-text-block";
-import SectionHeader from "@/components/ui/section-header";
+import { SectionHeader } from "@/components/ui/section-header";
 
 import Services01 from "~/public/images/services/services-block-01.jpg";
 import Services02 from "~/public/images/services/services-block-02.jpg";
@@ -21,7 +21,7 @@ const sections = {
   sixth: Services06,
 };
 
-export default async function Services({ locale }: { locale: string }) {
+export async function Services({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (

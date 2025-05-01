@@ -7,7 +7,7 @@ export const ScrollContext = React.createContext<{
   scrollTo: (id: string) => void;
 } | null>(null);
 
-export default function ScrollProvider({ children }: { children: React.ReactNode }) {
+export function ScrollProvider({ children }: { children: React.ReactNode }) {
   const sectionsRef = React.useRef<{ [key: string]: React.RefObject<HTMLElement> }>({});
 
   const registerSection = (id: string, ref: React.RefObject<HTMLElement>) => {

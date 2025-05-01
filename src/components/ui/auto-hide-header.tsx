@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-export default function AutoHideHeader({ children }: { children: React.ReactNode }) {
+export function AutoHideHeader({ children }: { children: React.ReactNode }) {
   const [showHeader, setShowHeader] = React.useState(false);
   const topMarkerRef = React.useRef<HTMLDivElement | null>(null);
 

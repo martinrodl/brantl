@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import useDeviceType from "@/hooks/useDeviceType";
+import { useDeviceType } from "./hooks/useDeviceType";
 import type { CarouselApi } from "@/components/ui/carousel";
 import { Carousel } from "@/components/ui/carousel";
 import { breakpoints } from "@/constants/breakpoints";

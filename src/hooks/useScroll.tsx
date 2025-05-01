@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { ScrollContext } from "@/components/context/scroll-provider";
 
-export const useScroll = () => {
+export function useScroll() {
   const context = React.useContext(ScrollContext);
 
   if (!context) {
@@ -12,4 +12,4 @@ export const useScroll = () => {
   const { scrollTo, registerSection } = context;
 
   return { scrollTo, registerSection };
-};
+}

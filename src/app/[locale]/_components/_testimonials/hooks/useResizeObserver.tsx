@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-export default function useResizeObserver() {
+export function useResizeObserver() {
   const [size, setSize] = React.useState({
     width: 0,
     height: 0,

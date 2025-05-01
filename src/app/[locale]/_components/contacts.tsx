@@ -1,14 +1,14 @@
 import initTranslations from "@/app/i18n";
-import { NavLinkHref } from "@/components/navbar/utils/enums";
-import SectionRef from "@/components/context/section-ref";
-import SectionHeader from "@/components/ui/section-header";
+import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
+import { SectionRef } from "@/components/context/section-ref";
+import { SectionHeader } from "@/components/ui/section-header";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
 import { TriangleClusterRow } from "./_contacts/triangle-cluster-row";
 import { ContactDetails } from "./_contacts/contact-details";
 import { MarkerMap } from "./_contacts/marker-map";
 import { OfficeAddress } from "./_contacts/office-address";
 
-export default async function Contacts({ locale }: { locale: string }) {
+export async function Contacts({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
@@ -53,7 +53,7 @@ export default async function Contacts({ locale }: { locale: string }) {
         city={t("contacts.office1.city")}
         addressStreet={t("contacts.office1.addressStreet")}
         addressCity={t("contacts.office1.addressCity")}
-        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0"
+        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0 xl:pl-8"
       />
 
       <MarkerMap
@@ -65,7 +65,7 @@ export default async function Contacts({ locale }: { locale: string }) {
         city={t("contacts.office2.city")}
         addressStreet={t("contacts.office2.addressStreet")}
         addressCity={t("contacts.office2.addressCity")}
-        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0"
+        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0 xl:pl-8"
       />
 
       <TriangleClusterRow

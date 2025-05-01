@@ -1,11 +1,9 @@
-import * as React from "react";
-
 import { navLinks } from "./utils/constants";
 import { cn } from "@/lib/utils";
-import LanguageSwitcher from "@/components/ui/language-switcher";
-import NavbarButton from "@/components/navbar/navbar-button";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import { NavbarButton } from "./navbar-button";
 
-export default function NavbarMenuHorizontal({ className }: { className?: string }) {
+export function NavbarMenuHorizontal({ className }: { className?: string }) {
   return (
     <nav className={cn("flex items-center", className)}>
       {navLinks.map((navLink) => (

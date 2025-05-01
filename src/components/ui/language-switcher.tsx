@@ -9,7 +9,7 @@ import { LANGUAGES } from "@/constants/locales";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export default function LanguageSwitcher({
+export function LanguageSwitcher({
   preserveMenuState = false,
   containerClassName,
   buttonClassName,

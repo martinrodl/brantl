@@ -17,13 +17,13 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import LanguageSwitcher from "@/components/ui/language-switcher";
+import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import Logo from "~/public/logos/brantl-partners-logo.svg";
 import Vector from "~/public/icons/vector.svg";
 import { useSearchParams } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
 
-export default function NavbarMenuVertical({ className }: { className?: string }) {
+export function NavbarMenuVertical({ className }: { className?: string }) {
   const { scrollTo } = useScroll();
   const { t } = useTranslation();
   const searchParams = useSearchParams();

@@ -5,7 +5,7 @@ import heroBanner from "~/public/images/hero/hero-banner.webp";
 import Vector from "~/public/icons/vector.svg";
 import BorderTexture from "~/public/icons/border-texture.svg";
 
-export default async function Hero({ locale }: { locale: string }) {
+export async function Hero({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
@@ -16,8 +16,8 @@ export default async function Hero({ locale }: { locale: string }) {
         </div>
 
         <div className="absolute mx-6 flex h-full max-w-[800px] flex-col md:mx-16">
-          <div className="xl:gap-20 my-auto flex flex-col gap-24 self-center text-center text-inverse-foreground">
-            <h1 className="xl:text-6xl text-3xl font-medium md:text-5xl">{t("hero.header")}</h1>
+          <div className="my-auto flex flex-col gap-24 self-center text-center text-inverse-foreground xl:gap-20">
+            <h1 className="text-3xl font-medium md:text-5xl xl:text-6xl">{t("hero.header")}</h1>
             <p className="text-2xl">{t("hero.description")}</p>
           </div>
 

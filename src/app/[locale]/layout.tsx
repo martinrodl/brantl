@@ -3,9 +3,11 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
 import "./globals.css";
-import Header from "@/components/layout/header";
-import Footer from "@/components/footer/footer";
-import ScrollProvider from "@/components/context/scroll-provider";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/footer/footer";
+import { ScrollProvider } from "@/components/context/scroll-provider";
+import { TranslationsProvider } from "~/src/components/context/translations-provider";
+import initTranslations from "@/app/i18n";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -22,21 +24,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const i18nNamespaces = ["home"];
+
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  const { resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <html>
       <body className={`${montserrat.className} antialiased`}>
-        <ScrollProvider>
-          <Header params={params} />
-          {children}
-          <Footer params={params} />
-        </ScrollProvider>
+        <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
+          <ScrollProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ScrollProvider>
+        </TranslationsProvider>
       </body>
     </html>
   );
