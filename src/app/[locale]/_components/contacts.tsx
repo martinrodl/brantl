@@ -10,14 +10,30 @@ import SectionHeader from "@/components/ui/section-header";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
 import Vector from "~/public/icons/vector.svg";
 import MapProvider from "@/components/context/map-provider";
+import { cn } from "@/lib/utils";
 
-const leftMarker = { lat: 50.0869393, lng: 14.4337539 };
-const rightMarker = { lat: 49.3955, lng: 13.2956 };
+const TriangleClusterRow = ({
+  count = 3,
+  className,
+  triangleClassName,
+}: {
+  count?: number;
+  className?: string;
+  triangleClassName?: string;
+}) => {
+  return (
+    <div className={cn("flex fill-muted", className)}>
+      {Array.from({ length: count }).map((_, index) => (
+        <TriangleCluster key={index} className={cn("h-auto w-4", triangleClassName)} />
+      ))}
+    </div>
+  );
+};
 
 const ContactInfo = ({ icon, children }: { icon?: boolean; children: React.ReactNode }) => (
-  <div className="xl:pr-0 flex gap-2 pr-8">
+  <div className="flex gap-2 pr-8 xl:pr-0">
     {icon && <Vector width={24} height={24} className="shrink-0 -rotate-90 fill-icon" />}
-    <div className="xl:mb-0 mb-4 flex flex-col md:mb-8">{children}</div>
+    <div className="mb-4 flex flex-col md:mb-8 xl:mb-0">{children}</div>
   </div>
 );
 
@@ -29,6 +45,7 @@ const ContactDetails = ({
   address,
   companyIdNumber,
   taxIdNumber,
+  className,
 }: {
   name: string;
   phone: string;
@@ -37,8 +54,9 @@ const ContactDetails = ({
   address: string;
   companyIdNumber: string;
   taxIdNumber: string;
+  className?: string;
 }) => (
-  <div className="xl:grid xl:grid-cols-[1.5fr_1fr_1fr_1.5fr] xl:text-lg flex flex-col text-sm">
+  <div className={cn("text-sm xl:text-lg", className)}>
     <p className="mb-6 text-xl font-bold md:mb-8">{name}</p>
 
     <ContactInfo icon>
@@ -60,82 +78,100 @@ const ContactDetails = ({
   </div>
 );
 
-const PositionedTriangleCluster = ({ position, translateX }: { position: "left" | "right"; translateX?: boolean }) => (
-  <TriangleCluster
-    className={`absolute bottom-28 ${
-      position === "left" ? "left-1/2" : "right-1/2"
-    } ml-auto hidden h-auto w-[156px] shrink-0 ${
-      translateX ? "translate-x-1/2" : "-translate-x-1/2"
-    } xl:block fill-muted`}
-  />
-);
+export function MarkerMap({ marker, className }: { marker: { lat: number; lng: number }; className?: string }) {
+  return (
+    <div className={cn("w-full", className)}>
+      <MapProvider>
+        <MapComponent marker={marker} />
+      </MapProvider>
+    </div>
+  );
+}
+
+export function OfficeAddress({
+  city,
+  addressStreet,
+  addressCity,
+  className,
+}: {
+  city: string;
+  addressStreet: string;
+  addressCity: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <p className="text-2.5xl font-semibold">{city}</p>
+      <p className="text-lg">{addressStreet}</p>
+      <p className="text-lg">{addressCity}</p>
+    </div>
+  );
+}
 
 export default async function Contacts({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
-    <SectionRef id={NavLinkHref.CONTACTS} className="flex flex-col">
-      <SectionHeader header={t("contacts.header")} />
+    <SectionRef
+      id={NavLinkHref.CONTACTS}
+      className="grid md:grid-cols-2 xl:auto-rows-min xl:grid-cols-4 2xl:grid-cols-6"
+    >
+      <SectionHeader header={t("contacts.header")} className="col-span-full pb-12 xl:pb-20" />
 
-      <div className="xl:mt-24 xl:gap-12 xl:px-0 mt-12 flex justify-center gap-12 px-8 md:gap-4 md:px-16">
-        <TriangleCluster className="xl:block hidden h-auto w-[254px] shrink-0 fill-muted" />
+      <TriangleCluster className="row-span-2 row-start-2 hidden h-[180px] w-auto self-end fill-muted 2xl:block" />
 
-        <div className="xl:flex-col flex flex-col gap-8 md:flex-row">
-          <ContactDetails
-            name={t("contacts.company1.companyName")}
-            phone={t("contacts.company1.phone")}
-            email={t("contacts.company1.email")}
-            website={t("contacts.company1.website")}
-            address={t("contacts.company1.address")}
-            companyIdNumber={t("contacts.company1.companyIdNumber")}
-            taxIdNumber={t("contacts.company1.taxIdNumber")}
-          />
+      <ContactDetails
+        name={t("contacts.company1.companyName")}
+        phone={t("contacts.company1.phone")}
+        email={t("contacts.company1.email")}
+        website={t("contacts.company1.website")}
+        address={t("contacts.company1.address")}
+        companyIdNumber={t("contacts.company1.companyIdNumber")}
+        taxIdNumber={t("contacts.company1.taxIdNumber")}
+        className="xl:grid-row-2 grid grid-cols-subgrid px-10 pb-20 md:px-12 md:pr-2 xl:col-span-full xl:px-16 xl:pb-6 2xl:col-span-4 2xl:col-start-2"
+      />
 
-          <ContactDetails
-            name={t("contacts.company2.companyName")}
-            phone={t("contacts.company2.phone")}
-            email={t("contacts.company2.email")}
-            website={t("contacts.company2.website")}
-            address={t("contacts.company2.address")}
-            companyIdNumber={t("contacts.company2.companyIdNumber")}
-            taxIdNumber={t("contacts.company2.taxIdNumber")}
-          />
-        </div>
+      <ContactDetails
+        name={t("contacts.company2.companyName")}
+        phone={t("contacts.company2.phone")}
+        email={t("contacts.company2.email")}
+        website={t("contacts.company2.website")}
+        address={t("contacts.company2.address")}
+        companyIdNumber={t("contacts.company2.companyIdNumber")}
+        taxIdNumber={t("contacts.company2.taxIdNumber")}
+        className="xl:grid-row-3 grid grid-cols-subgrid px-10 pb-20 md:px-12 md:pl-2 xl:col-span-full xl:px-16 xl:pb-12 2xl:col-span-4 2xl:col-start-2"
+      />
 
-        <TriangleCluster className="xl:block hidden h-auto w-[254px] shrink-0 fill-muted" />
-      </div>
+      <TriangleCluster className="col-start-6 row-span-2 row-start-2 hidden h-[180px] w-auto place-self-end fill-muted 2xl:block" />
 
-      <div className="xl:mt-0 xl:gap-0 relative mt-20 flex flex-col md:mt-24 md:flex-row md:gap-4">
-        <PositionedTriangleCluster position="left" />
-        <PositionedTriangleCluster position="right" />
-        <PositionedTriangleCluster position="left" translateX />
+      <MarkerMap
+        marker={{ lat: 50.0869393, lng: 14.4337539 }}
+        className="aspect-[1.5/1] w-full md:row-start-3 md:pr-2 xl:row-span-2 xl:row-start-4 xl:mr-0 xl:h-[526px] xl:pr-0 2xl:col-span-2"
+      />
 
-        <div className="xl:flex-row flex flex-col md:w-1/2">
-          <div className="xl:aspect-square xl:w-2/3 aspect-[1.5/1]">
-            <MapProvider>
-              <MapComponent marker={leftMarker} />
-            </MapProvider>
-          </div>
+      <OfficeAddress
+        city={t("contacts.office1.city")}
+        addressStreet={t("contacts.office1.addressStreet")}
+        addressCity={t("contacts.office1.addressCity")}
+        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0"
+      />
 
-          <div className="xl:w-1/3 xl:py-0 p-12 pb-32 pt-12">
-            <p className="text-2.5xl font-semibold">{t("contacts.office1.city")}</p>
-            <p className="text-lg">{t("contacts.office1.address")}</p>
-          </div>
-        </div>
+      <MarkerMap
+        marker={{ lat: 49.3955, lng: 13.2956 }}
+        className="aspect-[1.5/1] w-full md:row-start-3 md:pl-2 xl:col-start-4 xl:row-span-2 xl:row-start-4 xl:ml-0 xl:h-[526px] xl:pl-0 2xl:col-span-2 2xl:col-start-5"
+      />
 
-        <div className="xl:flex-row-reverse flex flex-col md:w-1/2">
-          <div className="xl:aspect-square xl:w-2/3 aspect-[1.5/1]">
-            <MapProvider>
-              <MapComponent marker={rightMarker} />
-            </MapProvider>
-          </div>
+      <OfficeAddress
+        city={t("contacts.office2.city")}
+        addressStreet={t("contacts.office2.addressStreet")}
+        addressCity={t("contacts.office2.addressCity")}
+        className="p-10 pb-20 md:px-12 md:pb-28 xl:py-0"
+      />
 
-          <div className="xl:w-1/3 xl:py-0 p-12 pb-32 pt-12">
-            <p className="text-2.5xl font-semibold">{t("contacts.office2.city")}</p>
-            <p className="text-lg">{t("contacts.office2.address")}</p>
-          </div>
-        </div>
-      </div>
+      <TriangleClusterRow
+        className="col-span-2 hidden w-fit -translate-y-1/2 justify-self-center xl:flex"
+        triangleClassName="w-36"
+      />
     </SectionRef>
   );
 }
