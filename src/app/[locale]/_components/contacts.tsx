@@ -1,112 +1,12 @@
-import * as React from "react";
-
-import Link from "next/link";
-
 import initTranslations from "@/app/i18n";
 import { NavLinkHref } from "@/components/navbar/utils/enums";
 import SectionRef from "@/components/context/section-ref";
-import MapComponent from "@/components/ui/map";
 import SectionHeader from "@/components/ui/section-header";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
-import Vector from "~/public/icons/vector.svg";
-import MapProvider from "@/components/context/map-provider";
-import { cn } from "@/lib/utils";
-
-const TriangleClusterRow = ({
-  count = 3,
-  className,
-  triangleClassName,
-}: {
-  count?: number;
-  className?: string;
-  triangleClassName?: string;
-}) => {
-  return (
-    <div className={cn("flex fill-muted", className)}>
-      {Array.from({ length: count }).map((_, index) => (
-        <TriangleCluster key={index} className={cn("h-auto w-4", triangleClassName)} />
-      ))}
-    </div>
-  );
-};
-
-const ContactInfo = ({ icon, children }: { icon?: boolean; children: React.ReactNode }) => (
-  <div className="flex gap-2 pr-8 xl:pr-0">
-    {icon && <Vector width={24} height={24} className="shrink-0 -rotate-90 fill-icon" />}
-    <div className="mb-4 flex flex-col md:mb-8 xl:mb-0">{children}</div>
-  </div>
-);
-
-const ContactDetails = ({
-  name,
-  phone,
-  email,
-  website,
-  address,
-  companyIdNumber,
-  taxIdNumber,
-  className,
-}: {
-  name: string;
-  phone: string;
-  email: string;
-  website: string;
-  address: string;
-  companyIdNumber: string;
-  taxIdNumber: string;
-  className?: string;
-}) => (
-  <div className={cn("text-sm xl:text-lg", className)}>
-    <p className="mb-6 text-xl font-bold md:mb-8">{name}</p>
-
-    <ContactInfo icon>
-      <Link href={`tel:${phone}`}>{phone}</Link>
-      <Link href={`mailto:${email}`}>{email}</Link>
-      <Link href={website} target="_blank" rel="noopener noreferrer">
-        {website.replace("https://", "")}
-      </Link>
-    </ContactInfo>
-
-    <ContactInfo icon>
-      <p>{companyIdNumber}</p>
-      <p>{taxIdNumber}</p>
-    </ContactInfo>
-
-    <ContactInfo icon>
-      <p>{address}</p>
-    </ContactInfo>
-  </div>
-);
-
-export function MarkerMap({ marker, className }: { marker: { lat: number; lng: number }; className?: string }) {
-  return (
-    <div className={cn("w-full", className)}>
-      <MapProvider>
-        <MapComponent marker={marker} />
-      </MapProvider>
-    </div>
-  );
-}
-
-export function OfficeAddress({
-  city,
-  addressStreet,
-  addressCity,
-  className,
-}: {
-  city: string;
-  addressStreet: string;
-  addressCity: string;
-  className?: string;
-}) {
-  return (
-    <div className={className}>
-      <p className="text-2.5xl font-semibold">{city}</p>
-      <p className="text-lg">{addressStreet}</p>
-      <p className="text-lg">{addressCity}</p>
-    </div>
-  );
-}
+import { TriangleClusterRow } from "./_contacts/triangle-cluster-row";
+import { ContactDetails } from "./_contacts/contact-details";
+import { MarkerMap } from "./_contacts/marker-map";
+import { OfficeAddress } from "./_contacts/office-address";
 
 export default async function Contacts({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
