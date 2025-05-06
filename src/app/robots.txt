@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-# Add your sitemap if you have one
-Sitemap: https://www.yourdomain.com/sitemap.xml

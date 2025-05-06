@@ -4,7 +4,7 @@ import initTranslations from "@/app/i18n";
 import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
 import { SectionRef } from "@/components/context/section-ref";
 import { SectionHeader } from "@/components/ui/section-header";
-import { DynamicSlider } from "./_testimonials/dynamic-slider";
+import { DynamicSlider } from "@/app/[locale]/_components/testimonials/dynamic-slider";
 import testimonials from "~/public/images/testimonials/testimonials.webp";
 import SmallTexture from "~/public/icons/small-texture.svg";
 

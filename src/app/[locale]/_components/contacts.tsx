@@ -3,10 +3,10 @@ import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
 import { SectionRef } from "@/components/context/section-ref";
 import { SectionHeader } from "@/components/ui/section-header";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
-import { TriangleClusterRow } from "./_contacts/triangle-cluster-row";
-import { ContactDetails } from "./_contacts/contact-details";
-import { MarkerMap } from "./_contacts/marker-map";
-import { OfficeAddress } from "./_contacts/office-address";
+import { TriangleClusterRow } from "@/app/[locale]/_components/contacts/triangle-cluster-row";
+import { ContactDetails } from "@/app/[locale]/_components/contacts/contact-details";
+import { MarkerMap } from "@/app/[locale]/_components/contacts/marker-map";
+import { OfficeAddress } from "@/app/[locale]/_components/contacts/office-address";
 
 export async function Contacts({ locale }: { locale: string }) {
   const { t } = await initTranslations(locale, ["home"]);
