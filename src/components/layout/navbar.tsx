@@ -10,7 +10,7 @@ export function Navbar() {
     "xl:m-0 xl:space-x-0 xl:border-none xl:px-12 xl:py-8 xl:pb-0",
   );
 
-  const logoClasses = cn("h-fit w-[95px] shrink-0 fill-icon-inverse", "md:mb-2", "xl:mb-0 xl:mt-2 xl:w-[172px]");
+  const logoClasses = cn("block h-auto w-[95px] shrink-0 fill-icon-inverse", "md:mb-2", "xl:mb-0 xl:mt-2 xl:w-[172px]");
 
   const horizontalMenuClasses = cn(
     "hidden justify-center space-x-2",
@@ -18,7 +18,7 @@ export function Navbar() {
     "xl:self-start xl:border-b xl:border-inverse xl:pr-3",
   );
 
-  const verticalMenuClasses = "place-self-end";
+  const verticalMenuClasses = "place-self-center";
 
   return (
     <nav className={navbarClasses}>
