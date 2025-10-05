@@ -5,6 +5,10 @@
 
 /* The app is prepared to support dark mode */
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
   :root {
     --background: 0, 0%, 100%;
     --foreground: 222, 51%, 26%;

@@ -27,6 +27,9 @@ export function DynamicSlider({
   const [api, setApi] = React.useState<CarouselApi | undefined>();
   const [itemsPerView, setItemsPerView] = React.useState(1);
   const [current, setCurrent] = React.useState(0);
+  const currentRef = React.useRef(0);
+  const directionRef = React.useRef<1 | -1>(1);
+  const autoScrollIntervalRef = React.useRef<number | null>(null);
   const {
     deviceType: { isTablet, isDesktop },
     containerRef,
@@ -39,6 +42,54 @@ export function DynamicSlider({
   const rowIndexes = Array.from({ length: imageUrls.length }, (_, index) => index);
   const dualRowIndexes = rowIndexes.filter((index) => index % 2 === 0);
   const deviceIndexes = isDesktop ? rowIndexes : dualRowIndexes;
+
+  const clearAutoScroll = React.useCallback(() => {
+    if (autoScrollIntervalRef.current !== null) {
+      window.clearInterval(autoScrollIntervalRef.current);
+      autoScrollIntervalRef.current = null;
+    }
+  }, []);
+
+  const startAutoScroll = React.useCallback(() => {
+    if (!api || deviceIndexes.length <= itemsPerView) {
+      clearAutoScroll();
+      return;
+    }
+
+    clearAutoScroll();
+
+    autoScrollIntervalRef.current = window.setInterval(() => {
+      if (!api) {
+        return;
+      }
+
+      const maxIndex = Math.max(0, deviceIndexes.length - itemsPerView);
+      let direction = directionRef.current;
+      const currentIndex = currentRef.current;
+
+      if (currentIndex >= maxIndex) {
+        direction = -1;
+      } else if (currentIndex <= 0) {
+        direction = 1;
+      }
+
+      let target = currentIndex + direction;
+
+      if (target > maxIndex) {
+        target = maxIndex;
+        direction = -1;
+      } else if (target < 0) {
+        target = 0;
+        direction = 1;
+      }
+
+      directionRef.current = direction;
+
+      if (target !== currentIndex) {
+        api.scrollTo(target);
+      }
+    }, 5000);
+  }, [api, deviceIndexes.length, itemsPerView, clearAutoScroll]);
 
   const calculateItemsPerView = React.useCallback(() => {
     const viewportWidth = isDesktop
@@ -67,9 +118,25 @@ export function DynamicSlider({
 
   React.useEffect(() => {
     if (!api) return;
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => setCurrent(api.selectedScrollSnap()));
-  }, [api]);
+    const handleSelect = () => {
+      const selected = api.selectedScrollSnap();
+      currentRef.current = selected;
+      setCurrent(selected);
+      startAutoScroll();
+    };
+
+    handleSelect();
+    api.on("select", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, startAutoScroll]);
+
+  React.useEffect(() => {
+    startAutoScroll();
+    return () => clearAutoScroll();
+  }, [startAutoScroll, clearAutoScroll]);
 
   const totalDots = Math.ceil(deviceIndexes.length / itemsPerView);
 
