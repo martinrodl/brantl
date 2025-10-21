@@ -10,11 +10,10 @@ import SmallTexture from "~/public/icons/small-texture.svg";
 
 const PARTNER_LOGOS = [
   "logos/wecubex-logo.svg",
-  "logos/solodoor-logo.svg",
+  "logos/konplan-logo.svg",
   "logos/fischer-group-logo.svg",
   "logos/sto-logo.svg",
   "logos/kaeser-kompressoren-logo.svg",
-  "logos/konplan-logo.svg",
   "logos/enika-logo.svg",
   "logos/fibran-energy-shield-logo.svg",
   "logos/sbs-cargo-logo.svg",

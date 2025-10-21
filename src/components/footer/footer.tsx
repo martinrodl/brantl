@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { navLinks } from "@/components/layout/navbar/utils/constants";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -30,6 +31,15 @@ export async function Footer() {
       </nav>
 
       <Logo className="h-fit w-[144px] shrink-0 fill-icon-inverse md:w-[206px]" />
+
+      <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[hsl(var(--inverse-foreground))]">
+        <Link href="/ochrana-oznamovatelu" className="hover:underline">
+          Ochrana oznamovatelů
+        </Link>
+        <Link href="/cookies" className="hover:underline">
+          Cookies
+        </Link>
+      </div>
     </footer>
   );
 }

@@ -2,11 +2,11 @@ import * as React from "react";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import Vector from "~/public/icons/vector.svg";
+import { ChevronRight } from "lucide-react";
 
 const ContactInfo = ({ icon, children }: { icon?: boolean; children: React.ReactNode }) => (
   <div className="flex gap-2 pr-8 xl:pr-0">
-    {icon && <Vector width={24} height={24} className="shrink-0 -rotate-90 fill-icon" />}
+    {icon && <ChevronRight className="h-6 w-6 shrink-0 stroke-icon" />}
     <div className="mb-4 flex flex-col md:mb-8 xl:mb-0">{children}</div>
   </div>
 );

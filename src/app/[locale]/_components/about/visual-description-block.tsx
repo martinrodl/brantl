@@ -21,7 +21,7 @@ export function VisualDescriptionBlock({
             alt={imageAlt}
             fill
             sizes="(max-width: 1024px) 100vw, (min-width: 1280px) 840px"
-            className="scale-[140%] object-cover object-[0_30%] 2xl:object-[0_50%]"
+            className="object-cover object-[0_30%] xl:object-contain xl:object-center xl:scale-100 2xl:object-center"
           />
         </div>
 

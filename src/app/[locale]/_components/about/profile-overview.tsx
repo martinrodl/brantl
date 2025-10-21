@@ -36,6 +36,7 @@ export async function ProfileOverview({ locale }: { locale: string }) {
             role={memberData.role}
             specializationTitle={t("about.team.sectionTitle.specialization")}
             specializations={memberData.specializations}
+            cvTitle={t("about.team.sectionTitle.experience")}
             cvRecords={memberData.cvRecords}
             className={PROFILE_CARD_CLASSES}
           />

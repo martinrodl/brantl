@@ -14,7 +14,7 @@ export function SectionRef({ id, children, className }: { id: string; children: 
   }, [id, sectionRef, registerSection]);
 
   return (
-    <section ref={sectionRef} className={className}>
+    <section id={id} ref={sectionRef} className={className}>
       {children}
     </section>
   );

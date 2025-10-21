@@ -28,7 +28,7 @@ export function DynamicSlider({
   const [itemsPerView, setItemsPerView] = React.useState(1);
   const [current, setCurrent] = React.useState(0);
   const currentRef = React.useRef(0);
-  const directionRef = React.useRef<1 | -1>(1);
+  // Direction no longer needed with looped auto-scroll
   const autoScrollIntervalRef = React.useRef<number | null>(null);
   const {
     deviceType: { isTablet, isDesktop },
@@ -59,36 +59,9 @@ export function DynamicSlider({
     clearAutoScroll();
 
     autoScrollIntervalRef.current = window.setInterval(() => {
-      if (!api) {
-        return;
-      }
-
-      const maxIndex = Math.max(0, deviceIndexes.length - itemsPerView);
-      let direction = directionRef.current;
-      const currentIndex = currentRef.current;
-
-      if (currentIndex >= maxIndex) {
-        direction = -1;
-      } else if (currentIndex <= 0) {
-        direction = 1;
-      }
-
-      let target = currentIndex + direction;
-
-      if (target > maxIndex) {
-        target = maxIndex;
-        direction = -1;
-      } else if (target < 0) {
-        target = 0;
-        direction = 1;
-      }
-
-      directionRef.current = direction;
-
-      if (target !== currentIndex) {
-        api.scrollTo(target);
-      }
-    }, 5000);
+      if (!api) return;
+      api.scrollNext();
+    }, 4000);
   }, [api, deviceIndexes.length, itemsPerView, clearAutoScroll]);
 
   const calculateItemsPerView = React.useCallback(() => {
@@ -156,7 +129,7 @@ export function DynamicSlider({
         className="relative mb-12 md:mb-0"
         style={{ padding: isTablet ? `0 ${paddingTabletDesktop}px` : `0 ${paddingMobile}px 60px` }}
       >
-        <Carousel opts={{ align: "start" }} setApi={setApi}>
+  <Carousel opts={{ align: "start", loop: true }} setApi={setApi}>
           <SliderContent
             rowIndexes={rowIndexes}
             dualRowIndexes={dualRowIndexes}
