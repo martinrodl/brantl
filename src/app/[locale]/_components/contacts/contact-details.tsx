@@ -2,11 +2,16 @@ import * as React from "react";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
+import Vector from "~/public/icons/vector.svg";
 
 const ContactInfo = ({ icon, children }: { icon?: boolean; children: React.ReactNode }) => (
-  <div className="flex gap-2 pr-8 xl:pr-0">
-    {icon && <ChevronRight className="h-6 w-6 shrink-0 stroke-icon" />}
+  <div className="flex items-start gap-2 pr-8 xl:pr-0">
+    {icon && (
+      <Vector
+        className="h-[10px] w-[10px] -rotate-90 shrink-0 mt-[6px] md:mt-[7px] xl:mt-[8px] fill-icon"
+        aria-hidden
+      />
+    )}
     <div className="mb-4 flex flex-col md:mb-8 xl:mb-0">{children}</div>
   </div>
 );

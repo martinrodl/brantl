@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export function SliderImage({ src, alt, width }: { src: string; alt: string; width: number }) {
+  if (!src) return null;
   return (
     <div
       className="relative flex aspect-video h-28 shrink-0 items-center justify-center"
@@ -33,7 +34,9 @@ export function SliderContent({
         <CarouselItem key={idx} className="mx-auto flex justify-center" style={{ flexBasis: `${100 / itemsPerView}%` }}>
           <div className="flex flex-col">
             <SliderImage src={imageUrls[idx]} alt={`Logo ${idx + 1}`} width={itemWidth} />
-            {!isDesktop && <SliderImage src={imageUrls[idx + 1]} alt={`Logo ${idx + 2}`} width={itemWidth} />}
+            {!isDesktop && imageUrls[idx + 1] && (
+              <SliderImage src={imageUrls[idx + 1]} alt={`Logo ${idx + 2}`} width={itemWidth} />
+            )}
           </div>
         </CarouselItem>
       ))}

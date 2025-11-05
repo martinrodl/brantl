@@ -10,13 +10,24 @@ const defaultMapContainerStyle = {
 
 const defaultMapZoom = 18;
 
+const figmaLikeStyles = [
+  { featureType: "all", elementType: "labels", stylers: [{ visibility: "on" }] },
+  { featureType: "poi", elementType: "all", stylers: [{ visibility: "off" }] },
+  { featureType: "transit", elementType: "all", stylers: [{ visibility: "off" }] },
+  { featureType: "administrative", elementType: "geometry", stylers: [{ lightness: 20 }] },
+  { featureType: "road", elementType: "geometry", stylers: [{ lightness: 70 }, { saturation: -100 }] },
+  { featureType: "landscape", elementType: "geometry", stylers: [{ saturation: -100 }, { lightness: 40 }] },
+  { featureType: "water", elementType: "geometry", stylers: [{ color: "#b9c7db" }] },
+];
+
 const defaultMapOptions = {
-  zoomControl: true,
+  zoomControl: false,
   tilt: 0,
-  gestureHandling: "auto",
+  gestureHandling: "greedy" as const,
   streetViewControl: false,
   fullscreenControl: false,
   mapTypeControl: false,
+  styles: figmaLikeStyles,
 };
 
 interface MapComponentProps {
@@ -25,14 +36,25 @@ interface MapComponentProps {
 
 export function MapComponent({ marker, className }: MapComponentProps & { className?: string }) {
   return (
-    <div className={cn("h-full w-full", className)}>
+    <div className={cn("relative h-full w-full", className)}>
       <GoogleMap
         mapContainerStyle={defaultMapContainerStyle}
         center={marker}
         zoom={defaultMapZoom}
         options={defaultMapOptions}
       >
-        <Marker position={marker} />
+        <Marker
+          position={marker}
+          icon={{
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 7,
+            fillColor: "#213565",
+            fillOpacity: 1,
+            strokeColor: "#ffffff",
+            strokeOpacity: 1,
+            strokeWeight: 3,
+          }}
+        />
       </GoogleMap>
     </div>
   );
