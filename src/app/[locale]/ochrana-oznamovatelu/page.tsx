@@ -26,47 +26,52 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
       <SectionHeader header={t("whistleblower.header")} />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">
-        <p>{t("whistleblower.intro")}</p>
+        <p>
+          Společnost Brantl & Partners implementovala vnitřní systém pro přijímání a vyřizování oznámení podle zákona
+          o ochraně oznamovatelů. Tento systém umožňuje zaměstnancům a dalším osobám upozornit na podezření z
+          protiprávního jednání.
+        </p>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("whistleblower.sections.howToReport.title")}</h2>
+          <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
           <ul className="list-disc pl-6">
             <li>
-              {t("whistleblower.sections.howToReport.methods.email")}{" "}
-              <a
-                className="underline"
-                href={`mailto:${t("whistleblower.sections.howToReport.methods.emailAddress")}`}
-              >
-                {t("whistleblower.sections.howToReport.methods.emailAddress")}
+              E-mailem na adresu:{" "}
+              <a className="underline" href="mailto:oznameni@brantl.cz">
+                oznameni@brantl.cz
               </a>
             </li>
-            <li>{t("whistleblower.sections.howToReport.methods.mail")}</li>
-            <li>{t("whistleblower.sections.howToReport.methods.inPerson")}</li>
+            <li>Poštou na adresu společnosti (označeno jako „důvěrné")</li>
+            <li>Osobně u odpovědné osoby (po předchozí domluvě)</li>
           </ul>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("whistleblower.sections.responsiblePerson.title")}</h2>
-          <p>{t("whistleblower.sections.responsiblePerson.content")}</p>
+          <h2 className="text-xl font-semibold">Odpovědná osoba</h2>
+          <p>
+            Za příjem a vyřizování oznámení odpovídá Ing. Jan Brantl. Kontakt: info@brantl.cz, +420 226 886 920.
+          </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("whistleblower.sections.externalReporting.title")}</h2>
+          <h2 className="text-xl font-semibold">Externí oznamování</h2>
           <p>
-            {t("whistleblower.sections.externalReporting.content")}{" "}
+            Oznamovatel může podat oznámení také přímo příslušnému orgánu veřejné moci. Více informací najdete na{" "}
             <a
               className="underline"
-              href={t("whistleblower.sections.externalReporting.linkUrl")}
+              href="https://www.ochranoznamovatelu.cz"
               target="_blank"
               rel="noreferrer noopener"
             >
-              {t("whistleblower.sections.externalReporting.linkText")}
+              www.ochranoznamovatelu.cz
             </a>
             .
           </p>
         </section>
 
-        <p className="text-sm text-muted-foreground">{t("whistleblower.disclaimer")}</p>
+        <p className="text-sm text-muted-foreground">
+          Tento systém slouží výhradně k oznamování protiprávního jednání. Zneužití systému může mít právní následky.
+        </p>
       </div>
     </main>
   );
