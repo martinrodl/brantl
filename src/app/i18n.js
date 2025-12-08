@@ -21,6 +21,9 @@ export default async function initTranslations(locale, namespaces, i18nInstance,
     fallbackNS: namespaces[0],
     ns: namespaces,
     preload: resources ? [] : i18nConfig.locales,
+    returnObjects: false,
+    returnEmptyString: false,
+    returnNull: false,
   });
 
   return {
