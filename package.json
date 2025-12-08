@@ -5,11 +5,11 @@
   "scripts": {
     "pull-i18n": "node --env-file=.env scripts/pull-i18n.mjs",
     "pull-i18n-deploy": "node scripts/pull-i18n.mjs",
-    "dev": "next dev",
-    "dev:i18n": "npm run pull-i18n && next dev",
-    "build:clean": "next build",
-    "build:local": "npm run pull-i18n && next build",
-    "build": "npm run pull-i18n-deploy && next build",
+    "dev": "next dev --webpack",
+    "dev:i18n": "npm run pull-i18n && next dev --webpack",
+    "build:clean": "next build --webpack",
+    "build:local": "npm run pull-i18n && next build --webpack",
+    "build": "npm run pull-i18n-deploy && next build --webpack",
     "start": "next start",
     "lint": "next lint",
     "export": "next export"
