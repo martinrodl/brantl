@@ -1,12 +1,22 @@
 "use client";
 
 import * as React from "react";
+import { usePathname } from "next/navigation";
 
 export function AutoHideHeader({ children }: { children: React.ReactNode }) {
-  const [showHeader, setShowHeader] = React.useState(false);
+  const pathname = usePathname();
+  const isStaticPage = pathname?.includes("/cookies") || pathname?.includes("/ochrana-oznamovatelu");
+  
+  const [showHeader, setShowHeader] = React.useState(isStaticPage);
   const topMarkerRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
+    // Always show header on static pages
+    if (isStaticPage) {
+      setShowHeader(true);
+      return;
+    }
+
     const currentMarker = topMarkerRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -27,7 +37,7 @@ export function AutoHideHeader({ children }: { children: React.ReactNode }) {
         observer.unobserve(currentMarker);
       }
     };
-  }, []);
+  }, [isStaticPage]);
 
   return (
     <>

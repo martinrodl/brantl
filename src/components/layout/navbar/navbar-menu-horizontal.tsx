@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { NavbarButton } from "./navbar-button";
 
-export function NavbarMenuHorizontal({ className }: { className?: string }) {
+export function NavbarMenuHorizontal({ className, isStaticPage }: { className?: string; isStaticPage?: boolean }) {
   return (
     <nav className={cn("flex items-center", className)}>
       {navLinks.map((navLink) => (
@@ -12,11 +12,11 @@ export function NavbarMenuHorizontal({ className }: { className?: string }) {
           type="button"
           role="link"
           navLink={navLink}
-          variant="ghostInverse"
+          variant={isStaticPage ? "ghost" : "ghostInverse"}
           className="justify-between text-sm font-medium"
         />
       ))}
-      <LanguageSwitcher buttonClassName="h-auto p-1" />
+      <LanguageSwitcher buttonClassName="h-auto p-1" isInverse={!isStaticPage} />
     </nav>
   );
 }

@@ -23,7 +23,7 @@ import Vector from "~/public/icons/vector.svg";
 import { useSearchParams } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
 
-export function NavbarMenuVertical({ className }: { className?: string }) {
+export function NavbarMenuVertical({ className, isStaticPage }: { className?: string; isStaticPage?: boolean }) {
   const { scrollTo } = useScroll();
   const { t } = useTranslation();
   const searchParams = useSearchParams();
@@ -48,13 +48,17 @@ export function NavbarMenuVertical({ className }: { className?: string }) {
     <Sheet open={open} onOpenChange={handleDrawerState}>
       <SheetTrigger asChild>
         <Button
-          variant="ghostInverse"
+          variant={isStaticPage ? "ghost" : "ghostInverse"}
           size="icon"
-          className={cn("group h-10 w-10 rounded-full border-2 border-inverse md:hidden [&_svg]:size-7", className)}
+          className={cn(
+            "group h-10 w-10 rounded-full border-2 md:hidden [&_svg]:size-7", 
+            isStaticPage ? "border-border" : "border-inverse",
+            className
+          )}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
         >
-          <Menu className="stroke-icon-inverse" />
+          <Menu className={isStaticPage ? "stroke-icon" : "stroke-icon-inverse"} />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>

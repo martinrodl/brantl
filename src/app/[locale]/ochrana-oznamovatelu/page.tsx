@@ -1,55 +1,72 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/ui/section-header";
+import initTranslations from "@/app/i18n";
 
-export const metadata: Metadata = {
-  title: "Ochrana oznamovatelů | Brantl",
-  description:
-    "Informace o režimu ochrany oznamovatelů (whistleblowing) ve společnosti Brantl & Partners a způsobech, jak podat oznámení.",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
-export default function WhistleblowerProtectionPage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await initTranslations(locale, ["home"]);
+
+  return {
+    title: t("whistleblower.metadata.title"),
+    description: t("whistleblower.metadata.description"),
+  };
+}
+
+export default async function WhistleblowerProtectionPage({ params }: Props) {
+  const { locale } = await params;
+  const { t } = await initTranslations(locale, ["home"]);
+
   return (
     <main className="container mx-auto px-6 py-10 md:py-16 xl:px-20">
-      <SectionHeader header="Ochrana oznamovatelů" />
+      <SectionHeader header={t("whistleblower.header")} />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">
-        <p>
-          Společnost Brantl & Partners, s.r.o., v souladu se zákonem č. 171/2023 Sb., o ochraně oznamovatelů,
-          zavedla vnitřní oznamovací systém pro podávání oznámení o možném protiprávním jednání, ke kterému došlo
-          nebo má dojít v pracovním kontextu.
-        </p>
+        <p>{t("whistleblower.intro")}</p>
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
+          <h2 className="text-xl font-semibold">{t("whistleblower.sections.howToReport.title")}</h2>
           <ul className="list-disc pl-6">
             <li>
-              E‑mailem na adresu: <a className="underline" href="mailto:whistleblowing@brantl.cz">whistleblowing@brantl.cz</a>
+              {t("whistleblower.sections.howToReport.methods.email")}{" "}
+              <a
+                className="underline"
+                href={`mailto:${t("whistleblower.sections.howToReport.methods.emailAddress")}`}
+              >
+                {t("whistleblower.sections.howToReport.methods.emailAddress")}
+              </a>
             </li>
-            <li>
-              Písemně na adresu sídla společnosti s viditelným označením „Oznámení – pouze do rukou příslušné osoby“.
-            </li>
-            <li>
-              Osobně po předchozí domluvě s příslušnou osobou.
-            </li>
+            <li>{t("whistleblower.sections.howToReport.methods.mail")}</li>
+            <li>{t("whistleblower.sections.howToReport.methods.inPerson")}</li>
           </ul>
         </section>
+
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Příslušná osoba</h2>
+          <h2 className="text-xl font-semibold">{t("whistleblower.sections.responsiblePerson.title")}</h2>
+          <p>{t("whistleblower.sections.responsiblePerson.content")}</p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold">{t("whistleblower.sections.externalReporting.title")}</h2>
           <p>
-            Příslušná osoba přijímá a posuzuje oznámení, komunikuje s oznamovateli a navrhuje nápravná opatření.
-            Kontakt na příslušnou osobu bude sdělen na vyžádání prostřednictvím výše uvedeného e‑mailu.
+            {t("whistleblower.sections.externalReporting.content")}{" "}
+            <a
+              className="underline"
+              href={t("whistleblower.sections.externalReporting.linkUrl")}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {t("whistleblower.sections.externalReporting.linkText")}
+            </a>
+            .
           </p>
         </section>
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Externí podání</h2>
-          <p>
-            Oznámení lze podat také prostřednictvím Ministerstva spravedlnosti ČR. Aktuální informace a formulář jsou
-            k dispozici na webu <a className="underline" href="https://oznamovatel.justice.cz/" target="_blank" rel="noreferrer noopener">oznamovatel.justice.cz</a>.
-          </p>
-        </section>
-        <p className="text-sm text-muted-foreground">
-          Tento text má informativní charakter a může být dále upřesněn interní směrnicí společnosti.
-        </p>
+
+        <p className="text-sm text-muted-foreground">{t("whistleblower.disclaimer")}</p>
       </div>
     </main>
   );

@@ -13,10 +13,12 @@ export function LanguageSwitcher({
   preserveMenuState = false,
   containerClassName,
   buttonClassName,
+  isInverse = true,
 }: {
   preserveMenuState?: boolean;
   containerClassName?: string;
   buttonClassName?: string;
+  isInverse?: boolean;
 }) {
   const { i18n } = useTranslation();
   const currentLocale = i18n.language;
@@ -49,14 +51,16 @@ export function LanguageSwitcher({
           <Button
             type="button"
             role="link"
-            variant="ghostInverse"
+            variant={isInverse ? "ghostInverse" : "ghost"}
             onClick={() => changeLanguage(locale)}
             className={cn({ "font-bold": currentLocale === locale }, buttonClassName)}
           >
             {label}
           </Button>
 
-          {locale !== Object.values(LANGUAGES).at(-1)?.locale && <span className="text-inverse-foreground">/</span>}
+          {locale !== Object.values(LANGUAGES).at(-1)?.locale && (
+            <span className={isInverse ? "text-inverse-foreground" : "text-foreground"}>/</span>
+          )}
         </React.Fragment>
       ))}
     </div>
