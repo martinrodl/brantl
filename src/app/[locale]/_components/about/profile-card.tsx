@@ -26,8 +26,9 @@ export function ProfileCard({
   className?: string;
 }) {
   const renderList = (items: string) => {
-    return items.split("|").map((item) => (
-      <li key={item} className={LIST_ITEM_CLASSES}>
+    const itemsString = String(items);
+    return itemsString.split("|").map((item, index) => (
+      <li key={`${item}-${index}`} className={LIST_ITEM_CLASSES}>
         {item}
       </li>
     ));
