@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { MapProvider } from "@/components/context/map-provider";
 import { MapComponent } from "@/components/ui/map";
@@ -5,8 +7,7 @@ import { MapComponent } from "@/components/ui/map";
 export function MarkerMap({ marker, className }: { marker: { lat: number; lng: number }; className?: string }) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   // Default to JS SDK when an API key is available; allow forcing iframe by setting NEXT_PUBLIC_GOOGLE_MAPS_USE_JS=0
-  const useJsApi =
-    typeof window !== "undefined" && !!apiKey && process.env.NEXT_PUBLIC_GOOGLE_MAPS_USE_JS !== "0";
+  const useJsApi = !!apiKey && process.env.NEXT_PUBLIC_GOOGLE_MAPS_USE_JS !== "0";
 
   // Default to iframe for maximum reliability (works even with restricted keys).
   if (!useJsApi) {
