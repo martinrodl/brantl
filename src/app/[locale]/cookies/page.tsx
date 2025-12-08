@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { t } = await initTranslations(locale, ["home"]);
 
   return {
-    title: t("cookies.metadata.title"),
-    description: t("cookies.metadata.description"),
+    title: String(t("cookies.metadata.title")),
+    description: String(t("cookies.metadata.description")),
   };
 }
 

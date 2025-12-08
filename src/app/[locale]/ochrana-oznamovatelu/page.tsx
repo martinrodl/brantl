@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { t } = await initTranslations(locale, ["home"]);
 
   return {
-    title: t("whistleblower.metadata.title"),
-    description: t("whistleblower.metadata.description"),
+    title: String(t("whistleblower.metadata.title")),
+    description: String(t("whistleblower.metadata.description")),
   };
 }
 
