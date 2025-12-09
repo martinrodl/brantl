@@ -11,11 +11,11 @@ export function Navbar() {
   const isStaticPage = pathname?.includes("/cookies") || pathname?.includes("/ochrana-oznamovatelu");
   
   const navbarClasses = cn(
-    "z-50 grid grid-cols-2 items-center border-b px-8 py-4",
-    isStaticPage ? "border-border bg-background" : "border-inverse",
+    "z-50 grid grid-cols-2 items-center px-8 py-4",
+    isStaticPage ? "border-b border-border bg-background" : "border-b border-inverse",
     "md:mx-4 md:grid-cols-[1fr_auto_1fr] md:space-x-4 md:p-4 md:pb-2",
     "xl:m-0 xl:space-x-0 xl:px-12 xl:py-8 xl:pb-0",
-    isStaticPage ? "" : "xl:border-none",
+    isStaticPage ? "xl:border-none" : "xl:border-none",
   );
 
   const logoClasses = cn(
