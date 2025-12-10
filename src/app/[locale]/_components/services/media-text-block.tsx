@@ -18,7 +18,7 @@ export function MediaTextBlock({
   descriptionPart2: string;
 }) {
   return (
-    <div className={`flex flex-col ${isImageFirst ? "xl:flex-row" : "xl:flex-row-reverse"}`}>
+    <div className={`mx-auto flex max-w-[1200px] flex-col ${isImageFirst ? "xl:flex-row" : "xl:flex-row-reverse"}`}>
       <div className="relative aspect-[64/26] xl:h-[740px] xl:w-1/2">
         <Image src={imageSrc} alt={title} fill placeholder="blur" className="object-cover" />
       </div>
@@ -30,8 +30,6 @@ export function MediaTextBlock({
           <p className="mt-6 text-xs md:text-lg xl:mt-14">{descriptionPart1}</p>
           <p className="mt-4 text-xs md:text-lg">{descriptionPart2}</p>
         </div>
-
-        <Vector width={24} height={10} />
       </div>
     </div>
   );
