@@ -24,7 +24,7 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
 
   return (
     <main className="container mx-auto px-6 py-10 md:py-16 xl:px-20">
-      <SectionHeader header={t("whistleblower.header")} />
+      <SectionHeader header={t("whistleblower.header")} hideArrow />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">
         <p>
@@ -37,7 +37,7 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
           <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
           <ul className="space-y-2">
             <li className="flex gap-3">
-              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
               <span>
                 E-mailem na adresu:{" "}
                 <a className="underline" href="mailto:oznameni@brantl.cz">
@@ -46,11 +46,11 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
               </span>
             </li>
             <li className="flex gap-3">
-              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
               <span>Poštou na adresu společnosti (označeno jako „důvěrné")</span>
             </li>
             <li className="flex gap-3">
-              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
               <span>Osobně u odpovědné osoby (po předchozí domluvě)</span>
             </li>
           </ul>
