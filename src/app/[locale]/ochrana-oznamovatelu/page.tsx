@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/ui/section-header";
 import initTranslations from "@/app/i18n";
+import Vector from "~/public/icons/vector.svg";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,15 +35,24 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
-          <ul className="list-disc pl-6">
-            <li>
-              E-mailem na adresu:{" "}
-              <a className="underline" href="mailto:oznameni@brantl.cz">
-                oznameni@brantl.cz
-              </a>
+          <ul className="space-y-2">
+            <li className="flex gap-3">
+              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <span>
+                E-mailem na adresu:{" "}
+                <a className="underline" href="mailto:oznameni@brantl.cz">
+                  oznameni@brantl.cz
+                </a>
+              </span>
             </li>
-            <li>Poštou na adresu společnosti (označeno jako „důvěrné")</li>
-            <li>Osobně u odpovědné osoby (po předchozí domluvě)</li>
+            <li className="flex gap-3">
+              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <span>Poštou na adresu společnosti (označeno jako „důvěrné")</span>
+            </li>
+            <li className="flex gap-3">
+              <Vector width={24} height={10} className="mt-1 shrink-0 fill-icon" />
+              <span>Osobně u odpovědné osoby (po předchozí domluvě)</span>
+            </li>
           </ul>
         </section>
 
