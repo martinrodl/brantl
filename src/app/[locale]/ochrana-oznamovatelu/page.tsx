@@ -36,8 +36,8 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
           <ul className="space-y-2">
-            <li className="flex gap-3">
-              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
               <span>
                 E-mailem na adresu:{" "}
                 <a className="underline" href="mailto:oznameni@brantl.cz">
@@ -45,12 +45,12 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
                 </a>
               </span>
             </li>
-            <li className="flex gap-3">
-              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
               <span>Poštou na adresu společnosti (označeno jako „důvěrné")</span>
             </li>
-            <li className="flex gap-3">
-              <Vector width={10} height={10} className="-rotate-90 mt-1 shrink-0 fill-icon" />
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
               <span>Osobně u odpovědné osoby (po předchozí domluvě)</span>
             </li>
           </ul>

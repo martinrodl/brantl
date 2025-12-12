@@ -6,10 +6,10 @@ import { MapComponent } from "@/components/ui/map";
 
 export function MarkerMap({ marker, className }: { marker: { lat: number; lng: number }; className?: string }) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  // Default to JS SDK when an API key is available; allow forcing iframe by setting NEXT_PUBLIC_GOOGLE_MAPS_USE_JS=0
-  const useJsApi = !!apiKey && process.env.NEXT_PUBLIC_GOOGLE_MAPS_USE_JS !== "0";
+  // Force iframe mode for production reliability
+  const useJsApi = false;
 
-  // Default to iframe for maximum reliability (works even with restricted keys).
+  // Use iframe for maximum reliability (works even with restricted keys).
   if (!useJsApi) {
     // Use ll + q=loc: to place the marker without showing the default info bubble, and hide it via iwloc
     const src = `https://maps.google.com/maps?ll=${marker.lat},${marker.lng}&q=loc:${marker.lat},${marker.lng}&z=16&hl=cs&output=embed&iwloc=near`;
