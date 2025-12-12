@@ -2,6 +2,7 @@ import * as React from "react";
 import type { Metadata } from "next";
 import { SectionHeader } from "@/components/ui/section-header";
 import initTranslations from "@/app/i18n";
+import Vector from "~/public/icons/vector.svg";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -37,15 +38,24 @@ export default async function CookiesPage({ params }: Props) {
 
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">{t("cookies.sections.types.title")}</h2>
-          <ul className="list-disc pl-6">
-            <li>
-              <strong>Nezbytné (technické)</strong> – {t("cookies.sections.types.items.necessary")}
+          <ul className="space-y-2">
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+              <span>
+                <strong>Nezbytné (technické)</strong> – {t("cookies.sections.types.items.necessary")}
+              </span>
             </li>
-            <li>
-              <strong>Preferenční</strong> – {t("cookies.sections.types.items.preferential")}
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+              <span>
+                <strong>Preferenční</strong> – {t("cookies.sections.types.items.preferential")}
+              </span>
             </li>
-            <li>
-              <strong>Analytické</strong> – {t("cookies.sections.types.items.analytical")}
+            <li className="flex items-center gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+              <span>
+                <strong>Analytické</strong> – {t("cookies.sections.types.items.analytical")}
+              </span>
             </li>
           </ul>
         </section>
