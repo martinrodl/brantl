@@ -26,7 +26,7 @@ export default async function CookiesPage({ params }: Props) {
 
   return (
     <main className="container mx-auto px-6 py-10 md:py-16 xl:px-20">
-      <SectionHeader header={t("cookies.header")} />
+      <SectionHeader header={t("cookies.header")} hideArrow />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">
         <p>{t("cookies.intro")}</p>
@@ -39,20 +39,20 @@ export default async function CookiesPage({ params }: Props) {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">{t("cookies.sections.types.title")}</h2>
           <ul className="space-y-2">
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
               <span>
                 <strong>Nezbytné (technické)</strong> – {t("cookies.sections.types.items.necessary")}
               </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
               <span>
                 <strong>Preferenční</strong> – {t("cookies.sections.types.items.preferential")}
               </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
               <span>
                 <strong>Analytické</strong> – {t("cookies.sections.types.items.analytical")}
               </span>
