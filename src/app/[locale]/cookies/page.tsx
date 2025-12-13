@@ -40,19 +40,19 @@ export default async function CookiesPage({ params }: Props) {
           <h2 className="text-xl font-semibold">{t("cookies.sections.types.title")}</h2>
           <ul className="space-y-2">
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.4rem]" />
               <span>
                 <strong>Nezbytné (technické)</strong> – {t("cookies.sections.types.items.necessary")}
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.4rem]" />
               <span>
                 <strong>Preferenční</strong> – {t("cookies.sections.types.items.preferential")}
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-1.5" />
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.4rem]" />
               <span>
                 <strong>Analytické</strong> – {t("cookies.sections.types.items.analytical")}
               </span>
