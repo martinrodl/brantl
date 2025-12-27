@@ -27,61 +27,92 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
       <SectionHeader header={t("whistleblower.header")} hideArrow />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">
-        <p>
-          Společnost Brantl & Partners implementovala vnitřní systém pro přijímání a vyřizování oznámení podle zákona
-          o ochraně oznamovatelů. Tento systém umožňuje zaměstnancům a dalším osobám upozornit na podezření z
-          protiprávního jednání.
-        </p>
+        <p>{t("whistleblower.intro")}</p>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Jak podat oznámení</h2>
+          <h2 className="text-xl font-semibold">{t("whistleblower.whatIs.title")}</h2>
+          <p>{t("whistleblower.whatIs.content")}</p>
           <ul className="space-y-2">
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
-              <span>
-                E-mailem na adresu:{" "}
-                <a className="underline" href="mailto:oznameni@brantl.cz">
-                  oznameni@brantl.cz
-                </a>
-              </span>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.whatIs.list1")}</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
-              <span>Poštou na adresu společnosti (označeno jako „důvěrné")</span>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.whatIs.list2")}</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon" />
-              <span>Osobně u odpovědné osoby (po předchozí domluvě)</span>
+          </ul>
+          <p>{t("whistleblower.whatIs.priority")}</p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold">{t("whistleblower.violations.title")}</h2>
+          <p>{t("whistleblower.violations.intro")}</p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list1")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list2")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list3")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list4")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list5")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list6")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list7")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span>{t("whistleblower.violations.list8")}</span>
             </li>
           </ul>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Odpovědná osoba</h2>
-          <p>
-            Za příjem a vyřizování oznámení odpovídá Ing. Jan Brantl. Kontakt: info@brantl.cz, +420 226 886 920.
-          </p>
+          <h2 className="text-xl font-semibold">{t("whistleblower.howToReport.title")}</h2>
+          <p>{t("whistleblower.howToReport.intro")}</p>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span><strong>osobně:</strong> {t("whistleblower.howToReport.inPerson")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span><strong>telefonicky:</strong> {t("whistleblower.howToReport.phone")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span><strong>písemně:</strong> {t("whistleblower.howToReport.mail")}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <span><strong>emailem:</strong> {t("whistleblower.howToReport.email")} <a className="underline" href="mailto:info@brantl.cz">info@brantl.cz</a></span>
+            </li>
+          </ul>
+          <p>{t("whistleblower.howToReport.protection")}</p>
+          <p>{t("whistleblower.howToReport.external")}</p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Externí oznamování</h2>
-          <p>
-            Oznamovatel může podat oznámení také přímo příslušnému orgánu veřejné moci. Více informací najdete na{" "}
-            <a
-              className="underline"
-              href="https://www.ochranoznamovatelu.cz"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              www.ochranoznamovatelu.cz
-            </a>
-            .
-          </p>
+          <h2 className="text-xl font-semibold">{t("whistleblower.noRetaliation.title")}</h2>
+          <p>{t("whistleblower.noRetaliation.content")}</p>
         </section>
-
-        <p className="text-sm text-muted-foreground">
-          Tento systém slouží výhradně k oznamování protiprávního jednání. Zneužití systému může mít právní následky.
-        </p>
       </div>
     </main>
   );

@@ -21,8 +21,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CookiesPage({ params }: Props) {
   const { locale } = await params;
   const { t } = await initTranslations(locale, ["home"]);
-  
-  const lastUpdateDate = new Date().toLocaleDateString(locale === "cs" ? "cs-CZ" : locale === "de" ? "de-DE" : "en-US");
 
   return (
     <main className="container mx-auto px-6 py-10 md:py-16 xl:px-20">
@@ -32,53 +30,32 @@ export default async function CookiesPage({ params }: Props) {
         <p>{t("cookies.intro")}</p>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("cookies.sections.whatAre.title")}</h2>
-          <p>{t("cookies.sections.whatAre.content")}</p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("cookies.sections.types.title")}</h2>
+          <h2 className="text-xl font-semibold">{t("cookies.whatItMeans.title")}</h2>
           <ul className="space-y-2">
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Nezbytné (technické)</strong> – {t("cookies.sections.types.items.necessary")}
+                <strong>Technické cookies</strong> – {t("cookies.whatItMeans.technical")}
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Preferenční</strong> – {t("cookies.sections.types.items.preferential")}
+                <strong>Analytické cookies</strong> – {t("cookies.whatItMeans.analytical")}
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
+              <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Analytické</strong> – {t("cookies.sections.types.items.analytical")}
+                <strong>Marketingové cookies</strong> – {t("cookies.whatItMeans.marketing")}
               </span>
             </li>
           </ul>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold">{t("cookies.sections.management.title")}</h2>
-          <p>{t("cookies.sections.management.content")}</p>
-        </section>
+        <p>{t("cookies.privacy")}</p>
 
-        <section className="space-y-3">
-          <h2 className="text-xl font-semibold">Kontakt</h2>
-          <p>
-            {t("cookies.contact.text")}{" "}
-            <a className="underline" href={`mailto:${t("cookies.contact.email")}`}>
-              {t("cookies.contact.email")}
-            </a>
-            .
-          </p>
-        </section>
-
-        <p className="text-sm text-muted-foreground">
-          {t("cookies.lastUpdate")} {lastUpdateDate}
-        </p>
+        <p>{t("cookies.noTracking")}</p>
       </div>
     </main>
   );

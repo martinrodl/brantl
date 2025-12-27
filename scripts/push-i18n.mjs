@@ -1,50 +1,12 @@
 import { exec } from "child_process";
-import { readFileSync, existsSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import { resolve } from "path";
+import { promisify } from "util";
 
-const ENV_KEY = "I18NEXUS_API_KEY";
+const execAsync = promisify(exec);
 
-const ensureApiKey = () => {
-  if (process.env[ENV_KEY]) {
-    return;
-  }
-
-  const envPath = resolve(process.cwd(), ".env");
-
-  if (!existsSync(envPath)) {
-    return;
-  }
-
-  try {
-    const envContent = readFileSync(envPath, "utf8");
-    for (const line of envContent.split(/\r?\n/)) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith("#")) {
-        continue;
-      }
-
-      const [key, ...rest] = trimmed.split("=");
-      if (key === ENV_KEY) {
-        const value = rest.join("=").trim().replace(/^['"]|['"]$/g, "");
-        if (value) {
-          process.env[ENV_KEY] = value;
-        }
-        break;
-      }
-    }
-  } catch (error) {
-    console.warn(`Warning: Failed to read .env file (${error.message}).`);
-  }
-};
-
-ensureApiKey();
-
-const apiKey = process.env[ENV_KEY];
-
-if (!apiKey) {
-  console.error("Error: Missing API key for i18nexus. Provide it via .env or directly in the script.");
-  process.exit(1);
-}
+const PAT = process.env.I18NEXUS_PAT || "7c965dd0-9726-4c08-b46b-679956c28cdf";
+const NAMESPACE = "home";
 
 // Helper function to flatten nested JSON
 function flattenJson(obj, prefix = "", result = {}) {
@@ -59,36 +21,102 @@ function flattenJson(obj, prefix = "", result = {}) {
   return result;
 }
 
-// Read Czech translations (base language)
-const csPath = resolve(process.cwd(), "locales/cs/home.json");
-const csTranslations = JSON.parse(readFileSync(csPath, "utf8"));
-const flatTranslations = flattenJson(csTranslations);
+async function pushTranslations() {
+  const localPath = resolve(process.cwd(), "locales/cs/home.json");
+  const backupPath = resolve(process.cwd(), "locales/cs/home.backup.json");
+  const { writeFileSync, copyFileSync } = await import("fs");
 
-console.log(`Found ${Object.keys(flatTranslations).length} translation keys`);
-console.log("Note: You need to add these manually in i18nexus web interface:");
-console.log("https://app.i18nexus.com\n");
+  // Backup local file
+  copyFileSync(localPath, backupPath);
+  
+  // Read local translations BEFORE pull
+  const localTranslations = JSON.parse(readFileSync(backupPath, "utf8"));
+  const localFlat = flattenJson(localTranslations);
 
-// Print out keys that need to be added
-const cookieKeys = Object.entries(flatTranslations).filter(([key]) => key.startsWith("cookies."));
-const whistleblowerKeys = Object.entries(flatTranslations).filter(([key]) => key.startsWith("whistleblower."));
+  // Pull current state from i18nexus
+  console.log("Checking current keys in i18nexus...\n");
+  try {
+    await execAsync("npx i18nexus pull");
+  } catch (error) {
+    console.error("Failed to pull from i18nexus:", error.message);
+    return;
+  }
 
-if (cookieKeys.length > 0) {
-  console.log("=== COOKIES SECTION ===");
-  cookieKeys.forEach(([key, value]) => {
-    console.log(`Key: ${key}`);
-    console.log(`Value: ${value}`);
-    console.log("---");
-  });
+  // Read what's currently in i18nexus (after pull overwrites the file)
+  const remoteTranslations = JSON.parse(readFileSync(localPath, "utf8"));
+  const remoteFlat = flattenJson(remoteTranslations);
+
+  // Restore local file from backup
+  copyFileSync(backupPath, localPath);
+
+  // Filter for cookies/whistleblower keys
+  const localKeys = Object.keys(localFlat).filter(k => 
+    k.startsWith("cookies.") || k.startsWith("whistleblower.")
+  );
+  
+  const remoteKeys = Object.keys(remoteFlat).filter(k => 
+    k.startsWith("cookies.") || k.startsWith("whistleblower.")
+  );
+
+  // Separate into keys to add vs keys to update
+  const keysToAdd = localKeys.filter(k => !remoteKeys.includes(k));
+  const keysToUpdate = localKeys.filter(k => remoteKeys.includes(k) && localFlat[k] !== remoteFlat[k]);
+
+  console.log(`Found ${keysToAdd.length} new keys to add`);
+  console.log(`Found ${keysToUpdate.length} existing keys to update\n`);
+
+  if (keysToAdd.length === 0 && keysToUpdate.length === 0) {
+    console.log("✅ All keys are already up to date!");
+    return;
+  }
+
+  let added = 0;
+  let updated = 0;
+  let failed = 0;
+
+  // Add new keys
+  for (const key of keysToAdd) {
+    try {
+      const value = String(localFlat[key]).replace(/"/g, '\\"').replace(/\n/g, '\\n');
+      const command = `npx i18nexus add-string -K "${key}" -v "${value}" -ns "${NAMESPACE}" -t "${PAT}"`;
+      await execAsync(command);
+      console.log(`✓ Added: ${key}`);
+      added++;
+    } catch (error) {
+      console.error(`✗ Failed to add: ${key}`);
+      const stderr = error.stderr || error.message;
+      if (stderr.includes("string limit")) {
+        console.error(`  ⚠️  String limit reached! Delete old keys or upgrade plan.`);
+      } else {
+        console.error(`  ${stderr}`);
+      }
+      failed++;
+    }
+  }
+
+  // Update existing keys
+  for (const key of keysToUpdate) {
+    try {
+      const value = String(localFlat[key]).replace(/"/g, '\\"').replace(/\n/g, '\\n');
+      const command = `npx i18nexus update-string "${NAMESPACE}" "${key}" -v "${value}" -t "${PAT}"`;
+      await execAsync(command);
+      console.log(`✓ Updated: ${key}`);
+      updated++;
+    } catch (error) {
+      console.error(`✗ Failed to update: ${key}`);
+      console.error(`  ${error.stderr || error.message}`);
+      failed++;
+    }
+  }
+
+  console.log(`\n✅ Done! Added: ${added}, Updated: ${updated}, Failed: ${failed}`);
+  
+  if (added > 0 || updated > 0) {
+    console.log("\n📝 Next steps:");
+    console.log("1. Add EN and DE translations at https://app.i18nexus.com");
+    console.log("2. Run 'npm run pull-i18n' to download all translations");
+  }
 }
 
-if (whistleblowerKeys.length > 0) {
-  console.log("\n=== WHISTLEBLOWER SECTION ===");
-  whistleblowerKeys.forEach(([key, value]) => {
-    console.log(`Key: ${key}`);
-    console.log(`Value: ${value}`);
-    console.log("---");
-  });
-}
+pushTranslations().catch(console.error);
 
-console.log("\nAlternatively, generate a PAT at: https://app.i18nexus.com/settings/api");
-console.log("Then run: npx i18nexus import locales/cs/home.json -ns home --overwrite -t <YOUR_PAT>");

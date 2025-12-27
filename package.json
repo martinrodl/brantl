@@ -5,6 +5,9 @@
   "scripts": {
     "pull-i18n": "node --env-file=.env scripts/pull-i18n.mjs",
     "pull-i18n-deploy": "node scripts/pull-i18n.mjs",
+    "push-i18n": "node --env-file=.env scripts/push-i18n.mjs",
+    "delete-old-keys": "node --env-file=.env scripts/delete-old-keys.mjs",
+    "delete-unused-keys": "node --env-file=.env scripts/delete-unused-keys.mjs",
     "dev": "next dev --webpack",
     "dev:i18n": "npm run pull-i18n && next dev --webpack",
     "build:clean": "next build --webpack",
