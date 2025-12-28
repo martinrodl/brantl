@@ -47,6 +47,75 @@
       }
     }
   },
+  "services": {
+    "header": "Služby",
+    "sections": {
+      "first": {
+        "descriptionPart1": "Ať už potřebujete jednorázovou radu nebo pravidelné poradenství, jsme tu pro vás. Naším úkolem je provést vás složitým daňovým prostředím, měnící se legislativou a pomoci vám vyvarovat se daňových rizik. Zaměřujeme se primárně na daň z příjmů právnických osob a daň z přidané hodnoty. \n",
+        "descriptionPart2": "Poskytneme daňovou konzultaci či zpracujeme daňovou analýzu. Provedeme revizi účetnictví se zaměřením na identifikaci daňových rizik. Připravíme a podáme daňové přiznání. Zastoupíme vás před finančním úřadem.  ",
+        "title": "Daňové poradenství"
+      },
+      "second": {
+        "descriptionPart1": "Propojení byznysu v současném světě vyvolává potřebu řešit obchodní případy z hlediska legislativ různých zemí. Plánujete-li podnikat v zahraničí nebo naopak chcete-li jako zahraniční subjekt začít s aktivitami v České republice, může se vás týkat problematika provozoven ať už  v oblasti daně z příjmů či daně z přidané hodnoty. Stejně tak může vyvstat potřeba řešit z mezinárodního pohledu působení zaměstnanců. ",
+        "descriptionPart2": "Poskytneme vám daňovou konzultaci či zpracujeme daňovou analýzu včetně interpretace smluv o zamezení dvojího zdanění. Připravíme a podáme daňové přiznání v České republice za zahraniční společnosti a jejich stálé provozovny či za zahraniční zaměstnance působící v České republice. Máme napojení na zahraniční poradce v okolních zemích, tuzemským společnostem proto pomůžeme s orientací v zahraničí a převezmeme za ně komunikaci se zahraničními kolegy.",
+        "title": "Mezinárodní zdanění"
+      },
+      "third": {
+        "descriptionPart1": "Jste-li součástí nadnárodní či tuzemské skupiny podniků a realizujete vzájemné obchody, čelíte zvýšenému zájmu finanční správy z hlediska nastavení převodních (transferových) cen. Objektem jejího zájmu je ověřit, zda transakce uvnitř skupiny splňují podmínky nezávislého obchodního vztahu.\n",
+        "descriptionPart2": "Poskytneme vám konzultaci či zpracujeme pro vás analýzu obchodních vztahů  v oblasti převodních cen a upozorníme na daňová rizika. Nastavíme s vámi optimální metodu stanovení ceny v jednotlivých transakcích a připravíme dokumentaci k převodním cenám ve formě, která je vyžadována finančními správami jak v tuzemsku, tak v zahraničí.",
+        "title": "Převodní ceny"
+      },
+      "fourth": {
+        "descriptionPart1": "Poskytovat společníkům, akcionářům, vedení, regulačním orgánům a dalším uživatelům přesné a spolehlivé informace v souladu s patřičnými pravidly a normami je součástí transparentního podnikání. Audit těchto informací pomáhá zvýšit důvěru jejich uživatelů.",
+        "descriptionPart2": "Provádíme statutární audity individuálních a konsolidovaných účetních závěrek, ověřování informací v konsolidačních balíčcích a další ověřovací služby. Jako jedni z prvních v České republice jsme získali oprávnění k ověřování ESG zpráv.",
+        "title": "Audit"
+      },
+      "fifth": {
+        "descriptionPart1": "Plánujete rozšířit své  podnikání či naopak zvažujete svou firmu prodat? Potřebujete poradit při nákupu, prodeji nebo restrukturalizaci své společnosti?",
+        "descriptionPart2": "Umíme vám poradit a provést celým procesem. Ve spolupráci s advokátními kanceláři a znalci jsme schopni zrealizovat celou transakci za vás. Provedeme finanční a daňovou prověrku cílové společnosti (due diligence), na jejímž základě navrhneme další kroky a upozorníme na možná rizika. Poskytneme poradenství při tvorbě holdingových struktur.",
+        "title": "Fúze, akvizice & transakční poradenství"
+      },
+      "sixth": {
+        "descriptionPart1": "Měnící se podnikatelské prostředí, rozvoj chytrých technologií a další okolnosti vyžadují průběžné revize využívaných systémů a nastavených podnikových procesů. Tlak externích i interních uživatelů na další a další informace vyžaduje další a další finanční reporty, přičemž vždy nebývá dostatek vlastní kapacity a expertízy na jejich tvorbu.",
+        "descriptionPart2": "Poskytneme vám konzultace k nastavení interních účetních systémů a procesů. Podělíme se o své zkušenosti s efektivním zpracováním účetních dokladů pomocí moderních technologií. Vedle toho připravujeme individuální i konsolidované účetní závěrky a další finanční reporty.  ",
+        "title": "Účetní poradenství"
+      }
+    }
+  },
+  "testimonials": {
+    "header": "Reference"
+  },
+  "contacts": {
+    "header": "Kontakty",
+    "office1": {
+      "addressCity": " 110 00 Praha 1",
+      "addressStreet": "Hybernská 1009/24",
+      "city": "Praha\n"
+    },
+    "office2": {
+      "addressCity": "339 01 Klatovy ",
+      "addressStreet": "Náměstí Míru 166/1",
+      "city": "Klatovy"
+    },
+    "company1": {
+      "address": "Zapsána u Městského soudu v Praze, oddíl C, vložka 15917",
+      "companyIdNumber": "IČO: 29002001",
+      "companyName": "Brantl & Partners, s.r.o.",
+      "email": "info@brantl.cz",
+      "phone": "+420 226 886 920",
+      "taxIdNumber": "DIČ: CZ29002001",
+      "website": "www.brantl.cz"
+    },
+    "company2": {
+      "address": "Zapsána u Městského soudu v Praze, oddíl C, vložka 394770 ",
+      "companyIdNumber": "IČO: 19966997",
+      "companyName": "Brantl & Partners Audit, s.r.o.\n",
+      "email": "info@brantl.cz",
+      "phone": "+420 226 886 920",
+      "taxIdNumber": "DIČ: CZ19966997",
+      "website": "www.brantl.cz"
+    }
+  },
   "cookies": {
     "header": "Prohlášení o používání souborů cookies",
     "intro": "Naše webové stránky nevyužívají žádné cookies ani jiné obdobné technologie, které by ukládaly informace do vašeho zařízení nebo sledovaly vaši aktivitu.",
