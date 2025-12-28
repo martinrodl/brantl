@@ -1,34 +1,47 @@
 {
+  "about": {
+    "description": "Od roku 2009 propojujeme dlouholeté zkušenosti z mezinárodních poradenských kanceláří s prostředím malé flexibilní kanceláře s osobním přístupem a inovativními technologiemi. Našimi klienty jsou především moderní malé a střední společnosti s mezinárodním přesahem nebo společnosti s mezinárodním kapitálem působící v České republice.  ",
+    "header": "Kdo jsme",
+    "team": {
+      "first": {
+        "cvRecords": "Společník, Brantl & Partners, od 2020|\nTax Manager, Moore Stephens (BDO), 2013 - 2018|\nDaňový poradce, Vorlíčková Partners (Rödl & Partner), 2007 - 2013|\nDaňový poradce od 2009|\nLL.M. (evropské daňové právo), Johannes Kepler Universität Linz, 2009 - 2010 ",
+        "name": "Ing. Jiří Dolejš, LL.M.",
+        "role": "daňový poradce I jednatel\n",
+        "specializations": "Poradenství pro společnosti s německým kapitálem v ČR| Transferové ceny|\nMezinárodní zdanění"
+      },
+      "second": {
+        "cvRecords": "Společník, Brantl & Partners, od 2023|\nAudit Manager, BDO, 2020 - 2023|\nAuditor, Moore Stephens, 2019 – 2020|\nStatutární auditor od 2019",
+        "name": "Ing. Romana Rödlová",
+        "role": "auditor I jednatel",
+        "specializations": "Audit českých společností, společností se zahraničním kapitálem|\nZaměření na výrobní podniky, přepravní a logistické firmy, hotelový průmysl|\nÚčetnictví a účetní výkaznictví"
+      },
+      "sectionTitle": {
+        "experience": "Pracovní zkušenosti",
+        "specialization": "Specializace"
+      },
+      "third": {
+        "cvRecords": "Zakládající společník, Brantl & Partners|\nTax Manager, Accace, 2008 - 2009|\nDaňový poradce, Rödl & Partner, 2001 - 2008|\nDaňový poradce od 2003|\nAuditor od 2009",
+        "name": "Ing. Jan Brantl",
+        "role": "daňový poradce I auditor I jednatel",
+        "specializations": "Poradenství pro společnosti se zahraničním kapitálem v ČR|\nTransakční poradenství|\nČeské účetní standardy \n"
+      }
+    }
+  },
   "cookies": {
+    "header": "Prohlášení o používání souborů cookies",
+    "intro": "Naše webové stránky nevyužívají žádné cookies ani jiné obdobné technologie, které by ukládaly informace do vašeho zařízení nebo sledovaly vaši aktivitu.",
     "metadata": {
       "title": "Cookies | Brantl",
       "description": "Informace o používání souborů cookies na webu Brantl & Partners."
     },
-    "header": "Cookies",
-    "intro": "Tento web používá soubory cookies, aby správně fungoval a abychom mohli vylepšovat jeho obsah a vaše uživatelské prostředí. Níže najdete přehled typů cookies a informace o tom, jak je lze spravovat.",
-    "sections": {
-      "whatAre": {
-        "title": "Co jsou cookies",
-        "content": "Cookies jsou malé textové soubory ukládané do vašeho zařízení, které umožňují webu rozpoznat vaše zařízení, pamatovat si vaše volby nebo sledovat, jak web používáte."
-      },
-      "types": {
-        "title": "Jaké cookies používáme",
-        "items": {
-          "necessary": "Nutné pro základní funkce webu (např. bezpečnost, navigace, uložení jazykové volby). Tyto cookies nelze vypnout.",
-          "preferential": "Pomáhají si pamatovat vaše nastavení a zlepšují komfort používání webu.",
-          "analytical": "Anonymně měří návštěvnost a používání webu, abychom mohli zlepšovat obsah."
-        }
-      },
-      "management": {
-        "title": "Správa a odmítnutí cookies",
-        "content": "Cookies můžete kdykoli spravovat či odmítnout v nastavení svého prohlížeče. Způsob se může lišit podle konkrétního prohlížeče (Chrome, Firefox, Safari, Edge). Obvykle je najdete v části Soukromí / Bezpečnost. Upozorňujeme, že vypnutí některých cookies může omezit funkčnost webu."
-      }
+    "whatItMeans": {
+      "title": "Co to znamená?",
+      "technical": "nejsou využívány, protože web je plně funkční i bez nich.",
+      "analytical": "nesbíráme žádné statistické údaje o návštěvnosti ani o chování uživatelů.",
+      "marketing": "nesloužíme reklamě, proto na webu nejsou přítomny žádné prvky třetích stran, které by vás mohly sledovat."
     },
-    "contact": {
-      "text": "Máte‑li dotazy k používání cookies, napište nám na",
-      "email": "info@brantl.cz"
-    },
-    "lastUpdate": "Poslední aktualizace:"
+    "privacy": "Vaše soukromí je pro nás zásadní. Proto jsme zvolili řešení, které nevyžaduje cookies a neomezuje vás žádnými volbami ohledně jejich ukládání či blokování.",
+    "noTracking": "Při používání našeho webu nedochází ke zpracování ani ukládání osobních údajů prostřednictvím cookies či jiných sledovacích nástrojů."
   },
   "whistleblower": {
     "metadata": {

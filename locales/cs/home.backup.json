@@ -1,0 +1,176 @@
+{
+  "about": {
+    "description": "Od roku 2009 propojujeme dlouholeté zkušenosti z mezinárodních poradenských kanceláří s prostředím malé flexibilní kanceláře s osobním přístupem a inovativními technologiemi. Našimi klienty jsou především moderní malé a střední společnosti s mezinárodním přesahem nebo společnosti s mezinárodním kapitálem působící v České republice.  ",
+    "header": "Kdo jsme",
+    "team": {
+      "first": {
+        "cvRecords": "Společník, Brantl & Partners, od 2020|\nTax Manager, Moore Stephens (BDO), 2013 - 2018|\nDaňový poradce, Vorlíčková Partners (Rödl & Partner), 2007 - 2013|\nDaňový poradce od 2009|\nLL.M. (evropské daňové právo), Johannes Kepler Universität Linz, 2009 - 2010 ",
+        "name": "Ing. Jiří Dolejš, LL.M.",
+        "role": "daňový poradce I jednatel\n",
+        "specializations": "Poradenství pro společnosti s německým kapitálem v ČR| Transferové ceny|\nMezinárodní zdanění"
+      },
+      "second": {
+        "cvRecords": "Společník, Brantl & Partners, od 2023|\nAudit Manager, BDO, 2020 - 2023|\nAuditor, Moore Stephens, 2019 – 2020|\nStatutární auditor od 2019",
+        "name": "Ing. Romana Rödlová",
+        "role": "auditor I jednatel",
+        "specializations": "Audit českých společností, společností se zahraničním kapitálem|\nZaměření na výrobní podniky, přepravní a logistické firmy, hotelový průmysl|\nÚčetnictví a účetní výkaznictví"
+      },
+      "sectionTitle": {
+        "experience": "Pracovní zkušenosti",
+        "specialization": "Specializace"
+      },
+      "third": {
+        "cvRecords": "Zakládající společník, Brantl & Partners|\nTax Manager, Accace, 2008 - 2009|\nDaňový poradce, Rödl & Partner, 2001 - 2008|\nDaňový poradce od 2003|\nAuditor od 2009",
+        "name": "Ing. Jan Brantl",
+        "role": "daňový poradce I auditor I jednatel",
+        "specializations": "Poradenství pro společnosti se zahraničním kapitálem v ČR|\nTransakční poradenství|\nČeské účetní standardy \n"
+      }
+    }
+  },
+  "contacts": {
+    "company1": {
+      "address": "Zapsána u Městského soudu v Praze, oddíl C, vložka 15917",
+      "companyIdNumber": "IČO: 29002001",
+      "companyName": "Brantl & Partners, s.r.o.",
+      "email": "info@brantl.cz",
+      "phone": "+420 226 886 920",
+      "taxIdNumber": "DIČ: CZ29002001",
+      "website": "www.brantl.cz"
+    },
+    "company2": {
+      "address": "Zapsána u Městského soudu v Praze, oddíl C, vložka 394770 ",
+      "companyIdNumber": "IČO: 19966997",
+      "companyName": "Brantl & Partners Audit, s.r.o.\n",
+      "email": "info@brantl.cz",
+      "phone": "+420 226 886 920",
+      "taxIdNumber": "DIČ: CZ19966997",
+      "website": "www.brantl.cz"
+    },
+    "header": "Kontakty",
+    "office1": {
+      "addressCity": " 110 00 Praha 1",
+      "addressStreet": "Hybernská 1009/24",
+      "city": "Praha\n"
+    },
+    "office2": {
+      "addressCity": "339 01 Klatovy ",
+      "addressStreet": "Náměstí Míru 166/1",
+      "city": "Klatovy"
+    }
+  },
+  "header": {
+    "navbar": {
+      "about": "KDO JSME",
+      "contacts": "KONTAKTY",
+      "services": "SLUŽBY",
+      "testimonials": "REFERENCE"
+    },
+    "switcher": {
+      "dropdownHeader": "Vybrat jazyk"
+    }
+  },
+  "hero": {
+    "description": "Jsme Brantl Partners, certifikovaní daňoví poradci a auditoři.",
+    "header": "Pragmatické poradenství pro moderní firmy"
+  },
+  "navbar": {
+    "sideMenu": {
+      "footer": "Jsme Brantl Partners, certifikovaní daňoví poradci a auditoři. "
+    }
+  },
+  "services": {
+    "header": "Služby",
+    "sections": {
+      "fifth": {
+        "descriptionPart1": "Plánujete rozšířit své  podnikání či naopak zvažujete svou firmu prodat? Potřebujete poradit při nákupu, prodeji nebo restrukturalizaci své společnosti?",
+        "descriptionPart2": "Umíme vám poradit a provést celým procesem. Ve spolupráci s advokátními kanceláři a znalci jsme schopni zrealizovat celou transakci za vás. Provedeme finanční a daňovou prověrku cílové společnosti (due diligence), na jejímž základě navrhneme další kroky a upozorníme na možná rizika. Poskytneme poradenství při tvorbě holdingových struktur.",
+        "title": "Fúze, akvizice & transakční poradenství"
+      },
+      "first": {
+        "descriptionPart1": "Ať už potřebujete jednorázovou radu nebo pravidelné poradenství, jsme tu pro vás. Naším úkolem je provést vás složitým daňovým prostředím, měnící se legislativou a pomoci vám vyvarovat se daňových rizik. Zaměřujeme se primárně na daň z příjmů právnických osob a daň z přidané hodnoty. \n",
+        "descriptionPart2": "Poskytneme daňovou konzultaci či zpracujeme daňovou analýzu. Provedeme revizi účetnictví se zaměřením na identifikaci daňových rizik. Připravíme a podáme daňové přiznání. Zastoupíme vás před finančním úřadem.  ",
+        "title": "Daňové poradenství"
+      },
+      "fourth": {
+        "descriptionPart1": "Poskytovat společníkům, akcionářům, vedení, regulačním orgánům a dalším uživatelům přesné a spolehlivé informace v souladu s patřičnými pravidly a normami je součástí transparentního podnikání. Audit těchto informací pomáhá zvýšit důvěru jejich uživatelů.",
+        "descriptionPart2": "Provádíme statutární audity individuálních a konsolidovaných účetních závěrek, ověřování informací v konsolidačních balíčcích a další ověřovací služby. Jako jedni z prvních v České republice jsme získali oprávnění k ověřování ESG zpráv.",
+        "title": "Audit"
+      },
+      "second": {
+        "descriptionPart1": "Propojení byznysu v současném světě vyvolává potřebu řešit obchodní případy z hlediska legislativ různých zemí. Plánujete-li podnikat v zahraničí nebo naopak chcete-li jako zahraniční subjekt začít s aktivitami v České republice, může se vás týkat problematika provozoven ať už  v oblasti daně z příjmů či daně z přidané hodnoty. Stejně tak může vyvstat potřeba řešit z mezinárodního pohledu působení zaměstnanců. ",
+        "descriptionPart2": "Poskytneme vám daňovou konzultaci či zpracujeme daňovou analýzu včetně interpretace smluv o zamezení dvojího zdanění. Připravíme a podáme daňové přiznání v České republice za zahraniční společnosti a jejich stálé provozovny či za zahraniční zaměstnance působící v České republice. Máme napojení na zahraniční poradce v okolních zemích, tuzemským společnostem proto pomůžeme s orientací v zahraničí a převezmeme za ně komunikaci se zahraničními kolegy.",
+        "title": "Mezinárodní zdanění"
+      },
+      "sixth": {
+        "descriptionPart1": "Měnící se podnikatelské prostředí, rozvoj chytrých technologií a další okolnosti vyžadují průběžné revize využívaných systémů a nastavených podnikových procesů. Tlak externích i interních uživatelů na další a další informace vyžaduje další a další finanční reporty, přičemž vždy nebývá dostatek vlastní kapacity a expertízy na jejich tvorbu.",
+        "descriptionPart2": "Poskytneme vám konzultace k nastavení interních účetních systémů a procesů. Podělíme se o své zkušenosti s efektivním zpracováním účetních dokladů pomocí moderních technologií. Vedle toho připravujeme individuální i konsolidované účetní závěrky a další finanční reporty.  ",
+        "title": "Účetní poradenství"
+      },
+      "third": {
+        "descriptionPart1": "Jste-li součástí nadnárodní či tuzemské skupiny podniků a realizujete vzájemné obchody, čelíte zvýšenému zájmu finanční správy z hlediska nastavení převodních (transferových) cen. Objektem jejího zájmu je ověřit, zda transakce uvnitř skupiny splňují podmínky nezávislého obchodního vztahu.\n",
+        "descriptionPart2": "Poskytneme vám konzultaci či zpracujeme pro vás analýzu obchodních vztahů  v oblasti převodních cen a upozorníme na daňová rizika. Nastavíme s vámi optimální metodu stanovení ceny v jednotlivých transakcích a připravíme dokumentaci k převodním cenám ve formě, která je vyžadována finančními správami jak v tuzemsku, tak v zahraničí.",
+        "title": "Převodní ceny"
+      }
+    }
+  },
+  "testimonials": {
+    "header": "Reference"
+  },
+  "cookies": {
+    "header": "Prohlášení o používání souborů cookies",
+    "intro": "Naše webové stránky nevyužívají žádné cookies ani jiné obdobné technologie, které by ukládaly informace do vašeho zařízení nebo sledovaly vaši aktivitu.",
+    "metadata": {
+      "title": "Cookies | Brantl",
+      "description": "Informace o používání souborů cookies na webu Brantl & Partners."
+    },
+    "whatItMeans": {
+      "title": "Co to znamená?",
+      "technical": "nejsou využívány, protože web je plně funkční i bez nich.",
+      "analytical": "nesbíráme žádné statistické údaje o návštěvnosti ani o chování uživatelů.",
+      "marketing": "nesloužíme reklamě, proto na webu nejsou přítomny žádné prvky třetích stran, které by vás mohly sledovat."
+    },
+    "privacy": "Vaše soukromí je pro nás zásadní. Proto jsme zvolili řešení, které nevyžaduje cookies a neomezuje vás žádnými volbami ohledně jejich ukládání či blokování.",
+    "noTracking": "Při používání našeho webu nedochází ke zpracování ani ukládání osobních údajů prostřednictvím cookies či jiných sledovacích nástrojů."
+  },
+  "whistleblower": {
+    "header": "Ochrana oznamovatelů",
+    "intro": "Naše společnost považuje za důležité informovat Vás o pravidlech, která se týkají oznamování protiprávního či neetického jednání (tzv. whistleblowingu) a ochrany oznamovatelů. Povinnost zveřejnit níže uvedené informace vyplývá ze zákona č. 171/2023 Sb., o ochraně oznamovatelů, ve spojení se zákonem č. 253/2008 Sb., o některých opatřeních proti legalizaci výnosů z trestné činnosti a financování terorismu. V souladu s těmito předpisy jsme tzv. povinnou osobou.",
+    "metadata": {
+      "title": "Ochrana oznamovatelů | Brantl",
+      "description": "Informace o režimu ochrany oznamovatelů (whistleblowing) ve společnosti Brantl & Partners a způsobech, jak podat oznámení."
+    },
+    "whatIs": {
+      "title": "Co je whistleblowing",
+      "content": "Whistleblowing představuje způsob, jakým můžete naší společnosti oznámit porušení nebo hrozící porušení právního předpisu, jakož i nekalé či neetické jednání ze strany:",
+      "list1": "zaměstnanců naší kanceláře,",
+      "list2": "spolupracujících osob.",
+      "priority": "Naší prioritou je, aby všichni, kteří se podílejí na činnosti naší společnosti a poskytování služeb klientům, jednali v souladu s právními předpisy, morálními zásadami a profesním etickým kodexem. Jakékoli jednání v rozporu s těmito principy je nepřípustné. Oznámení může v souladu se zákonem podat jakákoli osoba, která je k tomu oprávněna."
+    },
+    "violations": {
+      "title": "Co je považováno za protiprávní či neetické chování?",
+      "intro": "Za důvody pro oznámení se považují například:",
+      "list1": "trestné činy (např. krádež, podvod) nebo přestupky",
+      "list2": "porušení vnitřních zásad či postupů naší společnosti",
+      "list3": "šikana, obtěžování, diskriminace či zneužívání návykových látek",
+      "list4": "porušení pravidel týkajících se ochrany soukromí, osobních údajů nebo bezpečnosti IT systémů",
+      "list5": "ohrožení zdraví či bezpečnosti osob",
+      "list6": "poškození životního prostředí",
+      "list7": "nedodržení zákonných povinností",
+      "list8": "pokusy o utajení či potlačení informací týkajících se výše uvedeného"
+    },
+    "howToReport": {
+      "title": "Jak lze oznámení podat",
+      "intro": "Oznámení je možné učinit prostřednictvím vnitřního oznamovacího systému naší kanceláře, a to následujícími způsoby:",
+      "inPerson": "na adrese Hybernská 1009/24, Praha 1,",
+      "phone": "na čísle +420 226 886 920,",
+      "mail": "na adresu Brantl & Partners, s.r.o., Hybernská 1009/24, Praha 1,",
+      "email": "na adresu info@brantl.cz.",
+      "protection": "Oznámení lze učinit anonymně nebo pod vlastním jménem. Pokud uvedete své kontaktní údaje, budeme Vás informovat o průběhu vyřizování Vašeho podnětu. Identita oznamovatele je chráněna za všech okolností. Veškeré údaje jsou řádně zabezpečeny proti zneužití, archivovány a uchovávány v souladu s platnou legislativou v oblasti ochrany osobních údajů (např. Nařízení EU 2016/679 – GDPR).",
+      "external": "Oznamovatel může podat oznámení také přímo příslušnému orgánu veřejné moci."
+    },
+    "noRetaliation": {
+      "title": "Zákaz odvetných opatření",
+      "content": "Na závěr zdůrazňujeme, že je plně respektován a dodržován zákaz odvetných opatření vůči oznamovatelům."
+    }
+  }
+}
