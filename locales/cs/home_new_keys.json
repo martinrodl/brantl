@@ -1,4 +1,24 @@
 {
+  "header": {
+    "navbar": {
+      "about": "KDO JSME",
+      "contacts": "KONTAKTY",
+      "services": "SLUŽBY",
+      "testimonials": "REFERENCE"
+    },
+    "switcher": {
+      "dropdownHeader": "Vybrat jazyk"
+    }
+  },
+  "hero": {
+    "description": "Jsme Brantl Partners, certifikovaní daňoví poradci a auditoři.",
+    "header": "Pragmatické poradenství pro moderní firmy"
+  },
+  "navbar": {
+    "sideMenu": {
+      "footer": "Jsme Brantl Partners, certifikovaní daňoví poradci a auditoři. "
+    }
+  },
   "about": {
     "description": "Od roku 2009 propojujeme dlouholeté zkušenosti z mezinárodních poradenských kanceláří s prostředím malé flexibilní kanceláře s osobním přístupem a inovativními technologiemi. Našimi klienty jsou především moderní malé a střední společnosti s mezinárodním přesahem nebo společnosti s mezinárodním kapitálem působící v České republice.  ",
     "header": "Kdo jsme",
