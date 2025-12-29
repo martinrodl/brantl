@@ -26,21 +26,19 @@ export function LanguageSwitcher({
   const currentPathname = usePathname();
 
   const changeLanguage = (newLocale: string) => {
-    const queryParams = new URLSearchParams(window.location.search);
-
-    if (preserveMenuState) {
-      queryParams.set("open", "true");
-    }
-
-    if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
-      router.push("/" + newLocale + currentPathname + (preserveMenuState ? "?" + queryParams.toString() : ""), {
-        scroll: false,
-      });
+    // Pro statický export - jednoduše nahraď první segment (locale) za nový
+    const segments = currentPathname.split('/').filter(Boolean);
+    
+    // Pokud první segment je locale, nahraď ho
+    if (segments.length > 0 && Object.keys(LANGUAGES).includes(segments[0])) {
+      segments[0] = newLocale;
+      const newPathname = '/' + segments.join('/');
+      router.push(newPathname, { scroll: false });
     } else {
-      const newPathname = currentPathname.replace(`/${currentLocale}`, `/${newLocale}`);
-      router.push(newPathname + (preserveMenuState ? "?" + queryParams.toString() : ""), { scroll: false });
+      // Pokud není locale v cestě, přidej ho
+      router.push(`/${newLocale}`, { scroll: false });
     }
-
+    
     router.refresh();
   };
 

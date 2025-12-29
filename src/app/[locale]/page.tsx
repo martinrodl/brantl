@@ -3,6 +3,13 @@ import { About } from "@/app/[locale]/_components/about";
 import { Services } from "@/app/[locale]/_components/services";
 import { Testimonials } from "@/app/[locale]/_components/testimonials";
 import { Contacts } from "@/app/[locale]/_components/contacts";
+import { LANGUAGES } from "@/constants/locales";
+
+export function generateStaticParams() {
+  return Object.keys(LANGUAGES).map((locale) => ({
+    locale,
+  }));
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

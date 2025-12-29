@@ -20,28 +20,16 @@ import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import Logo from "~/public/logos/brantl-partners-logo.svg";
 import Vector from "~/public/icons/vector.svg";
-import { useSearchParams } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
 
 export function NavbarMenuVertical({ className, isStaticPage }: { className?: string; isStaticPage?: boolean }) {
   const { scrollTo } = useScroll();
   const { t } = useTranslation();
-  const searchParams = useSearchParams();
 
-  const [open, setOpen] = React.useState(searchParams.get("open") === "true");
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerState = (state: boolean) => {
     setOpen(state);
-
-    const params = new URLSearchParams(searchParams.toString());
-    if (state) {
-      params.set("open", "true");
-    } else {
-      params.delete("open");
-    }
-
-    const newUrl = `${window.location.pathname}?${params.toString()}`;
-    window.history.replaceState(null, "", newUrl);
   };
 
   return (

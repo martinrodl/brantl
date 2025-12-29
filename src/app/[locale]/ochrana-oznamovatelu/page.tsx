@@ -3,10 +3,17 @@ import type { Metadata } from "next";
 import { SectionHeader } from "@/components/ui/section-header";
 import initTranslations from "@/app/i18n";
 import Vector from "~/public/icons/vector.svg";
+import { LANGUAGES } from "@/constants/locales";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export function generateStaticParams() {
+  return Object.keys(LANGUAGES).map((locale) => ({
+    locale,
+  }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
