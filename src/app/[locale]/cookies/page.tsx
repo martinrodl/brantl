@@ -42,19 +42,19 @@ export default async function CookiesPage({ params }: Props) {
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Technické cookies</strong> – {t("cookies.whatItMeans.technical")}
+                <strong>{t("cookies.whatItMeans.labelTechnical")}</strong> – {t("cookies.whatItMeans.technical")}
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Analytické cookies</strong> – {t("cookies.whatItMeans.analytical")}
+                <strong>{t("cookies.whatItMeans.labelAnalytical")}</strong> – {t("cookies.whatItMeans.analytical")}
               </span>
             </li>
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="mt-[0.55rem] shrink-0 -rotate-90 fill-icon" />
               <span>
-                <strong>Marketingové cookies</strong> – {t("cookies.whatItMeans.marketing")}
+                <strong>{t("cookies.whatItMeans.labelMarketing")}</strong> – {t("cookies.whatItMeans.marketing")}
               </span>
             </li>
           </ul>

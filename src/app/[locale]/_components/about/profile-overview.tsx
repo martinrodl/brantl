@@ -31,7 +31,7 @@ export async function ProfileOverview({ locale }: { locale: string }) {
         return (
           <ProfileCard
             key={idx}
-            imageSrc={`/images/about/${position}-member.webp`}
+            imageSrc={`/images/about/${position}-member.jpg`}
             name={memberData.name}
             role={memberData.role}
             specializationTitle={t("about.team.sectionTitle.specialization")}

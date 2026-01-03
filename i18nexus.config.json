@@ -1,0 +1,6 @@
+{
+  "apiKey": "bLHG5YuqBlpxH98vqS4now",
+  "locales": ["cs", "en", "de"],
+  "namespaces": ["home"],
+  "output": "./locales/{{locale}}/{{namespace}}.json"
+}

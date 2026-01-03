@@ -49,14 +49,9 @@ async function pushTranslations() {
   // Restore local file from backup
   copyFileSync(backupPath, localPath);
 
-  // Filter for cookies/whistleblower keys
-  const localKeys = Object.keys(localFlat).filter(k => 
-    k.startsWith("cookies.") || k.startsWith("whistleblower.")
-  );
-  
-  const remoteKeys = Object.keys(remoteFlat).filter(k => 
-    k.startsWith("cookies.") || k.startsWith("whistleblower.")
-  );
+  // Use all keys from the local file (upload any missing keys across the namespace)
+  const localKeys = Object.keys(localFlat);
+  const remoteKeys = Object.keys(remoteFlat);
 
   // Separate into keys to add vs keys to update
   const keysToAdd = localKeys.filter(k => !remoteKeys.includes(k));

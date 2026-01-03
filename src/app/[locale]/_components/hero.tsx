@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import initTranslations from "@/app/i18n";
-import heroBanner from "~/public/images/hero/hero-banner.webp";
+import heroBanner from "~/public/images/hero/hero-banner.jpg";
 import Vector from "~/public/icons/vector.svg";
 import BorderTexture from "~/public/icons/border-texture.svg";
 

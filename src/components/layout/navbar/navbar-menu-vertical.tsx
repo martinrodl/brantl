@@ -51,7 +51,7 @@ export function NavbarMenuVertical({ className, isStaticPage }: { className?: st
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="flex w-full flex-col justify-between gap-0 overflow-scroll bg-[url('/images/mobile/menu-bg-mobile.webp')] bg-cover bg-center p-0 text-inverse-foreground">
+      <SheetContent className="flex w-full flex-col justify-between gap-0 overflow-scroll bg-[url('/images/mobile/menu-bg-mobile.jpg')] bg-cover bg-center p-0 text-inverse-foreground">
         <VisuallyHidden>
           <SheetTitle>Main Navigation</SheetTitle>
           <SheetDescription>Choose an option from the menu below.</SheetDescription>

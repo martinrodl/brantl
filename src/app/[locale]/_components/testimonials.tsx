@@ -5,7 +5,7 @@ import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
 import { SectionRef } from "@/components/context/section-ref";
 import { SectionHeader } from "@/components/ui/section-header";
 import { DynamicSlider } from "@/app/[locale]/_components/testimonials/dynamic-slider";
-import testimonials from "~/public/images/testimonials/testimonials.webp";
+import testimonials from "~/public/images/testimonials/testimonials.jpg";
 import SmallTexture from "~/public/icons/small-texture.svg";
 
 const PARTNER_LOGOS = [

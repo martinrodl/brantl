@@ -3,16 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 import { navLinks } from "@/components/layout/navbar/utils/constants";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { NavbarButton } from "@/components/layout/navbar/navbar-button";
-import footerBackground from "~/public/images/footer/footer-bg.webp";
+import footerBackground from "~/public/images/footer/footer-bg.jpg";
 import Logo from "~/public/logos/brantl-partners-logo.svg";
 
 export function Footer() {
   const params = useParams();
   const locale = params?.locale || "cs";
+  const { t } = useTranslation();
   return (
     <footer className="container relative flex min-h-[292px] flex-col items-center justify-between gap-6 p-9 pt-16 md:h-[367px] md:gap-10 md:p-16">
       <Image
@@ -39,10 +41,10 @@ export function Footer() {
 
       <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[hsl(var(--inverse-foreground))]">
         <Link href={`/${locale}/ochrana-oznamovatelu`} className="hover:underline">
-          Ochrana oznamovatelů
+          {t("footer.links.whistleblower")}
         </Link>
         <Link href={`/${locale}/cookies`} className="hover:underline">
-          Cookies
+          {t("footer.links.cookies")}
         </Link>
       </div>
     </footer>

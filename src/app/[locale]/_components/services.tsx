@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 
 import Services01 from "~/public/images/services/services-block-01.jpg";
 import Services02 from "~/public/images/services/services-block-02.jpg";
-import Services03 from "~/public/images/services/services-block-03.webp";
+import Services03 from "~/public/images/services/services-block-03.jpg";
 import Services04 from "~/public/images/services/services-block-04.jpg";
 import Services05 from "~/public/images/services/services-block-05.jpg";
 import Services06 from "~/public/images/services/services-block-06.jpg";

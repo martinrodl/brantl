@@ -4,7 +4,7 @@ import { NavLinkHref } from "@/components/layout/navbar/utils/enums";
 import { SectionRef } from "@/components/context/section-ref";
 import { ProfileOverview } from "@/app/[locale]/_components/about/profile-overview";
 import { VisualDescriptionBlock } from "@/app/[locale]/_components/about/visual-description-block";
-import aboutPrimary from "~/public/images/about/about-primary.webp";
+import aboutPrimary from "~/public/images/about/about-primary.jpg";
 import TriangleCluster from "~/public/icons/triangle-cluster.svg";
 import BorderTexture from "~/public/icons/border-texture.svg";
 

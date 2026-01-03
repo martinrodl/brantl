@@ -97,19 +97,19 @@ export default async function WhistleblowerProtectionPage({ params }: Props) {
           <ul className="space-y-2">
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
-              <span><strong>osobně:</strong> {t("whistleblower.howToReport.inPerson")}</span>
+              <span><strong>{t("whistleblower.howToReport.labelInPerson")}</strong> {t("whistleblower.howToReport.inPerson")}</span>
             </li>
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
-              <span><strong>telefonicky:</strong> {t("whistleblower.howToReport.phone")}</span>
+              <span><strong>{t("whistleblower.howToReport.labelPhone")}</strong> {t("whistleblower.howToReport.phone")}</span>
             </li>
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
-              <span><strong>písemně:</strong> {t("whistleblower.howToReport.mail")}</span>
+              <span><strong>{t("whistleblower.howToReport.labelMail")}</strong> {t("whistleblower.howToReport.mail")}</span>
             </li>
             <li className="flex items-start gap-3">
               <Vector width={10} height={10} className="-rotate-90 shrink-0 fill-icon mt-[0.55rem]" />
-              <span><strong>emailem:</strong> {t("whistleblower.howToReport.email")} <a className="underline" href="mailto:info@brantl.cz">info@brantl.cz</a></span>
+              <span><strong>{t("whistleblower.howToReport.labelEmail")}</strong> {t("whistleblower.howToReport.email")} <a className="underline" href="mailto:info@brantl.cz">info@brantl.cz</a></span>
             </li>
           </ul>
           <p>{t("whistleblower.howToReport.protection")}</p>
