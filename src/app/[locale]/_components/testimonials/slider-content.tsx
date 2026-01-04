@@ -31,7 +31,14 @@ export function SliderContent({
   return (
     <CarouselContent className="flex min-h-[300px] items-center gap-8 md:gap-12">
       {rowIndexes.map((idx) => (
-        <CarouselItem key={idx} className="mx-auto flex justify-center" style={{ flexBasis: `${100 / itemsPerView}%` }}>
+        <CarouselItem
+          key={idx}
+          className="mx-auto flex justify-center"
+          style={{ 
+            flexBasis: `${100 / itemsPerView}%`,
+            marginRight: idx === rowIndexes.length - 1 ? '32px' : undefined
+          }}
+        >
           <SliderImage src={imageUrls[idx]} alt={`Logo ${idx + 1}`} width={itemWidth} />
         </CarouselItem>
       ))}
