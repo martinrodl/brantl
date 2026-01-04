@@ -25,7 +25,10 @@ export function Navbar() {
     "md:flex md:items-center md:justify-end md:ml-auto",
   );
 
-  const verticalMenuClasses = "place-self-center";
+  const verticalMenuClasses = cn(
+    // Mobile: keep the hamburger on the right edge
+    isStaticPage ? "ml-auto" : "col-start-2 justify-self-end",
+  );
 
   return (
     <nav className={navbarClasses}>
