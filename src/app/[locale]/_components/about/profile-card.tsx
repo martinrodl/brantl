@@ -35,28 +35,29 @@ export function ProfileCard({
   };
 
   return (
-    <div className={cn("md:flex md:items-start md:gap-x-8", className)}>
-      <Image
-        src={imageSrc}
-        alt={`${name} - ${role}`}
-        width={138}
-        height={184}
-        className={cn("mb-8 h-auto min-w-[138px] md:mb-0", className)}
-      />
-
-      <div className="flex flex-col">
-        <div className={cn(SECTION_CLASSES, "mb-0 xl:mb-1 xl:gap-0")}> 
+    <div className={cn("flex flex-col", className)}>
+      <div className="flex flex-col items-center gap-x-8 lg:flex-row lg:items-start">
+        <Image
+          src={imageSrc}
+          alt={`${name} - ${role}`}
+          width={138}
+          height={184}
+          className="mb-[10px] h-auto w-[138px] flex-shrink-0"
+        />
+        <div className="mb-4 text-center lg:text-left">
           <p className="text-xl font-bold">{name}</p>
-          <p className={cn(SECTION_TITLE_CLASSES, "mb-0")}>{role}</p>
+          <p className="text-xs font-bold">{role}</p>
         </div>
+      </div>
 
-          <div className={cn("flex flex-col gap-2 mt-2 mb-2 xl:mt-3 xl:mb-3")}> 
-          <p className={cn(SECTION_TITLE_CLASSES, "mt-0")}>{specializationTitle}:</p>
+      <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-2">
+          <p className="text-xs font-bold">{specializationTitle}:</p>
           <ul className={LIST_CLASSES}>{renderList(specializations)}</ul>
         </div>
 
-          <div className={cn("flex flex-col gap-2 mb-4")}> 
-    <p className={SECTION_TITLE_CLASSES}>{cvTitle}:</p>
+        <div className="flex flex-col gap-2">
+          <p className={SECTION_TITLE_CLASSES}>{cvTitle}:</p>
           <ul className={LIST_CLASSES}>{renderList(cvRecords)}</ul>
         </div>
       </div>

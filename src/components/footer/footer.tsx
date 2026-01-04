@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useTranslation } from "react-i18next";
 
 import { navLinks } from "@/components/layout/navbar/utils/constants";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -14,7 +13,7 @@ import Logo from "~/public/logos/brantl-partners-logo.svg";
 export function Footer() {
   const params = useParams();
   const locale = params?.locale || "cs";
-  const { t } = useTranslation();
+  
   return (
     <footer className="container relative flex min-h-[292px] flex-col items-center justify-between gap-6 p-9 pt-16 md:h-[367px] md:gap-10 md:p-16">
       <Image
@@ -37,14 +36,16 @@ export function Footer() {
         <LanguageSwitcher buttonClassName="text-sm ml-2 md:ml-0 p-1 h-auto" />
       </nav>
 
-      <Logo className="h-fit w-[144px] shrink-0 fill-icon-inverse md:w-[206px]" />
+      <Link href={`/${locale}`} className="block">
+        <Logo className="h-fit w-[144px] shrink-0 fill-icon-inverse md:w-[206px]" />
+      </Link>
 
       <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium text-[hsl(var(--inverse-foreground))]">
         <Link href={`/${locale}/ochrana-oznamovatelu`} className="hover:underline">
-          {t("footer.links.whistleblower")}
+          Ochrana oznamovatelů
         </Link>
         <Link href={`/${locale}/cookies`} className="hover:underline">
-          {t("footer.links.cookies")}
+          Cookies
         </Link>
       </div>
     </footer>

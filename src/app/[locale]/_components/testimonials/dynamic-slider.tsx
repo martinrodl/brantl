@@ -41,7 +41,8 @@ export function DynamicSlider({
   const itemWidth = isDesktop ? itemDesktopWidth : isTablet ? itemTabletWidth : itemBaseWidth;
   const rowIndexes = Array.from({ length: imageUrls.length }, (_, index) => index);
   const dualRowIndexes = rowIndexes.filter((index) => index % 2 === 0);
-  const deviceIndexes = isDesktop ? rowIndexes : dualRowIndexes;
+  // Vždy používat všechny indexy v jedné řadě
+  const deviceIndexes = rowIndexes;
 
   const clearAutoScroll = React.useCallback(() => {
     if (autoScrollIntervalRef.current !== null) {
@@ -112,6 +113,7 @@ export function DynamicSlider({
   }, [startAutoScroll, clearAutoScroll]);
 
   const totalDots = Math.ceil(deviceIndexes.length / itemsPerView);
+  const allItemsVisible = deviceIndexes.length <= itemsPerView;
 
   const handlePrevious = () => api?.scrollTo(Math.max(current - itemsPerView, 0));
   const handleNext = () => api?.scrollTo(Math.min(deviceIndexes.length - itemsPerView, current + itemsPerView));
@@ -129,7 +131,7 @@ export function DynamicSlider({
         className="relative mb-12 md:mb-0"
         style={{ padding: isTablet ? `0 ${paddingTabletDesktop}px` : `0 ${paddingMobile}px 60px` }}
       >
-  <Carousel opts={{ align: "start", loop: true }} setApi={setApi}>
+  <Carousel opts={{ align: "start", loop: !allItemsVisible }} setApi={setApi}>
           <SliderContent
             rowIndexes={rowIndexes}
             dualRowIndexes={dualRowIndexes}
@@ -140,22 +142,28 @@ export function DynamicSlider({
           />
         </Carousel>
 
-        <NavigationButton direction="prev" disabled={current === 0} onClick={handlePrevious} />
+        {!allItemsVisible && (
+          <>
+            <NavigationButton direction="prev" disabled={current === 0} onClick={handlePrevious} />
 
-        <NavigationButton
-          direction="next"
-          disabled={current >= deviceIndexes.length - itemsPerView}
-          onClick={handleNext}
-        />
+            <NavigationButton
+              direction="next"
+              disabled={current >= deviceIndexes.length - itemsPerView}
+              onClick={handleNext}
+            />
+          </>
+        )}
       </div>
 
-      <PaginationDots
-        totalDots={totalDots}
-        currentIndex={current}
-        itemsPerView={itemsPerView}
-        onDotClick={handleDotClick}
-        className="mt-12 hidden min-h-12 justify-center md:flex xl:mt-40"
-      />
+      {!allItemsVisible && totalDots > 1 && (
+        <PaginationDots
+          totalDots={totalDots}
+          currentIndex={current}
+          itemsPerView={itemsPerView}
+          onDotClick={handleDotClick}
+          className="mt-12 hidden min-h-12 justify-center md:flex xl:mt-40"
+        />
+      )}
     </div>
   );
 }

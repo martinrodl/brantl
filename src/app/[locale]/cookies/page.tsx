@@ -30,7 +30,7 @@ export default async function CookiesPage({ params }: Props) {
   const { t } = await initTranslations(locale, ["home"]);
 
   return (
-    <main className="container mx-auto px-6 py-10 md:py-16 xl:px-20">
+    <main className="container mx-auto px-6 pt-24 pb-10 md:pt-28 md:pb-16 xl:px-20">
       <SectionHeader header={t("cookies.header")} hideArrow />
 
       <div className="mx-auto mt-8 max-w-3xl space-y-6 text-base leading-relaxed md:mt-10 md:text-lg">

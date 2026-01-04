@@ -29,15 +29,10 @@ export function SliderContent({
   imageUrls: string[];
 }) {
   return (
-    <CarouselContent className="flex min-h-[300px] items-center">
-      {(!isDesktop ? dualRowIndexes : rowIndexes).map((idx) => (
+    <CarouselContent className="flex min-h-[300px] items-center gap-8 md:gap-12">
+      {rowIndexes.map((idx) => (
         <CarouselItem key={idx} className="mx-auto flex justify-center" style={{ flexBasis: `${100 / itemsPerView}%` }}>
-          <div className="flex flex-col">
-            <SliderImage src={imageUrls[idx]} alt={`Logo ${idx + 1}`} width={itemWidth} />
-            {!isDesktop && imageUrls[idx + 1] && (
-              <SliderImage src={imageUrls[idx + 1]} alt={`Logo ${idx + 2}`} width={itemWidth} />
-            )}
-          </div>
+          <SliderImage src={imageUrls[idx]} alt={`Logo ${idx + 1}`} width={itemWidth} />
         </CarouselItem>
       ))}
     </CarouselContent>

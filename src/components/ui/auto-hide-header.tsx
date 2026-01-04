@@ -7,7 +7,7 @@ export function AutoHideHeader({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isStaticPage = pathname?.includes("/cookies") || pathname?.includes("/ochrana-oznamovatelu");
   
-  const [showHeader, setShowHeader] = React.useState(isStaticPage);
+  const [showHeader, setShowHeader] = React.useState(true);
   const topMarkerRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
@@ -44,7 +44,7 @@ export function AutoHideHeader({ children }: { children: React.ReactNode }) {
       <div ref={topMarkerRef} className="absolute top-0 h-1 w-full"></div>
 
       <header
-        className={`container fixed left-0 right-0 top-0 z-50 transition-transform duration-300 ${
+        className={`${isStaticPage ? 'relative' : 'fixed left-0 right-0 top-0'} z-50 transition-transform duration-300 ${
           showHeader ? "translate-y-0" : "-translate-y-full"
         }`}
       >

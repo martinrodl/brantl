@@ -4,12 +4,12 @@ import initTranslations from "@/app/i18n";
 
 const PROFILE_GRID_CLASSES = cn(
   "grid",
-  "grid-cols-1 px-8",
-  "md:grid-cols-3 md:grid-flow-col md:grid-rows-[repeat(4,auto)] md:gap-x-4",
-  "xl:grid-cols-[repeat(6,auto)] xl:grid-rows-1 xl:gap-x-10 xl:px-20 xl:place-items-start",
+  "grid-cols-1 gap-y-12 px-8",
+  "md:grid-cols-3 md:gap-x-8 md:gap-y-12",
+  "lg:gap-x-10 lg:px-20",
 );
 
-const PROFILE_CARD_CLASSES = "xl:row-span-3 xl:place-self-start place-self-center";
+const PROFILE_CARD_CLASSES = "place-self-start";
 
 const TEAM_MEMBERS = ["first", "second", "third"] as const;
 

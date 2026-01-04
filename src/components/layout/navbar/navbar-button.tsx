@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 import { NavLink } from "./utils/types";
 import { useScroll } from "@/hooks/useScroll";
@@ -20,13 +20,15 @@ export function NavbarButton({
   const { t } = useTranslation();
   const router = useRouter();
   const params = useParams();
+  const pathname = usePathname();
   const locale = (params?.locale as string) || "";
+  const isStaticPage = pathname?.includes("/cookies") || pathname?.includes("/ochrana-oznamovatelu");
 
   return (
     <Button
       onClick={() => {
         const el = typeof document !== "undefined" ? document.getElementById(navLink.href) : null;
-        if (el) {
+        if (el && !isStaticPage) {
           scrollTo(navLink.href);
         } else {
           router.push(`/${locale}#${navLink.href}`);

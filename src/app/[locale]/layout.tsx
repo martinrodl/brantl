@@ -38,11 +38,13 @@ export default async function RootLayout({
 
   return (
     <html>
-      <body className={`${montserrat.className} antialiased`}>
+      <body className={`${montserrat.className} antialiased bg-gray-100`}>
         <TranslationsProvider namespaces={i18nNamespaces} locale={locale} resources={resources}>
           <ScrollProvider>
-            <Header />
-            {children}
+            <div className="max-w-[1200px] mx-auto bg-white shadow-lg">
+              <Header />
+              {children}
+            </div>
             <Footer />
           </ScrollProvider>
         </TranslationsProvider>
