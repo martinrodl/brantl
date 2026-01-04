@@ -19,9 +19,14 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
 
     if (section && section.current) {
       setTimeout(() => {
-        section.current.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
+        const element = section.current;
+        const headerOffset = 100; // Offset pro fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
         });
       }, 200);
     }
