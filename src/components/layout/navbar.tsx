@@ -12,22 +12,17 @@ export function Navbar() {
 
   const navbarClasses = cn(
     "z-50 px-8 py-4 max-w-[1200px] mx-auto",
+    isStaticPage ? "flex items-center justify-between bg-background" : "grid grid-cols-2 items-center",
     isStaticPage
-      ? "flex items-center justify-between border-b border-border bg-background"
-      : "grid grid-cols-2 items-center border-b border-inverse",
-    isStaticPage
-      ? "md:mx-4 md:flex md:justify-between md:space-x-4 md:p-4 md:pb-2 md:pr-24"
+      ? "md:mx-4 md:flex md:justify-between md:space-x-4 md:p-4 md:pb-2 md:pr-32"
       : "md:mx-4 md:flex md:justify-end md:space-x-4 md:p-4 md:pb-2",
     "xl:m-0 xl:space-x-0 xl:px-12 xl:py-8 xl:pb-0",
-    isStaticPage ? "xl:border-none xl:justify-between xl:pr-48" : "xl:border-none",
+    isStaticPage ? "xl:border-none xl:justify-between xl:pr-40" : "xl:border-none",
   );
 
   const horizontalMenuClasses = cn(
     "hidden justify-center space-x-2",
-    "md:flex md:self-end",
-    isStaticPage
-      ? "xl:self-start xl:border-b xl:border-border xl:pr-3"
-      : "xl:self-start xl:border-b xl:border-inverse xl:pr-3",
+    "md:flex md:items-center md:justify-end md:ml-auto",
   );
 
   const verticalMenuClasses = "place-self-center";
