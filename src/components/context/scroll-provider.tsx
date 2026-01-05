@@ -20,7 +20,7 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
     if (section && section.current) {
       setTimeout(() => {
         const element = section.current;
-        const headerOffset = 100; // Offset pro fixed header
+        const headerOffset = 150; // Offset pro fixed header - zvětšeno, aby byla sekce více nahoře
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 

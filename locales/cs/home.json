@@ -138,6 +138,12 @@
   "testimonials": {
     "header": "Reference"
   },
+  "footer": {
+    "links": {
+      "cookies": "Cookies",
+      "whistleblower": "Ochrana oznamovatelů"
+    }
+  },
   "whistleblower": {
     "header": "Ochrana oznamovatelů",
     "howToReport": {
