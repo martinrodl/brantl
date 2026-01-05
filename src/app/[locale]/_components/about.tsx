@@ -16,7 +16,7 @@ export async function About({ locale }: { locale: string }) {
       <div className="relative -mt-8 flex flex-col gap-8 pb-[15px] md:-mt-14 md:gap-10">
         <TriangleCluster className="absolute right-0 top-0 -z-10 hidden h-[296px] w-[296px] fill-muted xl:block" />
 
-        <SectionHeader header={t("about.header")} />
+        <SectionHeader header={t("about.header")} className="mt-4 md:mt-10" />
 
         <VisualDescriptionBlock
           imageSrc={aboutPrimary}

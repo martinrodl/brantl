@@ -17,7 +17,7 @@ export function Navbar() {
       ? "md:mx-4 md:flex md:justify-between md:space-x-4 md:p-4 md:pb-2 md:pr-32"
       : "md:mx-4 md:flex md:justify-end md:space-x-4 md:p-4 md:pb-2",
     "xl:m-0 xl:space-x-0 xl:px-12 xl:py-8 xl:pb-0",
-    isStaticPage ? "xl:border-none xl:justify-between xl:pr-40" : "xl:border-none",
+    isStaticPage ? "xl:border-none xl:justify-between xl:pr-52" : "xl:border-none",
   );
 
   const horizontalMenuClasses = cn(
