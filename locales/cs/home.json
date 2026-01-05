@@ -4,26 +4,26 @@
     "header": "Kdo jsme",
     "team": {
       "first": {
-        "cvRecords": "Společník, Brantl & Partners, od 2020|\nTax Manager, Moore Stephens (BDO), 2013 - 2018|\nDaňový poradce, Vorlíčková Partners (Rödl & Partner), 2007 - 2013|\nDaňový poradce od 2009|\nLL.M. (evropské daňové právo), Johannes Kepler Universität Linz, 2009 - 2010 ",
+        "cvRecords": "Společník, Brantl & Partners, od 2020|\r\nTax Manager, Moore Stephens (BDO), 2013 - 2018|\r\nDaňový poradce, Vorlíčková Partners (Rödl & Partner), 2007 - 2013|\r\nDaňový poradce od 2009|\r\nLL.M. (evropské daňové právo), Johannes Kepler Universität Linz, 2009 - 2010 ",
         "name": "Ing. Jiří Dolejš, LL.M.",
-        "role": "daňový poradce I jednatel\n",
-        "specializations": "Poradenství pro společnosti s německým kapitálem v ČR| Transferové ceny|\nMezinárodní zdanění"
+        "role": "daňový poradce I jednatel\r\n",
+        "specializations": "Poradenství pro společnosti s německým kapitálem v ČR| Transferové ceny|\r\nMezinárodní zdanění"
       },
       "second": {
-        "cvRecords": "Společník, Brantl & Partners, od 2023|\nAudit Manager, BDO, 2020 - 2023|\nAuditor, Moore Stephens, 2019 – 2020|\nStatutární auditor od 2019",
+        "cvRecords": "Společník, Brantl & Partners, od 2023|\r\nAudit Manager, BDO, 2020 - 2023|\r\nAuditor, Moore Stephens, 2019 – 2020|\r\nStatutární auditor od 2019",
         "name": "Ing. Romana Rödlová",
         "role": "auditor I jednatel",
-        "specializations": "Audit českých společností, společností se zahraničním kapitálem|\nZaměření na výrobní podniky, přepravní a logistické firmy, hotelový průmysl|\nÚčetnictví a účetní výkaznictví"
+        "specializations": "Audit českých společností, společností se zahraničním kapitálem|\r\nZaměření na výrobní podniky, přepravní a logistické firmy, hotelový průmysl|\r\nÚčetnictví a účetní výkaznictví"
       },
       "sectionTitle": {
         "experience": "Pracovní zkušenosti",
         "specialization": "Specializace"
       },
       "third": {
-        "cvRecords": "Zakládající společník, Brantl & Partners|\nTax Manager, Accace, 2008 - 2009|\nDaňový poradce, Rödl & Partner, 2001 - 2008|\nDaňový poradce od 2003|\nAuditor od 2009",
+        "cvRecords": "Zakládající společník, Brantl & Partners|\r\nTax Manager, Accace, 2008 - 2009|\r\nDaňový poradce, Rödl & Partner, 2001 - 2008|\r\nDaňový poradce od 2003|\r\nAuditor od 2009",
         "name": "Ing. Jan Brantl",
         "role": "daňový poradce I auditor I jednatel",
-        "specializations": "Poradenství pro společnosti se zahraničním kapitálem v ČR|\nTransakční poradenství|\nČeské účetní standardy \n"
+        "specializations": "Poradenství pro společnosti se zahraničním kapitálem v ČR|\r\nTransakční poradenství|\r\nČeské účetní standardy \r\n"
       }
     }
   },
@@ -40,7 +40,7 @@
     "company2": {
       "address": "Zapsána u Městského soudu v Praze, oddíl C, vložka 394770 ",
       "companyIdNumber": "IČO: 19966997",
-      "companyName": "Brantl & Partners Audit, s.r.o.\n",
+      "companyName": "Brantl & Partners Audit, s.r.o.\r\n",
       "email": "info@brantl.cz",
       "phone": "+420 226 886 920",
       "taxIdNumber": "DIČ: CZ19966997",
@@ -50,7 +50,7 @@
     "office1": {
       "addressCity": " 110 00 Praha 1",
       "addressStreet": "Hybernská 1009/24",
-      "city": "Praha\n"
+      "city": "Praha\r\n"
     },
     "office2": {
       "addressCity": "339 01 Klatovy ",
@@ -60,7 +60,7 @@
   },
   "cookies": {
     "header": "Cookies",
-    "intro": "Tato webová stránka nepoužívá cookies ani jiné sledovací technologie k monitorování vašeho chování. Při návštěvě stránek nejsou ukládány žádné soubory cookies, které by sloužily k identifikaci vaší návštěvy či sledování vaší aktivity. Informace o své návštěvě nám přesto můžete poskytnout dobrovolně, například při vyplnění kontaktního formuláře.",
+    "intro": "Tato webová stránka nepoužívá cookies ani jiné sledovací technologie k monitorování vašeho chování. Při návštěvě stránek nejsou ukládány žádné soubory cookies, které by sloužily k identifikaci vaší návštěvy či sledování vaší aktivity. Informace o své návštěvě nám přesto můžete poskytnout dobrovolně.",
     "metadata": {
       "description": "Informace o používání souborů cookies na webu Brantl & Partners.",
       "title": "Cookies | Brantl"
@@ -109,7 +109,7 @@
         "title": "Fúze, akvizice & transakční poradenství"
       },
       "first": {
-        "descriptionPart1": "Ať už potřebujete jednorázovou radu nebo pravidelné poradenství, jsme tu pro vás. Naším úkolem je provést vás složitým daňovým prostředím, měnící se legislativou a pomoci vám vyvarovat se daňových rizik. Zaměřujeme se primárně na daň z příjmů právnických osob a daň z přidané hodnoty. \n",
+        "descriptionPart1": "Ať už potřebujete jednorázovou radu nebo pravidelné poradenství, jsme tu pro vás. Naším úkolem je provést vás složitým daňovým prostředím, měnící se legislativou a pomoci vám vyvarovat se daňových rizik. Zaměřujeme se primárně na daň z příjmů právnických osob a daň z přidané hodnoty. \r\n",
         "descriptionPart2": "Poskytneme daňovou konzultaci či zpracujeme daňovou analýzu. Provedeme revizi účetnictví se zaměřením na identifikaci daňových rizik. Připravíme a podáme daňové přiznání. Zastoupíme vás před finančním úřadem.  ",
         "title": "Daňové poradenství"
       },
@@ -129,7 +129,7 @@
         "title": "Účetní poradenství"
       },
       "third": {
-        "descriptionPart1": "Jste-li součástí nadnárodní či tuzemské skupiny podniků a realizujete vzájemné obchody, čelíte zvýšenému zájmu finanční správy z hlediska nastavení převodních (transferových) cen. Objektem jejího zájmu je ověřit, zda transakce uvnitř skupiny splňují podmínky nezávislého obchodního vztahu.\n",
+        "descriptionPart1": "Jste-li součástí nadnárodní či tuzemské skupiny podniků a realizujete vzájemné obchody, čelíte zvýšenému zájmu finanční správy z hlediska nastavení převodních (transferových) cen. Objektem jejího zájmu je ověřit, zda transakce uvnitř skupiny splňují podmínky nezávislého obchodního vztahu.\r\n",
         "descriptionPart2": "Poskytneme vám konzultaci či zpracujeme pro vás analýzu obchodních vztahů  v oblasti převodních cen a upozorníme na daňová rizika. Nastavíme s vámi optimální metodu stanovení ceny v jednotlivých transakcích a připravíme dokumentaci k převodním cenám ve formě, která je vyžadována finančními správami jak v tuzemsku, tak v zahraničí.",
         "title": "Převodní ceny"
       }
@@ -141,7 +141,7 @@
   "whistleblower": {
     "header": "Ochrana oznamovatelů",
     "howToReport": {
-      "email": "na adresu info@brantl.cz.",
+      "email": "na adresu",
       "external": "Oznamovatel může podat oznámení také přímo příslušnému orgánu veřejné moci.",
       "inPerson": "na adrese Hybernská 1009/24, Praha 1,",
       "intro": "Oznámení je možné učinit prostřednictvím vnitřního oznamovacího systému naší kanceláře, a to následujícími způsoby:",
@@ -165,14 +165,14 @@
     },
     "violations": {
       "intro": "Za důvody pro oznámení se považují například:",
-      "list1": "trestné činy (např. krádež, podvod) nebo přestupky",
-      "list2": "porušení vnitřních zásad či postupů naší společnosti",
-      "list3": "šikana, obtěžování, diskriminace či zneužívání návykových látek",
-      "list4": "porušení pravidel týkajících se ochrany soukromí, osobních údajů nebo bezpečnosti IT systémů",
-      "list5": "ohrožení zdraví či bezpečnosti osob",
-      "list6": "poškození životního prostředí",
-      "list7": "nedodržení zákonných povinností",
-      "list8": "pokusy o utajení či potlačení informací týkajících se výše uvedeného",
+      "list1": "trestné činy (např. krádež, podvod) nebo přestupky,",
+      "list2": "porušení vnitřních zásad či postupů naší společnosti,",
+      "list3": "šikana, obtěžování, diskriminace či zneužívání návykových látek,",
+      "list4": "porušení pravidel týkajících se ochrany soukromí, osobních údajů nebo bezpečnosti IT systémů,",
+      "list5": "ohrožení zdraví či bezpečnosti osob,",
+      "list6": "poškození životního prostředí,",
+      "list7": "nedodržení zákonných povinností,",
+      "list8": "pokusy o utajení či potlačení informací týkajících se výše uvedeného.",
       "title": "Co je považováno za protiprávní či neetické chování?"
     },
     "whatIs": {
